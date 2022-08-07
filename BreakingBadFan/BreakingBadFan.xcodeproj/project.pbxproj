@@ -15,6 +15,8 @@
 		CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */; };
 		CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815D289FDC8D00CE5A07 /* LoginUI.swift */; };
 		CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815F289FE10000CE5A07 /* LoginError.swift */; };
+		CECF816328A057A600CE5A07 /* Keychain+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF816228A057A600CE5A07 /* Keychain+Keys.swift */; };
+		CECF816628A057ED00CE5A07 /* Kaychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF816528A057ED00CE5A07 /* Kaychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		CECF815D289FDC8D00CE5A07 /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
 		CECF815F289FE10000CE5A07 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		CECF816228A057A600CE5A07 /* Keychain+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Keys.swift"; sourceTree = "<group>"; };
+		CECF816528A057ED00CE5A07 /* Kaychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		CECF8136289FC3B300CE5A07 /* BreakingBadFan */ = {
 			isa = PBXGroup;
 			children = (
+				CECF816428A057C800CE5A07 /* Utilities */,
+				CECF816128A0577100CE5A07 /* Extensions */,
 				CECF814D289FC5D300CE5A07 /* API */,
 				CECF814C289FC5CD00CE5A07 /* Model */,
 				CECF814B289FC5C300CE5A07 /* Scenes */,
@@ -111,6 +117,22 @@
 				CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		CECF816128A0577100CE5A07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CECF816228A057A600CE5A07 /* Keychain+Keys.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CECF816428A057C800CE5A07 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CECF816528A057ED00CE5A07 /* Kaychain.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,7 +208,9 @@
 			files = (
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
+				CECF816628A057ED00CE5A07 /* Kaychain.swift in Sources */,
 				CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */,
+				CECF816328A057A600CE5A07 /* Keychain+Keys.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,
 			);
