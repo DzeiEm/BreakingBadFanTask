@@ -20,8 +20,9 @@ class LoginViewController: UIViewController {
     var username: String = ""
     var password: String = ""
     var confirmPassword: String = ""
-   
+    
     let ui = LoginUI()
+    
     
     //ACTIONS
     @IBAction func onSegmentControllerTypeChanged(_ sender: UISegmentedControl) {
@@ -57,12 +58,17 @@ class LoginViewController: UIViewController {
         ui.roundCorners(of: buttonLabel, by: 20)
         errorLabel.isHidden = true
         buttonLabel.isEnabled = false
+        usernameTextfield.delegate = self
+        passwordTextfield.delegate = self
+        confirmPasswordTextfield.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        self.textFieldDidBeginEditing(usernameTextfield)
-        
+     
+        usernameTextfield.delegate =  self
+        passwordTextfield.delegate = self
+        confirmPasswordTextfield.delegate = self
+       
     }
     
     
@@ -85,20 +91,14 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate {
     
-    func textFieldDidBeginEditing(_ textfield: UITextField) {
-        if textfield.text == self.username {
-            buttonLabel.isEnabled = true
-            print("username textfield tapped")
-        }
-        if textfield.text == self.password {
-            buttonLabel.isEnabled = true
-            print("passwod textfield tapped")
-        }
-        if textfield.text == self.confirmPassword {
-            buttonLabel.isEnabled = true
-            print("confirm password textfield tapped")
-        }
+    func textFieldShouldBeginEditing(_ textField: UITextField)  -> Bool {
+        print("Textfield should begin editing")
+        buttonLabel.isEnabled = true
+        return true
     }
     
-    
+    func textFieldDidBeginEditing(_ textField: UITextField)  {
+        print("textFieldDidBeginEditing")
+      
+    }
 }
