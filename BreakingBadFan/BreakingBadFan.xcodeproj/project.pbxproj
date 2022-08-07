@@ -13,6 +13,8 @@
 		CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8154289FC8D000CE5A07 /* LoginViewController.swift */; };
 		CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF8156289FC90300CE5A07 /* LoginView.xib */; };
 		CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */; };
+		CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815D289FDC8D00CE5A07 /* LoginUI.swift */; };
+		CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815F289FE10000CE5A07 /* LoginError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CECF8154289FC8D000CE5A07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CECF8156289FC90300CE5A07 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		CECF815D289FDC8D00CE5A07 /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
+		CECF815F289FE10000CE5A07 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			children = (
 				CECF8154289FC8D000CE5A07 /* LoginViewController.swift */,
 				CECF8156289FC90300CE5A07 /* LoginView.xib */,
+				CECF815D289FDC8D00CE5A07 /* LoginUI.swift */,
+				CECF815F289FE10000CE5A07 /* LoginError.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -180,7 +186,9 @@
 			files = (
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
+				CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
+				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
