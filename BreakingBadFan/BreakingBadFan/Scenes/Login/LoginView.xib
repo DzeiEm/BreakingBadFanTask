@@ -45,19 +45,19 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FAc-9G-foi" userLabel="TextFieldStack">
                             <rect key="frame" x="0.0" y="64" width="354" height="132"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HXW-9P-S5U">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HXW-9P-S5U">
                                     <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
                                     <color key="backgroundColor" name="placeholderColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x8L-au-Y5I">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="x8L-au-Y5I">
                                     <rect key="frame" x="0.0" y="49" width="354" height="34"/>
                                     <color key="backgroundColor" name="placeholderColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nTD-qz-7wj">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nTD-qz-7wj">
                                     <rect key="frame" x="0.0" y="98" width="354" height="34"/>
                                     <color key="backgroundColor" name="placeholderColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -109,10 +109,10 @@
     </objects>
     <resources>
         <namedColor name="backgroundDarkColor">
-            <color red="0.14172825668797351" green="0.14172825668797351" blue="0.14172825668797351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14200000464916229" green="0.14200000464916229" blue="0.14200000464916229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="placeholderColor">
-            <color red="0.67823122433119898" green="0.99967694523358586" blue="0.91753991717541028" alpha="0.93262325059499174" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67799997329711914" green="1" blue="0.9179999828338623" alpha="0.93300002813339233" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

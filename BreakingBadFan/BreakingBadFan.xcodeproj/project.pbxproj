@@ -15,8 +15,9 @@
 		CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */; };
 		CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815D289FDC8D00CE5A07 /* LoginUI.swift */; };
 		CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815F289FE10000CE5A07 /* LoginError.swift */; };
-		CECF816328A057A600CE5A07 /* Keychain+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF816228A057A600CE5A07 /* Keychain+Keys.swift */; };
-		CECF816628A057ED00CE5A07 /* Kaychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF816528A057ED00CE5A07 /* Kaychain.swift */; };
+		CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */; };
+		CECF817128A1645000CE5A07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817028A1645000CE5A07 /* Profile.swift */; };
+		CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817328A1718F00CE5A07 /* ProfileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,10 @@
 		CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		CECF815D289FDC8D00CE5A07 /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
 		CECF815F289FE10000CE5A07 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
-		CECF816228A057A600CE5A07 /* Keychain+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Keys.swift"; sourceTree = "<group>"; };
-		CECF816528A057ED00CE5A07 /* Kaychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaychain.swift; sourceTree = "<group>"; };
+		CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		CECF816E28A162CB00CE5A07 /* keychain-swift-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "keychain-swift-master"; path = "../../../../../../Downloads/keychain-swift-master"; sourceTree = "<group>"; };
+		CECF817028A1645000CE5A07 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		CECF817328A1718F00CE5A07 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +67,15 @@
 		CECF8136289FC3B300CE5A07 /* BreakingBadFan */ = {
 			isa = PBXGroup;
 			children = (
+				CECF817228A1717600CE5A07 /* Managers */,
+				CECF816928A1603500CE5A07 /* Helpers */,
 				CECF816428A057C800CE5A07 /* Utilities */,
-				CECF816128A0577100CE5A07 /* Extensions */,
 				CECF814D289FC5D300CE5A07 /* API */,
 				CECF814C289FC5CD00CE5A07 /* Model */,
 				CECF814B289FC5C300CE5A07 /* Scenes */,
 				CECF8140289FC3B600CE5A07 /* Assets.xcassets */,
 				CECF8145289FC3B600CE5A07 /* Info.plist */,
+				CECF816E28A162CB00CE5A07 /* keychain-swift-master */,
 			);
 			path = BreakingBadFan;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 		CECF814C289FC5CD00CE5A07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CECF817028A1645000CE5A07 /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,20 +125,27 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		CECF816128A0577100CE5A07 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				CECF816228A057A600CE5A07 /* Keychain+Keys.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		CECF816428A057C800CE5A07 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CECF816528A057ED00CE5A07 /* Kaychain.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CECF816928A1603500CE5A07 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CECF817228A1717600CE5A07 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CECF817328A1718F00CE5A07 /* ProfileManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +221,10 @@
 			files = (
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
-				CECF816628A057ED00CE5A07 /* Kaychain.swift in Sources */,
+				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
+				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
+				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
 				CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */,
-				CECF816328A057A600CE5A07 /* Keychain+Keys.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,
 			);
