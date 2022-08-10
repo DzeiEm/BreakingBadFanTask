@@ -1,7 +1,7 @@
 
 
 import Foundation
-import CoreVideo
+import UIKit
 
 class ProfileManager {
     
@@ -49,17 +49,34 @@ class ProfileManager {
         }
     }
     
+    static var loggedInAccount: Profile? {
+        willSet(newProfile) {
+            print("About to set username", newProfile?.username ?? "nil" )
+        }
+        didSet {
+            print("About to set username", loggedInAccount?.username ?? "nil" )
+        }
+    }
     
-    
-    //    static var profile: Profile {
-    //
-    //    }
-    
-    static func login(username: String, password: String) {
+    static func register(username: String?, password: String?) throws {
+        
+        
+        let profile = try checkCredentialsAreNotEmpty(username: username, password: password)
+        
+        guard try cheackIsPasswordSecure(password: profile.password) else {
+            throw ProfileManagerError.passwordNOtSecure
+        }
+        
+        guard try checkIsUsernameUnique(username: profile.username) else {
+            throw ProfileManagerError.accountAlreadyExist
+        }
+        
+        UserDefaultsHelper.saveProfile(profile)
+        loggedInAccount = profile
         
     }
     
-    static func register(username: String, password: String) {
+    static func login(username: String, password: String) {
         
     }
 }
@@ -67,7 +84,7 @@ class ProfileManager {
 
 extension ProfileManager {
     
-    private func checkCredentialsAreNotEmpty(username: String?, password: String?) throws -> Bool {
+    private static func checkCredentialsAreNotEmpty(username: String?, password: String?) throws -> Profile {
         guard let username = username,
               let password = password,
               !username.isEmpty,
@@ -75,10 +92,16 @@ extension ProfileManager {
         else {
             throw ProfileManagerError.emptyFields
         }
-        return true
+        return Profile(username: username, password: password)
     }
     
-    private func chaeckPasswordIsSecure(password: String) throws -> Bool {
+    private static func checkIsUsernameUnique(username: String) throws -> Bool {
+        return UserDefaultsHelper.profiles?.contains(where: { profile in
+            profile.username == username
+        }) ?? false
+    }
+    
+    private static func cheackIsPasswordSecure(password: String) throws -> Bool {
         let password = password
         
         guard password.containsNumbers else {
@@ -96,12 +119,15 @@ extension ProfileManager {
         return true
     }
     
-    
-    
-    private func passswordMatch() -> Bool {
-        
-        return true
+    private static func passswordsMatches(_ profile: Profile) -> Bool {
+        guard let neededAccount = UserDefaultsHelper.profiles?.first(where: { neededAccount in
+            neededAccount.username == profile.username
+        }) else {
+            return false
+        }
+        return KeychainHelper.getPasword(usernameKey: neededAccount.username) == profile.password
     }
+    
 }
 
 extension String {

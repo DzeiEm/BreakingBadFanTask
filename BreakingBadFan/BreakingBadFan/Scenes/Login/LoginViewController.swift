@@ -46,11 +46,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
-        do {
-            try checkIfTextfieldsNotEmpty()
-        } catch {
-            //TODO
-        }
+       
+    
     }
     
     override func viewDidLoad() {
@@ -72,17 +69,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    func checkIfTextfieldsNotEmpty() throws -> Bool {
-        if username == usernameTextfield.text,
-           password == passwordTextfield.text,
-           confirmPassword == confirmPasswordTextfield.text,
-           username.isEmpty,
-           password.isEmpty,
-           confirmPassword.isEmpty {
-            throw LoginError.emptyField
-        }
-        return true
-    }
+   
     
     private func hideTextfield( textfield: UITextField?, hide: Bool) {
         textfield?.isHidden = hide

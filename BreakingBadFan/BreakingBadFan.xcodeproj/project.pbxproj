@@ -19,6 +19,7 @@
 		CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */; };
 		CECF817128A1645000CE5A07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817028A1645000CE5A07 /* Profile.swift */; };
 		CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817328A1718F00CE5A07 /* ProfileManager.swift */; };
+		CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		CECF817028A1645000CE5A07 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CECF817328A1718F00CE5A07 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */,
+				CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */,
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
