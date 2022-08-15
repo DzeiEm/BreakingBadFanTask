@@ -21,7 +21,8 @@
 		CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817328A1718F00CE5A07 /* ProfileManager.swift */; };
 		CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */; };
 		CEF568A628AA4FDE001D63B3 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */; };
-		CEF568A828AA54E8001D63B3 /* SceeneNavigatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A728AA54E8001D63B3 /* SceeneNavigatorHelper.swift */; };
+		CEF568A828AA54E8001D63B3 /* SceneNavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A728AA54E8001D63B3 /* SceneNavigationHelper.swift */; };
+		CEF568B028AA679C001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568AF28AA679C001D63B3 /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +41,8 @@
 		CECF817328A1718F00CE5A07 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDatabase.swift; sourceTree = "<group>"; };
-		CEF568A728AA54E8001D63B3 /* SceeneNavigatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceeneNavigatorHelper.swift; sourceTree = "<group>"; };
+		CEF568A728AA54E8001D63B3 /* SceneNavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneNavigationHelper.swift; sourceTree = "<group>"; };
+		CEF568AF28AA679C001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,7 @@
 		CECF8136289FC3B300CE5A07 /* BreakingBadFan */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568A228A2B226001D63B3 /* Custom View */,
+				CEF568A228A2B226001D63B3 /* Alert */,
 				CECF817228A1717600CE5A07 /* Managers */,
 				CECF816928A1603500CE5A07 /* Helpers */,
 				CECF816428A057C800CE5A07 /* Utilities */,
@@ -90,6 +92,7 @@
 		CECF814B289FC5C300CE5A07 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CEF568B128AA7F56001D63B3 /* Home */,
 				CECF8159289FCDD500CE5A07 /* Main */,
 				CECF8153289FC8BE00CE5A07 /* Login */,
 			);
@@ -145,7 +148,7 @@
 			children = (
 				CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */,
 				CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */,
-				CEF568A728AA54E8001D63B3 /* SceeneNavigatorHelper.swift */,
+				CEF568A728AA54E8001D63B3 /* SceneNavigationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -158,11 +161,19 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		CEF568A228A2B226001D63B3 /* Custom View */ = {
+		CEF568A228A2B226001D63B3 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				CEF568AF28AA679C001D63B3 /* AlertView.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		CEF568B128AA7F56001D63B3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "Custom View";
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,13 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF568A828AA54E8001D63B3 /* SceeneNavigatorHelper.swift in Sources */,
+				CEF568A828AA54E8001D63B3 /* SceneNavigationHelper.swift in Sources */,
 				CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */,
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
+				CEF568B028AA679C001D63B3 /* AlertView.swift in Sources */,
 				CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,

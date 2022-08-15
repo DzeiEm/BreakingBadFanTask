@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     
     let ui = LoginUI()
     let profileMananager = ProfileManager()
+  
     //ACTIONS
     @IBAction func onSegmentControllerTypeChanged(_ sender: UISegmentedControl) {
         
@@ -45,16 +46,25 @@ class LoginViewController: UIViewController {
 
     @IBAction func submitButtonTapped(_ sender: Any) {
         do {
-            try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text)
+            try ProfileManager.register(
+                username: usernameTextfield.text,
+                password: passwordTextfield.text
+            )
+            
             if let loggedInProfile = ProfileManager.loggedInAccount {
-                // navigate to another screen
+               let loginViewController = LoginViewController()
+                loginViewController.profileMananager = profileMananager
+//                navigationController?.pushViewController(navigate somewhere, animated: true)
             }
         } catch let profileError as ProfileManager.ProfileManagerError {
             
+            let alert = AlertView.makeAlert(isSucceess: false, title: AlertTitle.failure.rawValue, message: profileError.errorMessage)
+            present(alert, animated: true)
+        } catch {
+            present(AlertView.makeAlert(isSucceess: false, title: AlertTitle.failure.rawValue, message: AlertMessage.general.rawValue), animated: true)
         }
-        
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ui.roundCorners(of: buttonLabel, by: 20)
