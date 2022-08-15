@@ -17,13 +17,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextfield: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var buttonLabel: UIButton!
-    var username: String = ""
-    var password: String = ""
-    var confirmPassword: String = ""
-    
+    //    var username: String = ""
+    //    var password: String = ""
+    //    var confirmPassword: String = ""
+
     let ui = LoginUI()
     let profileMananager = ProfileManager()
-  
+    
     //ACTIONS
     @IBAction func onSegmentControllerTypeChanged(_ sender: UISegmentedControl) {
         
@@ -43,25 +43,31 @@ class LoginViewController: UIViewController {
             buttonLabel.isEnabled =  false
         }
     }
-
+    
     @IBAction func submitButtonTapped(_ sender: Any) {
-        do {
-            try ProfileManager.register(
-                username: usernameTextfield.text,
-                password: passwordTextfield.text
-            )
+        let homeViewController = HomeViewController()
+      
+        
+        if registrationTypeSegmentController.selectedSegmentIndex == 0 {
+            do {
+            try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
+                navigationController?.pushViewController(homeViewController, animated: true)
+            } catch {
             
-            if let loggedInProfile = ProfileManager.loggedInAccount {
-               let loginViewController = LoginViewController()
-                loginViewController.profileMananager = profileMananager
-//                navigationController?.pushViewController(navigate somewhere, animated: true)
+                let alert = AlertView.makeAlert(isSucceess: false, title: AlertTitle.failure.rawValue, message:  ProfileManager.ProfileManagerError.emptyFields.errorMessage)
+                
+                present(alert, animated: true)
             }
-        } catch let profileError as ProfileManager.ProfileManagerError {
+        } else {
             
-            let alert = AlertView.makeAlert(isSucceess: false, title: AlertTitle.failure.rawValue, message: profileError.errorMessage)
-            present(alert, animated: true)
-        } catch {
-            present(AlertView.makeAlert(isSucceess: false, title: AlertTitle.failure.rawValue, message: AlertMessage.general.rawValue), animated: true)
+            do {
+                try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
+                navigationController?.pushViewController(homeViewController, animated: true)
+            } catch {
+                let alert = AlertView.makeAlert(isSucceess: false, title: AlertTitle.failure.rawValue, message: ProfileManager.ProfileManagerError.emptyFields.errorMessage)
+                
+                present(alert, animated: true)
+            }
         }
     }
     
@@ -75,11 +81,11 @@ class LoginViewController: UIViewController {
         confirmPasswordTextfield.delegate = self
     }
     override func viewDidAppear(_ animated: Bool) {
-     
+        
         usernameTextfield.delegate =  self
         passwordTextfield.delegate = self
         confirmPasswordTextfield.delegate = self
-       
+        
     }
     
     private func hideTextfield( textfield: UITextField?, hide: Bool) {
@@ -97,6 +103,13 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField)  {
         print("textFieldDidBeginEditing")
-      
+        
     }
+    
+    func highlightTextfield(textfield: UITextField, by: Int, _ boarderColor: UIColor) {
+        textfield.layer.borderWidth = CGFloat(by)
+        textfield.layer.borderColor = UIColor.red.cgColor
+    }
+    
 }
+

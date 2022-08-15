@@ -15,14 +15,14 @@
 		CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF8156289FC90300CE5A07 /* LoginView.xib */; };
 		CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */; };
 		CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815D289FDC8D00CE5A07 /* LoginUI.swift */; };
-		CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815F289FE10000CE5A07 /* LoginError.swift */; };
 		CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */; };
 		CECF817128A1645000CE5A07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817028A1645000CE5A07 /* Profile.swift */; };
 		CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817328A1718F00CE5A07 /* ProfileManager.swift */; };
 		CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */; };
 		CEF568A628AA4FDE001D63B3 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */; };
-		CEF568A828AA54E8001D63B3 /* SceneNavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A728AA54E8001D63B3 /* SceneNavigationHelper.swift */; };
 		CEF568B028AA679C001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568AF28AA679C001D63B3 /* AlertView.swift */; };
+		CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568B228AA7FAA001D63B3 /* HomeViewController.swift */; };
+		CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568B428AA7FDA001D63B3 /* HomeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,14 +35,14 @@
 		CECF8156289FC90300CE5A07 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		CECF815D289FDC8D00CE5A07 /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
-		CECF815F289FE10000CE5A07 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		CECF817028A1645000CE5A07 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CECF817328A1718F00CE5A07 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDatabase.swift; sourceTree = "<group>"; };
-		CEF568A728AA54E8001D63B3 /* SceneNavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneNavigationHelper.swift; sourceTree = "<group>"; };
 		CEF568AF28AA679C001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		CEF568B228AA7FAA001D63B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CEF568B428AA7FDA001D63B3 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,6 @@
 				CECF8154289FC8D000CE5A07 /* LoginViewController.swift */,
 				CECF8156289FC90300CE5A07 /* LoginView.xib */,
 				CECF815D289FDC8D00CE5A07 /* LoginUI.swift */,
-				CECF815F289FE10000CE5A07 /* LoginError.swift */,
 				CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */,
 			);
 			path = Login;
@@ -148,7 +147,6 @@
 			children = (
 				CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */,
 				CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */,
-				CEF568A728AA54E8001D63B3 /* SceneNavigationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -172,6 +170,8 @@
 		CEF568B128AA7F56001D63B3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CEF568B228AA7FAA001D63B3 /* HomeViewController.swift */,
+				CEF568B428AA7FDA001D63B3 /* HomeView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -241,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */,
+				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
 				CECF8141289FC3B600CE5A07 /* Assets.xcassets in Resources */,
 				CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */,
 			);
@@ -253,15 +254,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF568A828AA54E8001D63B3 /* SceneNavigationHelper.swift in Sources */,
 				CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */,
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
+				CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
 				CEF568B028AA679C001D63B3 /* AlertView.swift in Sources */,
-				CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,
 				CEF568A628AA4FDE001D63B3 /* UsersDatabase.swift in Sources */,

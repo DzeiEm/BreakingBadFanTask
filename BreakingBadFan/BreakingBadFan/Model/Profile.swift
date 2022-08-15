@@ -7,9 +7,10 @@ class Profile: Codable {
     var password: String
     var confirmPassword: String?
     
-    init(username: String, password: String) {
+    init(username: String, password: String, confirmPassword: String?) {
         self.username = username
         self.password = password
-//        self.confirmPassword = nil
+        self.confirmPassword = confirmPassword
+        
     }
 }

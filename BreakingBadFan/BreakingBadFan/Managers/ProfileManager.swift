@@ -15,7 +15,7 @@ final class ProfileManager {
         var errorMessage: String {
             switch self {
             case.emptyFields:
-                return "Tiextfield caanot be empty"
+                return "Tiextfields caanot be empty "
             case .incorrectCredentials:
                 return "Username or password incorrect"
             case .userNotFound:
@@ -38,7 +38,7 @@ final class ProfileManager {
         var errroMessage: String {
             switch self {
             case .containsNumbers:
-                return "Pasword should contains numbers"
+                return "Pasword should contains numbers "
             case .containsLowerCase:
                 return "Pasword should contains lower cases"
             case .contaionUpperCase:
@@ -60,9 +60,9 @@ final class ProfileManager {
     }
     
     //MARK:- Public functions
-    static func register(username: String?, password: String?) throws {
+    static func register(username: String?, password: String?, confirmPassword: String?) throws {
         
-        let profile = try checkCredentialsAreNotEmpty(username: username, password: password)
+        let profile = try checkCredentialsAreNotEmpty(username: username, password: password, confirmPassword: confirmPassword)
         
         guard try cheackIsPasswordSecure(password: profile.password) else {
             throw ProfileManagerError.passwordNOtSecure
@@ -76,8 +76,13 @@ final class ProfileManager {
         ProfileManager.loggedInAccount = profile
     }
     
-    static func login(username: String,password: String) throws {
-        let profile = try checkCredentialsAreNotEmpty(username: username, password: password)
+    static func login(username: String?,password: String?) throws {
+        let profile = try checkCredentialsAreNotEmpty(username: username, password: password, confirmPassword: nil)
+        
+        guard let username = username else {
+            return
+        }
+
         guard profileIsTaken(username) else {
             throw ProfileManagerError.userNotFound
         }
@@ -90,15 +95,18 @@ final class ProfileManager {
 
 extension ProfileManager {
     
-    static func checkCredentialsAreNotEmpty(username: String?, password: String?) throws -> Profile {
+    static func checkCredentialsAreNotEmpty(username: String?, password: String?, confirmPassword: String?) throws -> Profile {
+        
         guard let username = username,
               let password = password,
+              let confirmPassword = confirmPassword,
               !username.isEmpty,
-              !password.isEmpty
-        else {
+              !password.isEmpty,
+              !confirmPassword.isEmpty else {
             throw ProfileManagerError.emptyFields
         }
-        return Profile(username: username, password: password)
+            
+        return Profile(username: username, password: password, confirmPassword: confirmPassword)
     }
     
     private static func checkIsUsernameUnique(username: String) throws -> Bool {
