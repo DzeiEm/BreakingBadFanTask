@@ -22,8 +22,7 @@ class LoginViewController: UIViewController {
     var confirmPassword: String = ""
     
     let ui = LoginUI()
-    
-    
+    let profileMananager = ProfileManager()
     //ACTIONS
     @IBAction func onSegmentControllerTypeChanged(_ sender: UISegmentedControl) {
         
@@ -42,14 +41,20 @@ class LoginViewController: UIViewController {
             buttonLabel.titleLabel?.text = SegmentTitle.Login.rawValue
             buttonLabel.isEnabled =  false
         }
+    }
+
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        do {
+            try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text)
+            if let loggedInProfile = ProfileManager.loggedInAccount {
+                // navigate to another screen
+            }
+        } catch let profileError as ProfileManager.ProfileManagerError {
+            
+        }
+        
         
     }
-    
-    @IBAction func buttonTapped(_ sender: UIButton) {
-       
-    
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         ui.roundCorners(of: buttonLabel, by: 20)
@@ -59,7 +64,6 @@ class LoginViewController: UIViewController {
         passwordTextfield.delegate = self
         confirmPasswordTextfield.delegate = self
     }
-    
     override func viewDidAppear(_ animated: Bool) {
      
         usernameTextfield.delegate =  self
@@ -67,9 +71,6 @@ class LoginViewController: UIViewController {
         confirmPasswordTextfield.delegate = self
        
     }
-    
-    
-   
     
     private func hideTextfield( textfield: UITextField?, hide: Bool) {
         textfield?.isHidden = hide

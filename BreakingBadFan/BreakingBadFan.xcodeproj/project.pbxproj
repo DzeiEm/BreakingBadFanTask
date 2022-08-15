@@ -20,6 +20,8 @@
 		CECF817128A1645000CE5A07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817028A1645000CE5A07 /* Profile.swift */; };
 		CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817328A1718F00CE5A07 /* ProfileManager.swift */; };
 		CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */; };
+		CEF568A628AA4FDE001D63B3 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */; };
+		CEF568A828AA54E8001D63B3 /* SceeneNavigatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A728AA54E8001D63B3 /* SceeneNavigatorHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		CECF817028A1645000CE5A07 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CECF817328A1718F00CE5A07 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDatabase.swift; sourceTree = "<group>"; };
+		CEF568A728AA54E8001D63B3 /* SceeneNavigatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceeneNavigatorHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				CECF8156289FC90300CE5A07 /* LoginView.xib */,
 				CECF815D289FDC8D00CE5A07 /* LoginUI.swift */,
 				CECF815F289FE10000CE5A07 /* LoginError.swift */,
+				CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			children = (
 				CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */,
 				CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */,
+				CEF568A728AA54E8001D63B3 /* SceeneNavigatorHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF568A828AA54E8001D63B3 /* SceeneNavigatorHelper.swift in Sources */,
 				CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */,
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
@@ -245,6 +252,7 @@
 				CECF8160289FE10000CE5A07 /* LoginError.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,
+				CEF568A628AA4FDE001D63B3 /* UsersDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

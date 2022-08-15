@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 
-class ProfileManager {
+final class ProfileManager {
     
     enum ProfileManagerError: Error {
         case incorrectCredentials
@@ -15,7 +15,7 @@ class ProfileManager {
         var errorMessage: String {
             switch self {
             case.emptyFields:
-                return "Tiextfield caanot be empy"
+                return "Tiextfield caanot be empty"
             case .incorrectCredentials:
                 return "Username or password incorrect"
             case .userNotFound:
@@ -49,6 +49,7 @@ class ProfileManager {
         }
     }
     
+    //MARK: -Variables
     static var loggedInAccount: Profile? {
         willSet(newProfile) {
             print("About to set username", newProfile?.username ?? "nil" )
@@ -58,8 +59,8 @@ class ProfileManager {
         }
     }
     
+    //MARK:- Public functions
     static func register(username: String?, password: String?) throws {
-        
         
         let profile = try checkCredentialsAreNotEmpty(username: username, password: password)
         
@@ -72,19 +73,24 @@ class ProfileManager {
         }
         
         UserDefaultsHelper.saveProfile(profile)
-        loggedInAccount = profile
-        
+        ProfileManager.loggedInAccount = profile
     }
     
-    static func login(username: String, password: String) {
-        
+    static func login(username: String,password: String) throws {
+        let profile = try checkCredentialsAreNotEmpty(username: username, password: password)
+        guard profileIsTaken(username) else {
+            throw ProfileManagerError.userNotFound
+        }
+        guard passswordsMatches(profile) else {
+            throw ProfileManagerError.incorrectCredentials
+        }
+        loggedInAccount = profile
     }
 }
 
-
 extension ProfileManager {
     
-    private static func checkCredentialsAreNotEmpty(username: String?, password: String?) throws -> Profile {
+    static func checkCredentialsAreNotEmpty(username: String?, password: String?) throws -> Profile {
         guard let username = username,
               let password = password,
               !username.isEmpty,
@@ -128,20 +134,25 @@ extension ProfileManager {
         return KeychainHelper.getPasword(usernameKey: neededAccount.username) == profile.password
     }
     
+    private static func profileIsTaken(_ username: String) -> Bool {
+        return UserDefaultsHelper.profiles?.contains(where: { profile in
+            profile.username == username
+        }) ?? false
+    }
 }
-
-extension String {
     
-    var containsLowercase: Bool {
-        return self == self.lowercased()
+    extension String {
+        
+        var containsLowercase: Bool {
+            return self == self.lowercased()
+        }
+        var containsUppercase: Bool {
+            return self == self.uppercased()
+        }
+        var containsNumbers: Bool {
+            return (self.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil)
+        }
+        var containsEightCharacters: Bool {
+            return self.count <= 8
+        }
     }
-    var containsUppercase: Bool {
-        return self == self.uppercased()
-    }
-    var containsNumbers: Bool {
-        return (self.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil)
-    }
-    var containsEightCharacters: Bool {
-        return self.count <= 8
-    }
-}
