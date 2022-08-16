@@ -30,6 +30,8 @@
 		CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */; };
 		CEF568C428AB26F1001D63B3 /* EpisodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568C328AB26F1001D63B3 /* EpisodeView.xib */; };
 		CEF568C928AB2882001D63B3 /* EpisodeModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */; };
+		CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */; };
+		CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
 		CEF568C328AB26F1001D63B3 /* EpisodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeView.xib; sourceTree = "<group>"; };
 		CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeModalView.xib; sourceTree = "<group>"; };
+		CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
+		CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,9 +219,8 @@
 		CEF568C028AB2677001D63B3 /* Episode */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */,
-				CEF568C328AB26F1001D63B3 /* EpisodeView.xib */,
-				CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */,
+				CEF568CF28AB2DF6001D63B3 /* Details */,
+				CEF568CE28AB2DE0001D63B3 /* List */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -227,6 +230,25 @@
 			children = (
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CEF568CE28AB2DE0001D63B3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */,
+				CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		CEF568CF28AB2DF6001D63B3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */,
+				CEF568C328AB26F1001D63B3 /* EpisodeView.xib */,
+				CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +320,7 @@
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
 				CECF8141289FC3B600CE5A07 /* Assets.xcassets in Resources */,
 				CEF568BF28AB236D001D63B3 /* CharacterDetailsCell.xib in Resources */,
+				CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */,
 				CEF568C428AB26F1001D63B3 /* EpisodeView.xib in Resources */,
 				CEF568C928AB2882001D63B3 /* EpisodeModalView.xib in Resources */,
 				CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */,
@@ -323,6 +346,7 @@
 				CEF568B028AA679C001D63B3 /* AlertView.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */,
+				CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */,
 				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,
 				CEF568A628AA4FDE001D63B3 /* UsersDatabase.swift in Sources */,
 			);
