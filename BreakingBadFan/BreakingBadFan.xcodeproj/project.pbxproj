@@ -19,8 +19,6 @@
 		CECF817128A1645000CE5A07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817028A1645000CE5A07 /* Profile.swift */; };
 		CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817328A1718F00CE5A07 /* ProfileManager.swift */; };
 		CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */; };
-		CEF568A628AA4FDE001D63B3 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */; };
-		CEF568B028AA679C001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568AF28AA679C001D63B3 /* AlertView.swift */; };
 		CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568B228AA7FAA001D63B3 /* HomeViewController.swift */; };
 		CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568B428AA7FDA001D63B3 /* HomeView.xib */; };
 		CEF568B828AB1F8D001D63B3 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568B728AB1F8D001D63B3 /* Quote.swift */; };
@@ -32,6 +30,11 @@
 		CEF568C928AB2882001D63B3 /* EpisodeModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */; };
 		CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */; };
 		CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */; };
+		CEF568DC28ABFDE0001D63B3 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */; };
+		CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DE28AC0658001D63B3 /* ValidateView.swift */; };
+		CEF568E128AC13A2001D63B3 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E028AC13A2001D63B3 /* CustomAlertViewController.swift */; };
+		CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */; };
+		CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +51,6 @@
 		CECF817028A1645000CE5A07 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CECF817328A1718F00CE5A07 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
-		CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDatabase.swift; sourceTree = "<group>"; };
-		CEF568AF28AA679C001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CEF568B228AA7FAA001D63B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEF568B428AA7FDA001D63B3 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		CEF568B728AB1F8D001D63B3 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
@@ -61,6 +62,11 @@
 		CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeModalView.xib; sourceTree = "<group>"; };
 		CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListView.xib; sourceTree = "<group>"; };
+		CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		CEF568DE28AC0658001D63B3 /* ValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateView.swift; sourceTree = "<group>"; };
+		CEF568E028AC13A2001D63B3 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
+		CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +100,6 @@
 		CECF8136289FC3B300CE5A07 /* BreakingBadFan */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568B628AB1C07001D63B3 /* Error */,
 				CEF568A228A2B226001D63B3 /* Alert */,
 				CECF817228A1717600CE5A07 /* Managers */,
 				CECF816928A1603500CE5A07 /* Helpers */,
@@ -140,10 +145,11 @@
 		CECF8153289FC8BE00CE5A07 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CEF568DD28AC05FE001D63B3 /* Validation */,
+				CEF568D828ABFDAD001D63B3 /* Error */,
 				CECF8154289FC8D000CE5A07 /* LoginViewController.swift */,
 				CECF8156289FC90300CE5A07 /* LoginView.xib */,
 				CECF815D289FDC8D00CE5A07 /* LoginUI.swift */,
-				CEF568A528AA4FDE001D63B3 /* UsersDatabase.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 			children = (
 				CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */,
 				CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */,
+				CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -185,7 +192,8 @@
 		CEF568A228A2B226001D63B3 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568AF28AA679C001D63B3 /* AlertView.swift */,
+				CEF568E028AC13A2001D63B3 /* CustomAlertViewController.swift */,
+				CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -197,13 +205,6 @@
 				CEF568B428AA7FDA001D63B3 /* HomeView.xib */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		CEF568B628AB1C07001D63B3 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Error;
 			sourceTree = "<group>";
 		};
 		CEF568B928AB2176001D63B3 /* Character */ = {
@@ -249,6 +250,22 @@
 				CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		CEF568D828ABFDAD001D63B3 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		CEF568DD28AC05FE001D63B3 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				CEF568DE28AC0658001D63B3 /* ValidateView.swift */,
+			);
+			path = Validation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */,
 				CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */,
 				CEF568BD28AB21D6001D63B3 /* CharacterView.xib in Resources */,
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
@@ -334,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF568E128AC13A2001D63B3 /* CustomAlertViewController.swift in Sources */,
 				CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */,
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
@@ -343,12 +362,13 @@
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
-				CEF568B028AA679C001D63B3 /* AlertView.swift in Sources */,
+				CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */,
+				CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */,
 				CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */,
 				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,
-				CEF568A628AA4FDE001D63B3 /* UsersDatabase.swift in Sources */,
+				CEF568DC28ABFDE0001D63B3 /* AuthenticationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

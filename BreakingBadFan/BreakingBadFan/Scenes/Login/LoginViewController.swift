@@ -47,7 +47,6 @@ class LoginViewController: UIViewController {
     @IBAction func submitButtonTapped(_ sender: Any) {
         let homeViewController = HomeViewController()
         
-        
         if registrationTypeSegmentController.selectedSegmentIndex == 0 {
             do {
                 username = usernameTextfield.text ?? ""
@@ -55,19 +54,24 @@ class LoginViewController: UIViewController {
                 confirmPassword = confirmPasswordTextfield.text ?? ""
                 
                 try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
-                navigationController?.pushViewController(homeViewController, animated: true)
+                
+                present(homeViewController, animated: true, completion: nil)
                 return
             } catch {
-                displayAlertForEmptyFields(username: username, password: password, comfirmPassword: confirmPassword)
+                let error = error as?  ProfileManager.LoginError
+                
+                displayAlert(username: username, password: password, comfirmPassword: confirmPassword, messsage: error?.errorMessage ?? "" )
                 return
             }
         } else {
             do {
                 try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
-                navigationController?.pushViewController(homeViewController, animated: true)
+                present(homeViewController, animated: true, completion: nil)
                 return
             } catch {
-               displayAlertForEmptyFields(username: username, password: password, comfirmPassword: nil)
+                let error = error as?  ProfileManager.LoginError
+                
+                displayAlert(username: username, password: password, comfirmPassword: confirmPassword, messsage: error?.errorMessage ?? "" )
             }
         }
     }
@@ -89,28 +93,7 @@ class LoginViewController: UIViewController {
     
 }
 
-extension LoginViewController {
-    
-    func displayAlertForEmptyFields(username: String, password: String, comfirmPassword: String?) {
-        
-        if username.isEmpty {
-            highlightTextfield(textfield: usernameTextfield, by: 2, .red)
-        }
-        if password.isEmpty {
-            highlightTextfield(textfield: passwordTextfield, by: 2, .red)
-        }
-        if confirmPassword.isEmpty {
-            highlightTextfield(textfield: confirmPasswordTextfield, by: 2, .red)
-        }
-        let alert = AlertView.makeAlert(
-            isSucceess: false,
-            title: AlertTitle.failure.rawValue,
-            message:  ProfileManager.LoginError.emptyFields.errorMessage)
-        return present(alert, animated: true)
-    }
-    
-    
-}
+
 
 
 extension LoginViewController: UITextFieldDelegate {
@@ -124,28 +107,7 @@ extension LoginViewController: UITextFieldDelegate {
     
     private func textFieldDidBeginEditing(_ textField: UITextField) throws {
         print("textFieldDidBeginEditing")
-       
-        if textField == passwordTextfield || textField == confirmPasswordTextfield {
-            
-            let isValid = try ProfileManager.cheackIsPasswordSecure(password: textField)
-   
-        }
-        
-       
-        
-        
-       
-        
-//        if textField == passwordTextfield || textField == confirmPasswordTextfield {
-//            let userInput = textField.text
-//            let characters = userInput?.count ?? 0
-//
-//            if characters >= 3 {
-//            var isValid = try ProfileManager.cheackIsPasswordSecure(password: textField)
-//            print(isValid)
-//
-//            }
-//        }
+    
     }
    
     
