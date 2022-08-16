@@ -5,13 +5,14 @@ import UIKit
 
 final class ProfileManager {
     
-    enum ProfileManagerError: Error {
+    enum LoginError: Error {
         case incorrectCredentials
+        case passwordDoesNotMatch
         case userNotFound
         case accountAlreadyExist
-        case passwordNOtSecure
+        case weakPassword
         case emptyFields
-        
+    
         var errorMessage: String {
             switch self {
             case.emptyFields:
@@ -22,11 +23,12 @@ final class ProfileManager {
                 return "User not found, check your credentials"
             case .accountAlreadyExist:
                 return "Account already exist"
-            case .passwordNOtSecure:
+            case .weakPassword:
                 return "Password is weak,try to create stronger"
+            case .passwordDoesNotMatch:
+                return "Password does not match"
             }
         }
-        
     }
     
     enum SecurePasswordError: Error {
@@ -34,7 +36,7 @@ final class ProfileManager {
         case containsLowerCase
         case contaionUpperCase
         case charactersCount
-        
+
         var errroMessage: String {
             switch self {
             case .containsNumbers:
@@ -64,16 +66,16 @@ final class ProfileManager {
         
         let profile = try checkCredentialsAreNotEmpty(username: username, password: password, confirmPassword: confirmPassword)
         
-        guard try cheackIsPasswordSecure(password: profile.password) else {
-            throw ProfileManagerError.passwordNOtSecure
+        guard try checkDoesPasswordMatch(password: profile.password, confirmPassword: profile.confirmPassword ?? "") else {
+            throw LoginError.passwordDoesNotMatch
         }
-        
-        guard try checkIsUsernameUnique(username: profile.username) else {
-            throw ProfileManagerError.accountAlreadyExist
-        }
+//        guard try checkIsUsernameUnique(username: profile.username) else {
+//            throw LoginError.accountAlreadyExist
+//        }
         
         UserDefaultsHelper.saveProfile(profile)
         ProfileManager.loggedInAccount = profile
+        UsersDatabase.profiles.append(profile)
     }
     
     static func login(username: String?,password: String?) throws {
@@ -82,58 +84,46 @@ final class ProfileManager {
         guard let username = username else {
             return
         }
-
+        
         guard profileIsTaken(username) else {
-            throw ProfileManagerError.userNotFound
+            throw LoginError.userNotFound
         }
-        guard passswordsMatches(profile) else {
-            throw ProfileManagerError.incorrectCredentials
+        
+        guard try loginPassswordsMatches(profile) else {
+            throw LoginError.incorrectCredentials
         }
+        
         loggedInAccount = profile
     }
 }
 
 extension ProfileManager {
     
-    static func checkCredentialsAreNotEmpty(username: String?, password: String?, confirmPassword: String?) throws -> Profile {
-        
-        guard let username = username,
-              let password = password,
-              let confirmPassword = confirmPassword,
-              !username.isEmpty,
-              !password.isEmpty,
-              !confirmPassword.isEmpty else {
-            throw ProfileManagerError.emptyFields
-        }
+    static private func checkCredentialsAreNotEmpty(
+        username: String?,
+        password: String?,
+        confirmPassword: String?) throws -> Profile {
             
-        return Profile(username: username, password: password, confirmPassword: confirmPassword)
-    }
+            guard let username = username,
+                  let password = password,
+                  let confirmPassword = confirmPassword,
+                  !username.isEmpty,
+                  !password.isEmpty,
+                  !confirmPassword.isEmpty
+            else {
+                throw LoginError.emptyFields
+            }
+            return Profile(username: username, password: password, confirmPassword: confirmPassword)
+        }
     
-    private static func checkIsUsernameUnique(username: String) throws -> Bool {
+    static private func checkIsUsernameUnique(username: String) throws -> Bool {
         return UserDefaultsHelper.profiles?.contains(where: { profile in
             profile.username == username
         }) ?? false
     }
     
-    private static func cheackIsPasswordSecure(password: String) throws -> Bool {
-        let password = password
-        
-        guard password.containsNumbers else {
-            throw SecurePasswordError.containsNumbers
-        }
-        guard password.containsLowercase else {
-            throw SecurePasswordError.containsLowerCase
-        }
-        guard password.containsUppercase else {
-            throw SecurePasswordError.contaionUpperCase
-        }
-        guard password.containsEightCharacters else {
-            throw SecurePasswordError.charactersCount
-        }
-        return true
-    }
-    
-    private static func passswordsMatches(_ profile: Profile) -> Bool {
+   
+    static private func loginPassswordsMatches(_ profile: Profile) throws -> Bool {
         guard let neededAccount = UserDefaultsHelper.profiles?.first(where: { neededAccount in
             neededAccount.username == profile.username
         }) else {
@@ -142,25 +132,60 @@ extension ProfileManager {
         return KeychainHelper.getPasword(usernameKey: neededAccount.username) == profile.password
     }
     
-    private static func profileIsTaken(_ username: String) -> Bool {
+    static func checkDoesPasswordMatch(password: String, confirmPassword: String) -> Bool {
+        
+        if password == confirmPassword  {
+            return true
+        }
+        return false
+    }
+    
+    static func profileIsTaken(_ username: String) -> Bool {
         return UserDefaultsHelper.profiles?.contains(where: { profile in
             profile.username == username
         }) ?? false
     }
-}
-    
-    extension String {
-        
-        var containsLowercase: Bool {
-            return self == self.lowercased()
+    static func cheackIsPasswordSecure(password: UITextField) throws -> Bool {
+        guard let password = password.text else {
+            return false
         }
-        var containsUppercase: Bool {
-            return self == self.uppercased()
+        guard ProfileManager.containsNumbers(password) else {
+            throw SecurePasswordError.containsNumbers
         }
-        var containsNumbers: Bool {
-            return (self.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil)
+        guard ProfileManager.containsLowerCase(password) else {
+            throw SecurePasswordError.containsLowerCase
         }
-        var containsEightCharacters: Bool {
-            return self.count <= 8
+        guard ProfileManager.containsUpperCase(password) else {
+            throw SecurePasswordError.contaionUpperCase
         }
+        guard ProfileManager.containsRequiredPasswordLength(password) else {
+            throw SecurePasswordError.charactersCount
+        }
+        return true
     }
+}
+
+extension ProfileManager {
+    
+    private static func containsUpperCase(_ password: String) -> Bool {
+        password.contains(where: { letter in
+            letter.isUppercase
+        })
+    }
+    
+    private static func containsLowerCase(_ password: String) -> Bool {
+        password.contains(where: { letter in
+            letter.isLowercase
+        })
+    }
+    
+    private static func containsNumbers(_ password: String) -> Bool {
+        password.contains(where: { letter in
+            letter.isNumber
+        })
+    }
+    private static func containsRequiredPasswordLength(_ password: String) -> Bool {
+        password.count >= 8 ? true : false
+    }
+}
+

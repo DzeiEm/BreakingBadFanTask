@@ -9,7 +9,6 @@ enum SegmentTitle: String {
 
 class LoginViewController: UIViewController {
     
-    
     //OUTLETS
     @IBOutlet weak var registrationTypeSegmentController: UISegmentedControl!
     @IBOutlet weak var usernameTextfield: UITextField!
@@ -17,12 +16,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextfield: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var buttonLabel: UIButton!
-    //    var username: String = ""
-    //    var password: String = ""
-    //    var confirmPassword: String = ""
-
+    var username: String = ""
+    var password: String = ""
+    var confirmPassword: String = ""
+    
     let ui = LoginUI()
     let profileMananager = ProfileManager()
+    let loggedinUser = ProfileManager.loggedInAccount
     
     //ACTIONS
     @IBAction func onSegmentControllerTypeChanged(_ sender: UISegmentedControl) {
@@ -46,27 +46,27 @@ class LoginViewController: UIViewController {
     
     @IBAction func submitButtonTapped(_ sender: Any) {
         let homeViewController = HomeViewController()
-      
+        
         
         if registrationTypeSegmentController.selectedSegmentIndex == 0 {
             do {
-            try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
-                navigationController?.pushViewController(homeViewController, animated: true)
-            } catch {
-            
-                let alert = AlertView.makeAlert(isSucceess: false, title: AlertTitle.failure.rawValue, message:  ProfileManager.ProfileManagerError.emptyFields.errorMessage)
+                username = usernameTextfield.text ?? ""
+                password = passwordTextfield.text ?? ""
+                confirmPassword = confirmPasswordTextfield.text ?? ""
                 
-                present(alert, animated: true)
+                try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
+                navigationController?.pushViewController(homeViewController, animated: true)
+                return
+            } catch {
+                displayAlertForEmptyFields(username: username, password: password, comfirmPassword: confirmPassword)
+                return
             }
         } else {
-            
             do {
                 try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
                 navigationController?.pushViewController(homeViewController, animated: true)
             } catch {
-                let alert = AlertView.makeAlert(isSucceess: false, title: AlertTitle.failure.rawValue, message: ProfileManager.ProfileManagerError.emptyFields.errorMessage)
-                
-                present(alert, animated: true)
+               displayAlertForEmptyFields(username: username, password: password, comfirmPassword: nil)
             }
         }
     }
@@ -81,35 +81,80 @@ class LoginViewController: UIViewController {
         confirmPasswordTextfield.delegate = self
     }
     override func viewDidAppear(_ animated: Bool) {
-        
         usernameTextfield.delegate =  self
         passwordTextfield.delegate = self
         confirmPasswordTextfield.delegate = self
-        
     }
     
+}
+
+extension LoginViewController {
+    
+    func displayAlertForEmptyFields(username: String, password: String, comfirmPassword: String?) {
+        
+        if username.isEmpty {
+            highlightTextfield(textfield: usernameTextfield, by: 2, .red)
+        }
+        if password.isEmpty {
+            highlightTextfield(textfield: passwordTextfield, by: 2, .red)
+        }
+        if confirmPassword.isEmpty {
+            highlightTextfield(textfield: confirmPasswordTextfield, by: 2, .red)
+        }
+        let alert = AlertView.makeAlert(
+            isSucceess: false,
+            title: AlertTitle.failure.rawValue,
+            message:  ProfileManager.LoginError.emptyFields.errorMessage)
+        return present(alert, animated: true)
+    }
+    
+    
+}
+
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("Textfield should begin editing")
+        buttonLabel.isEnabled = true
+    
+        return true
+    }
+    
+    private func textFieldDidBeginEditing(_ textField: UITextField) throws {
+        print("textFieldDidBeginEditing")
+       
+        if textField == passwordTextfield || textField == confirmPasswordTextfield {
+            
+            let isValid = try ProfileManager.cheackIsPasswordSecure(password: textField)
+   
+        }
+        
+       
+        
+        
+       
+        
+//        if textField == passwordTextfield || textField == confirmPasswordTextfield {
+//            let userInput = textField.text
+//            let characters = userInput?.count ?? 0
+//
+//            if characters >= 3 {
+//            var isValid = try ProfileManager.cheackIsPasswordSecure(password: textField)
+//            print(isValid)
+//
+//            }
+//        }
+    }
+   
+    
+    private func highlightTextfield(textfield: UITextField, by: Int, _ boarderColor: UIColor) {
+        textfield.layer.borderWidth = CGFloat(by)
+        textfield.layer.borderColor = UIColor.red.cgColor
+    }
     private func hideTextfield( textfield: UITextField?, hide: Bool) {
         textfield?.isHidden = hide
     }
 }
 
-extension LoginViewController: UITextFieldDelegate {
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField)  -> Bool {
-        print("Textfield should begin editing")
-        buttonLabel.isEnabled = true
-        return true
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField)  {
-        print("textFieldDidBeginEditing")
-        
-    }
-    
-    func highlightTextfield(textfield: UITextField, by: Int, _ boarderColor: UIColor) {
-        textfield.layer.borderWidth = CGFloat(by)
-        textfield.layer.borderColor = UIColor.red.cgColor
-    }
-    
-}
 

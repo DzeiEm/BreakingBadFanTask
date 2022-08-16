@@ -76,6 +76,7 @@
 		CECF8136289FC3B300CE5A07 /* BreakingBadFan */ = {
 			isa = PBXGroup;
 			children = (
+				CEF568B628AB1C07001D63B3 /* Error */,
 				CEF568A228A2B226001D63B3 /* Alert */,
 				CECF817228A1717600CE5A07 /* Managers */,
 				CECF816928A1603500CE5A07 /* Helpers */,
@@ -174,6 +175,13 @@
 				CEF568B428AA7FDA001D63B3 /* HomeView.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CEF568B628AB1C07001D63B3 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
