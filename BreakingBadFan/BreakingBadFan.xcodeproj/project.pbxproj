@@ -29,6 +29,7 @@
 		CEF568BF28AB236D001D63B3 /* CharacterDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568BE28AB236D001D63B3 /* CharacterDetailsCell.xib */; };
 		CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */; };
 		CEF568C428AB26F1001D63B3 /* EpisodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568C328AB26F1001D63B3 /* EpisodeView.xib */; };
+		CEF568C928AB2882001D63B3 /* EpisodeModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		CEF568BE28AB236D001D63B3 /* CharacterDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailsCell.xib; sourceTree = "<group>"; };
 		CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
 		CEF568C328AB26F1001D63B3 /* EpisodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeView.xib; sourceTree = "<group>"; };
+		CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeModalView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		CECF814B289FC5C300CE5A07 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CEF568C728AB284D001D63B3 /* New Group */,
 				CEF568C028AB2677001D63B3 /* Episode */,
 				CEF568B928AB2176001D63B3 /* Character */,
 				CEF568B128AA7F56001D63B3 /* Home */,
@@ -214,8 +217,16 @@
 			children = (
 				CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */,
 				CEF568C328AB26F1001D63B3 /* EpisodeView.xib */,
+				CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */,
 			);
 			path = Episode;
+			sourceTree = "<group>";
+		};
+		CEF568C728AB284D001D63B3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				CECF8141289FC3B600CE5A07 /* Assets.xcassets in Resources */,
 				CEF568BF28AB236D001D63B3 /* CharacterDetailsCell.xib in Resources */,
 				CEF568C428AB26F1001D63B3 /* EpisodeView.xib in Resources */,
+				CEF568C928AB2882001D63B3 /* EpisodeModalView.xib in Resources */,
 				CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
