@@ -65,6 +65,7 @@ class LoginViewController: UIViewController {
             do {
                 try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
                 navigationController?.pushViewController(homeViewController, animated: true)
+                return
             } catch {
                displayAlertForEmptyFields(username: username, password: password, comfirmPassword: nil)
             }

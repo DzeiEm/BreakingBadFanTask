@@ -23,6 +23,10 @@
 		CEF568B028AA679C001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568AF28AA679C001D63B3 /* AlertView.swift */; };
 		CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568B228AA7FAA001D63B3 /* HomeViewController.swift */; };
 		CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568B428AA7FDA001D63B3 /* HomeView.xib */; };
+		CEF568B828AB1F8D001D63B3 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568B728AB1F8D001D63B3 /* Quote.swift */; };
+		CEF568BB28AB219B001D63B3 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568BA28AB219B001D63B3 /* CharacterViewController.swift */; };
+		CEF568BD28AB21D6001D63B3 /* CharacterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568BC28AB21D6001D63B3 /* CharacterView.xib */; };
+		CEF568BF28AB236D001D63B3 /* CharacterDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568BE28AB236D001D63B3 /* CharacterDetailsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		CEF568AF28AA679C001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CEF568B228AA7FAA001D63B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEF568B428AA7FDA001D63B3 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		CEF568B728AB1F8D001D63B3 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		CEF568BA28AB219B001D63B3 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		CEF568BC28AB21D6001D63B3 /* CharacterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterView.xib; sourceTree = "<group>"; };
+		CEF568BE28AB236D001D63B3 /* CharacterDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,7 @@
 		CECF814B289FC5C300CE5A07 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CEF568B928AB2176001D63B3 /* Character */,
 				CEF568B128AA7F56001D63B3 /* Home */,
 				CECF8159289FCDD500CE5A07 /* Main */,
 				CECF8153289FC8BE00CE5A07 /* Login */,
@@ -104,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				CECF817028A1645000CE5A07 /* Profile.swift */,
+				CEF568B728AB1F8D001D63B3 /* Quote.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +194,16 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		CEF568B928AB2176001D63B3 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				CEF568BA28AB219B001D63B3 /* CharacterViewController.swift */,
+				CEF568BC28AB21D6001D63B3 /* CharacterView.xib */,
+				CEF568BE28AB236D001D63B3 /* CharacterDetailsCell.xib */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,8 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */,
+				CEF568BD28AB21D6001D63B3 /* CharacterView.xib in Resources */,
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
 				CECF8141289FC3B600CE5A07 /* Assets.xcassets in Resources */,
+				CEF568BF28AB236D001D63B3 /* CharacterDetailsCell.xib in Resources */,
 				CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +287,9 @@
 				CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */,
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
+				CEF568BB28AB219B001D63B3 /* CharacterViewController.swift in Sources */,
 				CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */,
+				CEF568B828AB1F8D001D63B3 /* Quote.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,

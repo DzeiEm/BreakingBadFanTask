@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterDetailsCell" rowHeight="150" id="oa2-FN-2VF">
+            <rect key="frame" x="0.0" y="0.0" width="466" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oa2-FN-2VF" id="MLv-ew-Ges">
+                <rect key="frame" x="0.0" y="0.0" width="466" height="113"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="xMe-38-sEj">
+                        <rect key="frame" x="5" y="10" width="456" height="24"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suit.heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Vet-6f-nbR">
+                                <rect key="frame" x="0.0" y="1.5" width="100" height="21.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UJw-wP-DHd"/>
+                                    <constraint firstAttribute="height" constant="100" id="VQ2-BC-zUO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title title title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUz-J3-n1V">
+                                <rect key="frame" x="134" y="0.0" width="322" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="xMe-38-sEj" secondAttribute="trailing" constant="5" id="0jf-ks-FOg"/>
+                    <constraint firstItem="xMe-38-sEj" firstAttribute="top" secondItem="MLv-ew-Ges" secondAttribute="top" constant="10" id="8t7-EI-Db7"/>
+                    <constraint firstAttribute="bottom" secondItem="xMe-38-sEj" secondAttribute="bottom" constant="10" id="DOt-5a-yr4"/>
+                    <constraint firstItem="xMe-38-sEj" firstAttribute="leading" secondItem="MLv-ew-Ges" secondAttribute="leading" constant="5" id="afn-hq-MzP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-430" y="-552"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
+    </resources>
+</document>
