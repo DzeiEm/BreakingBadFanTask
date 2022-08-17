@@ -32,9 +32,10 @@
 		CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */; };
 		CEF568DC28ABFDE0001D63B3 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */; };
 		CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DE28AC0658001D63B3 /* ValidateView.swift */; };
-		CEF568E128AC13A2001D63B3 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E028AC13A2001D63B3 /* CustomAlert.swift */; };
+		CEF568E128AC13A2001D63B3 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */; };
 		CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */; };
 		CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */; };
+		CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E628AD93F2001D63B3 /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,9 +65,10 @@
 		CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListView.xib; sourceTree = "<group>"; };
 		CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		CEF568DE28AC0658001D63B3 /* ValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateView.swift; sourceTree = "<group>"; };
-		CEF568E028AC13A2001D63B3 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
 		CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		CEF568E628AD93F2001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,8 +194,9 @@
 		CEF568A228A2B226001D63B3 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568E028AC13A2001D63B3 /* CustomAlert.swift */,
+				CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */,
 				CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */,
+				CEF568E628AD93F2001D63B3 /* AlertView.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -352,7 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF568E128AC13A2001D63B3 /* CustomAlert.swift in Sources */,
+				CEF568E128AC13A2001D63B3 /* CustomAlertView.swift in Sources */,
 				CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */,
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
@@ -363,6 +366,7 @@
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
 				CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */,
+				CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */,
 				CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */,

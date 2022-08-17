@@ -25,8 +25,8 @@ class LoginViewController: UIViewController {
     var loggedinUser = ProfileManager.loggedInAccount
     let homeViewController = HomeViewController()
     
-    private lazy var something = {
-        Bundle.main.loadNibNamed("CustomAlertView", owner: self, options: nil)?.first as? CustomAlert
+    lazy var alert = {
+        Bundle.main.loadNibNamed("CustomAlertView", owner: self, options: nil)?.first as? CustomAlertView
     }()
     
     //ACTIONS
@@ -51,6 +51,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func submitButtonTapped(_ sender: Any) {
         if registrationTypeSegmentController.selectedSegmentIndex == 0 {
+            //MARK: - REGISTER USER
             do {
                 try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
                 
@@ -59,21 +60,29 @@ class LoginViewController: UIViewController {
                     navigationController?.pushViewController(homeViewController, animated: true)
                     return
                 }
-            } catch let error as AuthenticationError.RegistrationError {
                 
-             
+            } catch {
+                let errorMessage = error as? AuthenticationError.RegistrationError
+                print("ERROR: \(error)")
+                 
+                guard let customAlert = alert else {
+                    present(AlertView.build(message: error.localizedDescription.description ?? " "), animated: true)
+                    return
+                }
+                customAlert.setupView(
+                    success: false,
+                    title: AlertTitle.error.rawValue,
+                    message: error.localizedDescription.description ,
+                    agreeButtonTitle: AlertButton.ok.rawValue,
+                    cancelButtonTitle: AlertButton.cancel.rawValue)
+                view.addSubview(customAlert)
                 
+                customAlert.translatesAutoresizingMaskIntoConstraints = false
+                customAlert.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+                customAlert.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+                customAlert.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+                customAlert.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
                 
-                //
-                //                let alert = displayAlert(success: false,
-                //                             title: AlertTitle.error.rawValue,
-                //                             message: error?.localizedDescription ?? "",
-                //                             agreeButtonTitle: AlertButton.ok.rawValue,
-                //                             cancelButtonTitle: AlertButton.cancel.rawValue)
-                //                present(alert, animated: true)
-            }
-            catch {
-                print(AuthenticationError.General.unexpectedError)
             }
         }
         
@@ -82,10 +91,23 @@ class LoginViewController: UIViewController {
             do {
                 try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
                 
-            } catch {
-                let error = error as? AuthenticationError
-                
+            } catch let error as AuthenticationError.LoginError  {
+                guard let customAlert = alert else {
+                    present(AlertView.build(message: error.localizedDescription), animated: true)
+                    return
+                }
+                customAlert.setupView(
+                    success: false,
+                    title: AlertTitle.error.rawValue,
+                    message: error.localizedDescription,
+                    agreeButtonTitle: AlertButton.ok.rawValue,
+                    cancelButtonTitle: AlertButton.cancel.rawValue)
+                view.addSubview(customAlert)
             }
+            catch {
+                print(AuthenticationError.General.unexpectedError)
+            }
+            
         }
         
     }
@@ -128,30 +150,8 @@ extension LoginViewController: UITextFieldDelegate {
     private func hideTextfield( textfield: UITextField?, hide: Bool) {
         textfield?.isHidden = hide
     }
-    //
-    //    func displayAlert(success: Bool,
-    //                      title: String,
-    //                      message: String,
-    //                      agreeButtonTitle: String,
-    //                      cancelButtonTitle: String ) {
-    //
-    //        let alertView = CustomAlert()
-    //        alertView.setupView(
-    //            success: success,
-    //            title: title,
-    //            message: message,
-    //            agreeButtonTitle: agreeButtonTitle,
-    //            cancelButtonTitle: cancelButtonTitle)
-  
+    
+    static func clearTextfield(_ textfield: UITextField ) {
+        textfield.text = ""
+    }
 }
-
-//extension LoginViewController {
-//
-//    private lazy var something = {
-//        Bundle.main.loadNibNamed("CustomAlertView", owner: self, options: nil)?.first as? CustomAlert
-//    }()
-//}
-//
-
-
-

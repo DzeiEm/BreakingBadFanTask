@@ -16,17 +16,18 @@ enum AlertTitle: String {
     case success = "SUCCESS 🤟🏻"
 }
 
-final class CustomAlert: UIView {
+final class CustomAlertView: UIView {
     
-    @IBOutlet weak var alertHeader: UILabel!
-    @IBOutlet weak var alertMessage: UILabel!
-    @IBOutlet weak var agreeButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
-    
+    @IBOutlet private weak var alertHeader: UILabel!
+    @IBOutlet private weak var alertMessage: UILabel!
+    @IBOutlet private weak var agreeButton: UIButton!
+    @IBOutlet private weak var cancelButton: UIButton!
+   
     
     var completion: AlertCompletion?
     weak var delegate: CustomAlertViewDelegate?
-    
+    var profileManager = ProfileManager()
+   
     func setupView(success: Bool,
                    title: String,
                    message: String,
@@ -39,16 +40,6 @@ final class CustomAlert: UIView {
         agreeButton.setTitle(agreeButtonTitle, for: .normal)
         cancelButton.setTitle(cancelButtonTitle, for: .normal)
         
-        if success {
-            self.backgroundColor = .green
-        } else {
-            self.backgroundColor = .red
-        }
-        
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.cornerRadius = 4
-        
         self.completion = completion
     }
     
@@ -57,6 +48,7 @@ final class CustomAlert: UIView {
         completion?(agreeButton)
         removeFromSuperview()
         delegate?.didTapAgreeButton()
+      
     }
     
     @IBAction func cancelButtonTapped() {
@@ -65,15 +57,4 @@ final class CustomAlert: UIView {
         delegate?.didTapCancelButton()
     }
     
-    func setButtonColor(_ button: UIButton) {
-        
-    switch button {
-        case agreeButton: button.backgroundColor = .green
-        case cancelButton: button.backgroundColor  = .red
-        default:
-            button.backgroundColor = .systemGreen
-        }
-        return
-    }
 }
-
