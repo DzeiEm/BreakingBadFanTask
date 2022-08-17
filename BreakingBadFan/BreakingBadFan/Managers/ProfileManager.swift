@@ -6,6 +6,8 @@ import UIKit
 final class ProfileManager {
     
     static var profiles = [Profile]()
+   
+    
     
     //MARK: -Variables
     static var loggedInAccount: Profile? {
@@ -19,10 +21,24 @@ final class ProfileManager {
     
     //MARK:- Public functions
     static func register(username: String?, password: String?, confirmPassword: String?) throws {
+        var profile: Profile
         
-//        UserDefaultsHelper.saveProfile(profile)
-//        ProfileManager.loggedInAccount = profile
-//        UsersDatabase.profiles.append(profile)
+        guard let username = username,
+              let password = password,
+              let confirmPassword = confirmPassword
+        else {
+            return
+        }
+        
+        profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: confirmPassword)
+    
+        try ValidateView.passwordMatch(password: password, confirmPassword: confirmPassword)
+
+        try ValidateView.isProfileIsTaken(username)
+
+        UserDefaultsHelper.saveProfile(profile)
+        ProfileManager.loggedInAccount = profile
+        profiles.append(profile)
     }
     
     static func login(username: String?,password: String?) throws {
@@ -39,11 +55,7 @@ final class ProfileManager {
 //        guard try validateLoginCredentials(profile) else {
 //            throw LoginError.incorrectCredentials
 //        }
-        
-        loggedInAccount = profile
+//
+//        loggedInAccount = profile
     }
-}
-
-extension ProfileManager {
-    private func displayAlert
 }

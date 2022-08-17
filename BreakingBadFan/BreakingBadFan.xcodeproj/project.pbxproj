@@ -32,7 +32,7 @@
 		CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */; };
 		CEF568DC28ABFDE0001D63B3 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */; };
 		CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DE28AC0658001D63B3 /* ValidateView.swift */; };
-		CEF568E128AC13A2001D63B3 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E028AC13A2001D63B3 /* CustomAlertViewController.swift */; };
+		CEF568E128AC13A2001D63B3 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E028AC13A2001D63B3 /* CustomAlert.swift */; };
 		CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */; };
 		CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */; };
 /* End PBXBuildFile section */
@@ -64,7 +64,7 @@
 		CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListView.xib; sourceTree = "<group>"; };
 		CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		CEF568DE28AC0658001D63B3 /* ValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateView.swift; sourceTree = "<group>"; };
-		CEF568E028AC13A2001D63B3 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		CEF568E028AC13A2001D63B3 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
 		CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,7 +192,7 @@
 		CEF568A228A2B226001D63B3 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568E028AC13A2001D63B3 /* CustomAlertViewController.swift */,
+				CEF568E028AC13A2001D63B3 /* CustomAlert.swift */,
 				CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */,
 			);
 			path = Alert;
@@ -352,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF568E128AC13A2001D63B3 /* CustomAlertViewController.swift in Sources */,
+				CEF568E128AC13A2001D63B3 /* CustomAlert.swift in Sources */,
 				CEF568A428A4084C001D63B3 /* UserDefaultsHelper.swift in Sources */,
 				CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */,
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,

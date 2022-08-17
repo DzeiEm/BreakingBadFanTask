@@ -10,11 +10,4 @@ enum Scenes {
     case quates
 }
 
-class NavigationHelper: UINavigationController {
-    
-    private static func proceedTo(_ scene: UIViewController, animated: Bool) {
-        
-    
-        
-    }
-}
+

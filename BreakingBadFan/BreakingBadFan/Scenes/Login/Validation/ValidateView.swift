@@ -5,7 +5,7 @@ class ValidateView {
     
     let profileManager = ProfileManager()
    
-    static private func checkTextfieldsAreNotEmpty(
+    static func checkTextfieldsAreNotEmpty(
         username: String?,
         password: String?,
         confirmPassword: String?) throws -> Profile {
@@ -22,7 +22,7 @@ class ValidateView {
             return Profile(username: username, password: password, confirmPassword: confirmPassword)
         }
     
-    static private func passwordMatch(password: String?, confirmPassword: String?) throws -> Bool {
+    static func passwordMatch(password: String?, confirmPassword: String?) throws -> Bool {
         
         if password != confirmPassword {
             throw AuthenticationError.RegistrationError.passwordDoNotMatch
@@ -30,7 +30,7 @@ class ValidateView {
         return true
     }
     
-    static private func passwordSecure(password: String?) throws -> Bool {
+    static func passwordSecure(password: String?) throws -> Bool {
         let password = ""
         
         guard password == password else {
@@ -51,7 +51,7 @@ class ValidateView {
         return true
     }
     
-    static private func isProfileIsTaken(_ username: String) -> Bool {
+    static func isProfileIsTaken(_ username: String) -> Bool {
         return UserDefaultsHelper.profiles?.contains(where: { profile in
             profile.username == username
         }) ?? false

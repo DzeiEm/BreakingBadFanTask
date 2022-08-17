@@ -21,8 +21,13 @@ class LoginViewController: UIViewController {
     var confirmPassword: String = ""
     
     let ui = LoginUI()
-    let profileMananager = ProfileManager()
-    let loggedinUser = ProfileManager.loggedInAccount
+    var profileMananager = ProfileManager()
+    var loggedinUser = ProfileManager.loggedInAccount
+    let homeViewController = HomeViewController()
+    
+    private lazy var something = {
+        Bundle.main.loadNibNamed("CustomAlertView", owner: self, options: nil)?.first as? CustomAlert
+    }()
     
     //ACTIONS
     @IBAction func onSegmentControllerTypeChanged(_ sender: UISegmentedControl) {
@@ -45,37 +50,45 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
-        let homeViewController = HomeViewController()
-        
         if registrationTypeSegmentController.selectedSegmentIndex == 0 {
             do {
-                username = usernameTextfield.text ?? ""
-                password = passwordTextfield.text ?? ""
-                confirmPassword = confirmPasswordTextfield.text ?? ""
-                
                 try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
                 
-                present(homeViewController, animated: true, completion: nil)
-                return
-            } catch {
-                let error = error as?  ProfileManager.LoginError
+                if let loggedinUser = ProfileManager.loggedInAccount {
+                    homeViewController.currentUser = loggedinUser
+                    navigationController?.pushViewController(homeViewController, animated: true)
+                    return
+                }
+            } catch let error as AuthenticationError.RegistrationError {
                 
-                displayAlert(username: username, password: password, comfirmPassword: confirmPassword, messsage: error?.errorMessage ?? "" )
-                return
+             
+                
+                
+                //
+                //                let alert = displayAlert(success: false,
+                //                             title: AlertTitle.error.rawValue,
+                //                             message: error?.localizedDescription ?? "",
+                //                             agreeButtonTitle: AlertButton.ok.rawValue,
+                //                             cancelButtonTitle: AlertButton.cancel.rawValue)
+                //                present(alert, animated: true)
             }
-        } else {
-            do {
-                try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
-                present(homeViewController, animated: true, completion: nil)
-                return
-            } catch {
-                let error = error as?  ProfileManager.LoginError
-                
-                displayAlert(username: username, password: password, comfirmPassword: confirmPassword, messsage: error?.errorMessage ?? "" )
+            catch {
+                print(AuthenticationError.General.unexpectedError)
             }
         }
+        
+        else {
+            //MARK: - LOGIN USER
+            do {
+                try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
+                
+            } catch {
+                let error = error as? AuthenticationError
+                
+            }
+        }
+        
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         ui.roundCorners(of: buttonLabel, by: 20)
@@ -95,29 +108,50 @@ class LoginViewController: UIViewController {
 
 
 
-
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         print("Textfield should begin editing")
         buttonLabel.isEnabled = true
-    
         return true
     }
     
     private func textFieldDidBeginEditing(_ textField: UITextField) throws {
         print("textFieldDidBeginEditing")
-    
     }
-   
     
     private func highlightTextfield(textfield: UITextField, by: Int, _ boarderColor: UIColor) {
         textfield.layer.borderWidth = CGFloat(by)
         textfield.layer.borderColor = UIColor.red.cgColor
     }
+    
     private func hideTextfield( textfield: UITextField?, hide: Bool) {
         textfield?.isHidden = hide
     }
+    //
+    //    func displayAlert(success: Bool,
+    //                      title: String,
+    //                      message: String,
+    //                      agreeButtonTitle: String,
+    //                      cancelButtonTitle: String ) {
+    //
+    //        let alertView = CustomAlert()
+    //        alertView.setupView(
+    //            success: success,
+    //            title: title,
+    //            message: message,
+    //            agreeButtonTitle: agreeButtonTitle,
+    //            cancelButtonTitle: cancelButtonTitle)
+  
 }
+
+//extension LoginViewController {
+//
+//    private lazy var something = {
+//        Bundle.main.loadNibNamed("CustomAlertView", owner: self, options: nil)?.first as? CustomAlert
+//    }()
+//}
+//
+
 
 

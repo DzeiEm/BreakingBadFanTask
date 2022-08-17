@@ -3,9 +3,10 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
+    
+    var currentUser: Profile?
    
-    
-    
+
     @IBAction func episodesButtonTapped(_ sender: Any) {
         //TODO: - get episodes
     }
