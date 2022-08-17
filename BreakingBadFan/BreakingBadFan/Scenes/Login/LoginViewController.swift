@@ -57,7 +57,9 @@ class LoginViewController: UIViewController {
                 
                 if let loggedinUser = ProfileManager.loggedInAccount {
                     homeViewController.currentUser = loggedinUser
+                   
                     navigationController?.pushViewController(homeViewController, animated: true)
+                    homeViewController.modalPresentationStyle = .fullScreen
                     return
                 }
                 
@@ -85,12 +87,21 @@ class LoginViewController: UIViewController {
                 
             }
         }
-        
         else {
             //MARK: - LOGIN USER
             do {
                 try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
                 
+                guard let loggedinUser = ProfileManager.loggedInAccount else {
+                    return
+                }
+                if loggedinUser.username == ProfileManager.loggedInAccount?.username && loggedinUser.password == ProfileManager.loggedInAccount?.password {
+                    let homeViewController = HomeViewController()
+                    navigationController?.pushViewController(homeViewController, animated: true)
+                } else {
+                    return
+                }
+
             } catch let error as AuthenticationError.LoginError  {
                 guard let customAlert = alert else {
                     present(AlertView.build(message: error.localizedDescription), animated: true)
