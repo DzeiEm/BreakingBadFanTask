@@ -2,6 +2,9 @@
 import Foundation
 import UIKit
 
-class Quate {
+struct Quate {
+    
+    let header: String
+    let icon: UIImage
     
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuoteCell" rowHeight="167" id="lIj-QK-iaQ" customClass="QuoteView">
+            <rect key="frame" x="0.0" y="0.0" width="539" height="167"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lIj-QK-iaQ" id="OoG-uI-3Ku">
+                <rect key="frame" x="0.0" y="0.0" width="539" height="167"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="332" translatesAutoresizingMaskIntoConstraints="NO" id="R0W-jd-sQ3">
+                        <rect key="frame" x="2" y="2" width="535" height="163"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="poJ-dW-erU">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="163"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="A1n-1R-tK4"/>
+                                    <constraint firstAttribute="width" constant="120" id="ob8-Fi-RQ8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXd-1E-231">
+                                <rect key="frame" x="122" y="0.0" width="413" height="163"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xXd-1E-231" firstAttribute="leading" secondItem="poJ-dW-erU" secondAttribute="trailing" constant="2" id="SLL-8m-QTe"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="R0W-jd-sQ3" secondAttribute="trailing" constant="2" id="dq7-mz-U57"/>
+                    <constraint firstItem="R0W-jd-sQ3" firstAttribute="top" secondItem="OoG-uI-3Ku" secondAttribute="top" constant="2" id="r4F-py-zWJ"/>
+                    <constraint firstAttribute="bottom" secondItem="R0W-jd-sQ3" secondAttribute="bottom" constant="2" id="vxe-oJ-6nP"/>
+                    <constraint firstItem="R0W-jd-sQ3" firstAttribute="leading" secondItem="OoG-uI-3Ku" secondAttribute="leading" constant="2" id="zS0-7q-SOc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="218.11594202898553" y="108.81696428571428"/>
+        </tableViewCell>
+    </objects>
+</document>
