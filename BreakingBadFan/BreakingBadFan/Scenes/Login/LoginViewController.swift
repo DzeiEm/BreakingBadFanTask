@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
     var password: String = ""
     var confirmPassword: String = ""
     
-    let ui = LoginUI()
-    var profileMananager = ProfileManager()
+    let ui = UIAppSettings()
+    var profileManager = ProfileManager()
     var loggedinUser = ProfileManager.loggedInAccount
     let homeViewController = HomeViewController()
     
@@ -56,10 +56,11 @@ class LoginViewController: UIViewController {
                 try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
                 
                 if let loggedinUser = ProfileManager.loggedInAccount {
-                    homeViewController.currentUser = loggedinUser
-                   
-                    navigationController?.pushViewController(homeViewController, animated: true)
+                    
+                    homeViewController.profileManager = profileManager
                     homeViewController.modalPresentationStyle = .fullScreen
+                    navigationController?.pushViewController(homeViewController, animated: true)
+                    
                     return
                 }
                 
@@ -99,7 +100,7 @@ class LoginViewController: UIViewController {
                     let homeViewController = HomeViewController()
                     navigationController?.pushViewController(homeViewController, animated: true)
                 } else {
-                    return
+                    throw AuthenticationError.LoginError.credentialsDoNotMatch
                 }
 
             } catch let error as AuthenticationError.LoginError  {
@@ -114,6 +115,7 @@ class LoginViewController: UIViewController {
                     agreeButtonTitle: AlertButton.ok.rawValue,
                     cancelButtonTitle: AlertButton.cancel.rawValue)
                 view.addSubview(customAlert)
+                
             }
             catch {
                 print(AuthenticationError.General.unexpectedError)

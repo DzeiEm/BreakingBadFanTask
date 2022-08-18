@@ -20,61 +20,70 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rR4-oW-6pO" userLabel="Label Stack">
-                    <rect key="frame" x="40" y="99" width="334" height="44.5"/>
+                    <rect key="frame" x="40" y="99" width="334" height="149"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaking Bad Fan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mI-1o-wk0">
-                            <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Breaking Bad Fan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mI-1o-wk0">
+                            <rect key="frame" x="0.0" y="0.0" width="334" height="128.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38L-J5-X7C">
-                            <rect key="frame" x="0.0" y="24" width="334" height="20.5"/>
+                            <rect key="frame" x="0.0" y="128.5" width="334" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SK6-hD-COS">
-                    <rect key="frame" x="40" y="243.5" width="334" height="409"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SK6-hD-COS">
+                    <rect key="frame" x="40" y="348" width="334" height="200"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXH-Kp-MQE">
                             <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                             <color key="backgroundColor" name="placeholderColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="A1r-IH-Ufe"/>
+                                <constraint firstAttribute="height" constant="50" id="CjD-Pf-YXh"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="pzQ-EH-yPE"/>
                             </constraints>
                             <color key="tintColor" name="buttonColor"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Episodes"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Episodes">
+                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="episodesButtonTapped:" destination="-1" eventType="touchUpInside" id="rJA-9z-Y8l"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEq-Wb-hvy">
-                            <rect key="frame" x="0.0" y="75" width="334" height="278"/>
+                            <rect key="frame" x="0.0" y="75" width="334" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="7bZ-q5-F8B"/>
+                            </constraints>
                             <color key="tintColor" name="buttonColor"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Characters"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Characters">
+                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="charactersButtonTapped:" destination="-1" eventType="touchUpInside" id="Bl7-kd-lZz"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnP-Wg-mUC">
-                            <rect key="frame" x="0.0" y="378" width="334" height="31"/>
+                            <rect key="frame" x="0.0" y="150" width="334" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="vmB-61-ssX"/>
+                            </constraints>
                             <color key="tintColor" name="buttonColor"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Quates"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Quates">
+                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="quatesButtonTapped:" destination="-1" eventType="touchUpInside" id="OHg-eW-abF"/>
                             </connections>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="jXH-Kp-MQE" firstAttribute="height" secondItem="hnP-Wg-mUC" secondAttribute="height" multiplier="1.6129" id="5Or-Iy-12V"/>
-                        <constraint firstItem="jXH-Kp-MQE" firstAttribute="height" secondItem="oEq-Wb-hvy" secondAttribute="height" multiplier="0.179856" id="KnY-T8-xuB"/>
-                    </constraints>
                 </stackView>
                 <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2d-mw-vRy">
                     <rect key="frame" x="40" y="802" width="334" height="40"/>
@@ -85,6 +94,9 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                    <connections>
+                        <action selector="logoutButtonTapped:" destination="-1" eventType="touchUpInside" id="sh1-hg-loJ"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -31,9 +31,9 @@ class ValidateView {
     }
     
     static func passwordSecure(password: String?) throws -> Bool {
-        let password = ""
         
-        guard password == password else {
+    
+        guard let password = password else {
             return false
         }
         guard containsNumbers(password) else {
@@ -57,7 +57,7 @@ class ValidateView {
         }) ?? false
     }
     
-    static private func validateLoginCretentials(_ profile: Profile) throws -> Bool {
+    static func validateLoginCretentials(_ profile: Profile) throws -> Bool {
         guard let neededAccount = UserDefaultsHelper.profiles?.first(where: { neededAccount in
             neededAccount.username == profile.username
         }) else {

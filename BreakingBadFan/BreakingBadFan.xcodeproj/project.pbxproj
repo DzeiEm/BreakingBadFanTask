@@ -14,7 +14,7 @@
 		CECF8155289FC8D000CE5A07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8154289FC8D000CE5A07 /* LoginViewController.swift */; };
 		CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF8156289FC90300CE5A07 /* LoginView.xib */; };
 		CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */; };
-		CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815D289FDC8D00CE5A07 /* LoginUI.swift */; };
+		CECF815E289FDC8D00CE5A07 /* UIAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF815D289FDC8D00CE5A07 /* UIAppSettings.swift */; };
 		CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */; };
 		CECF817128A1645000CE5A07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817028A1645000CE5A07 /* Profile.swift */; };
 		CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF817328A1718F00CE5A07 /* ProfileManager.swift */; };
@@ -36,6 +36,9 @@
 		CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */; };
 		CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */; };
 		CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E628AD93F2001D63B3 /* AlertView.swift */; };
+		CEF568E928ADAB7F001D63B3 /* QuatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */; };
+		CEF568EF28ADABDD001D63B3 /* EpisodesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568EE28ADABDD001D63B3 /* EpisodesAPI.swift */; };
+		CEF568F128ADABEE001D63B3 /* CharactersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +50,7 @@
 		CECF8154289FC8D000CE5A07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CECF8156289FC90300CE5A07 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		CECF815B289FD30D00CE5A07 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		CECF815D289FDC8D00CE5A07 /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
+		CECF815D289FDC8D00CE5A07 /* UIAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAppSettings.swift; sourceTree = "<group>"; };
 		CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		CECF817028A1645000CE5A07 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CECF817328A1718F00CE5A07 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
@@ -69,6 +72,9 @@
 		CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
 		CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CEF568E628AD93F2001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuatesAPI.swift; sourceTree = "<group>"; };
+		CEF568EE28ADABDD001D63B3 /* EpisodesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesAPI.swift; sourceTree = "<group>"; };
+		CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +124,6 @@
 		CECF814B289FC5C300CE5A07 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568C728AB284D001D63B3 /* New Group */,
 				CEF568C028AB2677001D63B3 /* Episode */,
 				CEF568B928AB2176001D63B3 /* Character */,
 				CEF568B128AA7F56001D63B3 /* Home */,
@@ -140,6 +145,9 @@
 		CECF814D289FC5D300CE5A07 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */,
+				CEF568EE28ADABDD001D63B3 /* EpisodesAPI.swift */,
+				CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -151,7 +159,7 @@
 				CEF568D828ABFDAD001D63B3 /* Error */,
 				CECF8154289FC8D000CE5A07 /* LoginViewController.swift */,
 				CECF8156289FC90300CE5A07 /* LoginView.xib */,
-				CECF815D289FDC8D00CE5A07 /* LoginUI.swift */,
+				CECF815D289FDC8D00CE5A07 /* UIAppSettings.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -227,13 +235,6 @@
 				CEF568CE28AB2DE0001D63B3 /* List */,
 			);
 			path = Episode;
-			sourceTree = "<group>";
-		};
-		CEF568C728AB284D001D63B3 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		CEF568CE28AB2DE0001D63B3 /* List */ = {
@@ -361,9 +362,12 @@
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
 				CEF568BB28AB219B001D63B3 /* CharacterViewController.swift in Sources */,
 				CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */,
+				CEF568E928ADAB7F001D63B3 /* QuatesAPI.swift in Sources */,
 				CEF568B828AB1F8D001D63B3 /* Quote.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
+				CEF568EF28ADABDD001D63B3 /* EpisodesAPI.swift in Sources */,
+				CEF568F128ADABEE001D63B3 /* CharactersAPI.swift in Sources */,
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
 				CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */,
 				CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */,
@@ -371,7 +375,7 @@
 				CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */,
 				CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */,
 				CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */,
-				CECF815E289FDC8D00CE5A07 /* LoginUI.swift in Sources */,
+				CECF815E289FDC8D00CE5A07 /* UIAppSettings.swift in Sources */,
 				CEF568DC28ABFDE0001D63B3 /* AuthenticationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

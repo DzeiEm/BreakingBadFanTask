@@ -21,7 +21,6 @@ final class ProfileManager {
     
     //MARK:- Public functions
     static func register(username: String?, password: String?, confirmPassword: String?) throws {
-        var profile: Profile
         
         guard let username = username,
               let password = password,
@@ -29,12 +28,16 @@ final class ProfileManager {
         else {
             return
         }
+      
+        let profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: confirmPassword)
+        print("USERNAME: \(profile.username)")
+        print("PASSWORD: \(profile.password)")
+        print("CONFIRMPASSWORD: \(profile.confirmPassword)")
         
-        profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: confirmPassword)
-    
-        try ValidateView.passwordMatch(password: password, confirmPassword: confirmPassword)
-
-        try ValidateView.isProfileIsTaken(username)
+        
+        
+        try ValidateView.isProfileIsTaken(profile.username)
+        var isValid = try ValidateView.passwordSecure(password: profile.password)
 
         UserDefaultsHelper.saveProfile(profile)
         ProfileManager.loggedInAccount = profile
@@ -42,20 +45,17 @@ final class ProfileManager {
     }
     
     static func login(username: String?,password: String?) throws {
-//        let profile = try checkCredentialsAreNotEmpty(username: username, password: password, confirmPassword: nil)
-//
-//        guard let username = username else {
-//            return
-//        }
-//
-//        guard profileIsTaken(username) else {
-//            throw LoginError.userNotFound
-//        }
-//
-//        guard try validateLoginCredentials(profile) else {
-//            throw LoginError.incorrectCredentials
-//        }
-//
-//        loggedInAccount = profile
+        
+        guard let username = username,
+              let password = password
+        else {
+            return
+        }
+        
+        let profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: nil)
+        
+        try ValidateView.validateLoginCretentials(profile)
+
+        loggedInAccount = profile
     }
 }

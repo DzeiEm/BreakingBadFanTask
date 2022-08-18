@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-class LoginUI {
+class UIAppSettings {
     
     func roundCorners(of button: UIButton, by: Int) {
         button.layer.cornerRadius = CGFloat(by)
