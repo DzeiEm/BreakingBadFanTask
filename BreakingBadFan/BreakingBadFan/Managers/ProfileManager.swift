@@ -6,7 +6,7 @@ import UIKit
 final class ProfileManager {
     
     static var profiles = [Profile]()
-   
+    
     
     
     //MARK: -Variables
@@ -21,23 +21,18 @@ final class ProfileManager {
     
     //MARK:- Public functions
     static func register(username: String?, password: String?, confirmPassword: String?) throws {
+    
         
-        guard let username = username,
-              let password = password,
-              let confirmPassword = confirmPassword
-        else {
-            return
-        }
-      
         let profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: confirmPassword)
-        print("USERNAME: \(profile.username)")
-        print("PASSWORD: \(profile.password)")
-        print("CONFIRMPASSWORD: \(profile.confirmPassword)")
+
+        if ValidateView.isProfileIsTaken(profile.username) {
+            throw AuthenticationError.General.userAlreadyExist
+        }
         
         
-        
-        try ValidateView.isProfileIsTaken(profile.username)
-        var isValid = try ValidateView.passwordSecure(password: profile.password)
+        guard try ValidateView.passwordSecure(password: profile.password) else {
+            throw AuthenticationError.RegistrationError.weakPassword
+        }
 
         UserDefaultsHelper.saveProfile(profile)
         ProfileManager.loggedInAccount = profile
@@ -46,16 +41,12 @@ final class ProfileManager {
     
     static func login(username: String?,password: String?) throws {
         
-        guard let username = username,
-              let password = password
-        else {
-            return
-        }
-        
         let profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: nil)
         
-        try ValidateView.validateLoginCretentials(profile)
-
+        guard try ValidateView.validateLoginCretentials(profile) else {
+            throw AuthenticationError.LoginError.credentialsDoNotMatch
+        }
+        
         loggedInAccount = profile
     }
 }

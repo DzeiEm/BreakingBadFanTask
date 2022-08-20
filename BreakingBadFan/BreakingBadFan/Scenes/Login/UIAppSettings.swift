@@ -4,11 +4,15 @@ import UIKit
 
 class UIAppSettings {
     
-    func roundCorners(of button: UIButton, by: Int) {
+    static func roundCorners(of button: UIButton, by: Int) {
         button.layer.cornerRadius = CGFloat(by)
     }
     
-    func hightlight(textfield: UITextField, by color: UIColor) {
+    static func setButtonColor(button: UIButton, color: UIColor) {
+        button.backgroundColor = color
+    }
+    
+    static func hightlight(textfield: UITextField, by color: UIColor) {
         
     }
     

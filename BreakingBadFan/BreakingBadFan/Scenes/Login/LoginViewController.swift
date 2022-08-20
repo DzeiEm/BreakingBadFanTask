@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
     let ui = UIAppSettings()
     var profileManager = ProfileManager()
     var loggedinUser = ProfileManager.loggedInAccount
-    let homeViewController = HomeViewController()
     
     lazy var alert = {
         Bundle.main.loadNibNamed("CustomAlertView", owner: self, options: nil)?.first as? CustomAlertView
@@ -53,80 +52,59 @@ class LoginViewController: UIViewController {
         if registrationTypeSegmentController.selectedSegmentIndex == 0 {
             //MARK: - REGISTER USER
             do {
-                try ProfileManager.register(username: usernameTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
-                
+                try ProfileManager.register(
+                    username: usernameTextfield.text,
+                    password: passwordTextfield.text,
+                    confirmPassword: confirmPasswordTextfield.text
+                )
                 if let loggedinUser = ProfileManager.loggedInAccount {
+
                     
-                    homeViewController.profileManager = profileManager
-                    homeViewController.modalPresentationStyle = .fullScreen
-                    navigationController?.pushViewController(homeViewController, animated: true)
-                    
-                    return
+                    let homeSceene = HomeViewController()
+                    homeSceene.modalPresentationStyle = .fullScreen
+                    present(homeSceene, animated: true, completion: nil)
                 }
+                
+            } catch let error as AuthenticationError.RegistrationError {
+                displayAlert(error: error.localizedDescription)
                 
             } catch {
-                let errorMessage = error as? AuthenticationError.RegistrationError
-                print("ERROR: \(error)")
-                 
-                guard let customAlert = alert else {
-                    present(AlertView.build(message: error.localizedDescription.description ?? " "), animated: true)
-                    return
-                }
-                customAlert.setupView(
-                    success: false,
-                    title: AlertTitle.error.rawValue,
-                    message: error.localizedDescription.description ,
-                    agreeButtonTitle: AlertButton.ok.rawValue,
-                    cancelButtonTitle: AlertButton.cancel.rawValue)
-                view.addSubview(customAlert)
-                
-                customAlert.translatesAutoresizingMaskIntoConstraints = false
-                customAlert.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-                customAlert.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-                customAlert.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-                customAlert.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-                
+                print(AuthenticationError.General.unexpectedError)
             }
         }
         else {
             //MARK: - LOGIN USER
             do {
-                try ProfileManager.login(username: usernameTextfield.text, password: passwordTextfield.text)
+                try ProfileManager.login(
+                    username: usernameTextfield.text,
+                    password: passwordTextfield.text)
                 
                 guard let loggedinUser = ProfileManager.loggedInAccount else {
                     return
                 }
                 if loggedinUser.username == ProfileManager.loggedInAccount?.username && loggedinUser.password == ProfileManager.loggedInAccount?.password {
-                    let homeViewController = HomeViewController()
-                    navigationController?.pushViewController(homeViewController, animated: true)
+                    
+                    let loginViewController = LoginViewController()
+                    loginViewController.modalPresentationStyle = .fullScreen
+                    navigationController?.pushViewController(loginViewController, animated: true)
                 } else {
                     throw AuthenticationError.LoginError.credentialsDoNotMatch
                 }
-
-            } catch let error as AuthenticationError.LoginError  {
-                guard let customAlert = alert else {
-                    present(AlertView.build(message: error.localizedDescription), animated: true)
-                    return
-                }
-                customAlert.setupView(
-                    success: false,
-                    title: AlertTitle.error.rawValue,
-                    message: error.localizedDescription,
-                    agreeButtonTitle: AlertButton.ok.rawValue,
-                    cancelButtonTitle: AlertButton.cancel.rawValue)
-                view.addSubview(customAlert)
+                
+            } catch let loginError as AuthenticationError.LoginError  {
+                displayAlert(error: loginError.localizedDescription)
                 
             }
             catch {
                 print(AuthenticationError.General.unexpectedError)
             }
-            
         }
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ui.roundCorners(of: buttonLabel, by: 20)
+        UIAppSettings.roundCorners(of: buttonLabel, by: 10)
+        UIAppSettings.setButtonColor(button: buttonLabel, color: .purple)
         errorLabel.isHidden = true
         buttonLabel.isEnabled = false
         usernameTextfield.delegate = self
@@ -168,3 +146,30 @@ extension LoginViewController: UITextFieldDelegate {
         textfield.text = ""
     }
 }
+
+extension LoginViewController {
+    func displayAlert(error: String) {
+        
+        guard let customAlert = alert else {
+            present(AlertView.build(message: error), animated: true)
+            return
+        }
+        customAlert.setupView(
+            success: false,
+            title: AlertTitle.error.rawValue,
+            message: error,
+            agreeButtonTitle: AlertButton.ok.rawValue,
+            cancelButtonTitle: AlertButton.cancel.rawValue)
+        view.addSubview(customAlert)
+        
+        customAlert.translatesAutoresizingMaskIntoConstraints = false
+        customAlert.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        customAlert.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        customAlert.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        customAlert.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+    }
+    
+}
+
+

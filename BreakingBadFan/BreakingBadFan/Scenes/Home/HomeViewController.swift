@@ -2,37 +2,48 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var usernameLabel: UILabel!
-    
     var currentUser: Profile?
     var profileManager: ProfileManager!
-   
-
+    
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var episodeButton: UIButton!
+    @IBOutlet private weak var charactersButton: UIButton!
+    @IBOutlet private weak var quotesButton: UIButton!
+    
+    
     @IBAction func episodesButtonTapped(_ sender: Any) {
-        //TODO: - get episodes
+        
+        let episodeListViewController = EpisodeListViewController()
+        present(episodeListViewController, animated: true, completion: nil)
     }
     
     @IBAction func charactersButtonTapped(_ sender: Any) {
-        //TODO: - get characters
+        let charactersViewController = CharacterViewController()
+        present(charactersViewController, animated: true, completion: nil)
     }
     
     
     @IBAction func quatesButtonTapped(_ sender: Any) {
-        //TODO: - get quates
+        let quotesViewController = QuatesViewController()
+        present(quotesViewController, animated: true, completion: nil)
     }
     
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        let loginScreen = LoginViewController()
+        present(loginScreen, animated: true, completion: nil)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        usernameLabel.text = "Hi: \(currentUser?.username ?? "DEFAULT value")"
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        usernameLabel.text = ProfileManager.loggedInAccount?.username
+        UIAppSettings.setButtonColor(button: episodeButton, color: .purple)
+        UIAppSettings.setButtonColor(button: charactersButton, color: .purple)
+        UIAppSettings.setButtonColor(button: quotesButton, color: .purple)
     }
     
 }
