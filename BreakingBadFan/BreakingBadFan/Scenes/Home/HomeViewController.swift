@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBAction func episodesButtonTapped(_ sender: Any) {
         
         let episodeListViewController = EpisodeListViewController()
+        episodeListViewController.modalPresentationStyle = .fullScreen
         present(episodeListViewController, animated: true, completion: nil)
     }
     
@@ -25,12 +26,14 @@ class HomeViewController: UIViewController {
     
     @IBAction func quatesButtonTapped(_ sender: Any) {
         let quotesViewController = QuatesViewController()
+        quotesViewController.modalPresentationStyle = .fullScreen
         present(quotesViewController, animated: true, completion: nil)
     }
     
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         let loginScreen = LoginViewController()
+        loginScreen.modalPresentationStyle = .fullScreen
         present(loginScreen, animated: true, completion: nil)
     }
     

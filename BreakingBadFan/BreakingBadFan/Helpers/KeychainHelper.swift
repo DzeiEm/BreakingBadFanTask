@@ -4,7 +4,7 @@ import KeychainSwift
 
 class KeychainHelper {
     
-    private static var keychain = KeychainSwift()
+    static var keychain = KeychainSwift()
     
     static func savePassword(profile: Profile) {
         keychain.set(profile.username, forKey: profile.password)
