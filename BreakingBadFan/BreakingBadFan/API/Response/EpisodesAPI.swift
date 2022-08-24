@@ -1,5 +1,5 @@
 
-import Foundation
+import UIKit
 
 struct EpisodesResponse: Decodable {
     
@@ -8,9 +8,16 @@ struct EpisodesResponse: Decodable {
     let season: Int
     let episode: Int
     let airDate: String
-    let characters: [Array]
+    let characters: [String]
     let series: String
     
-    
-    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case season
+        case episode
+        case airDate = "air_date"
+        case characters
+        case series
+    }
 }

@@ -32,8 +32,8 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h05-8r-3W7">
-                        <rect key="frame" x="20" y="256" width="374" height="411"/>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h05-8r-3W7">
+                        <rect key="frame" x="20" y="255" width="374" height="411"/>
                         <connections>
                             <outlet property="dataSource" destination="tzK-br-NV3" id="xFE-AD-9QH"/>
                             <outlet property="delegate" destination="tzK-br-NV3" id="iG7-Ct-br3"/>
@@ -52,6 +52,9 @@
                     <constraint firstItem="h05-8r-3W7" firstAttribute="leading" secondItem="9oo-c1-1jb" secondAttribute="leading" constant="20" id="ejS-rr-cWM"/>
                 </constraints>
             </view>
+            <connections>
+                <outlet property="tavleView" destination="h05-8r-3W7" id="XFJ-5l-2JI"/>
+            </connections>
             <point key="canvasLocation" x="-173.91304347826087" y="-105.13392857142857"/>
         </viewController>
     </objects>

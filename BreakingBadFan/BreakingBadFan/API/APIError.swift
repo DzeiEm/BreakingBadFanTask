@@ -6,7 +6,6 @@ enum APIError: Error {
     case serializationError
     case requestError(reason: String)
     case parsingError
-    case noUserId
 
     var description: String {
         switch self {
@@ -18,8 +17,6 @@ enum APIError: Error {
             return reason
         case .parsingError:
             return "Parsing error"
-        case .noUserId:
-            return "No session found, please log in"
         }
     }
 }

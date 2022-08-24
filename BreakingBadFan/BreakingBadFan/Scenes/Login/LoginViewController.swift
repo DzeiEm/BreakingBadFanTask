@@ -61,6 +61,7 @@ class LoginViewController: UIViewController {
 
                     
                     let homeSceene = HomeViewController()
+                   
                     homeSceene.modalPresentationStyle = .fullScreen
                     present(homeSceene, animated: true, completion: nil)
                     return

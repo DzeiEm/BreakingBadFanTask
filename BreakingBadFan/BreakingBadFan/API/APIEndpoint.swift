@@ -30,14 +30,6 @@ extension APIEndpoint {
         "https://www.breakingbadapi.com/api/"
     }
 
-//    private var UserIdQueryItemKey: String {
-//        "user_id"
-//    }
-//
-//    private var ImageObjectQueryItemKey: String {
-//        "image_object"
-//    }
-
     private func makeURL(endpoint: String, queryItems: [URLQueryItem]? = nil) -> URL? {
         let urlString = BaseUrlString + endpoint
 

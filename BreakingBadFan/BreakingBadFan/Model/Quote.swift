@@ -2,9 +2,10 @@
 import Foundation
 import UIKit
 
-struct Quate {
+struct Quote {
     
+    let id: Int
     let header: String
-    let icon: UIImage
+    let author: String
     
 }
