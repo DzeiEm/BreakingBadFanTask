@@ -15,6 +15,7 @@
 		CE07FF6B28B1334D00A18CC0 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FF6A28B1334D00A18CC0 /* APIEndpoint.swift */; };
 		CE07FFB228B5359700A18CC0 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFB128B5359700A18CC0 /* Episode.swift */; };
 		CE07FFB428B54FDC00A18CC0 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFB328B54FDC00A18CC0 /* Character.swift */; };
+		CE07FFB828B69E2900A18CC0 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFB728B69E2900A18CC0 /* Season.swift */; };
 		CEA579DC28A17B81009E5B1D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA579DB28A17B81009E5B1D /* KeychainSwift */; };
 		CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8137289FC3B300CE5A07 /* AppDelegate.swift */; };
 		CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */; };
@@ -34,7 +35,6 @@
 		CEF568BD28AB21D6001D63B3 /* CharacterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568BC28AB21D6001D63B3 /* CharacterView.xib */; };
 		CEF568BF28AB236D001D63B3 /* CharacterDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568BE28AB236D001D63B3 /* CharacterDetailsCell.xib */; };
 		CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */; };
-		CEF568C428AB26F1001D63B3 /* EpisodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568C328AB26F1001D63B3 /* EpisodeView.xib */; };
 		CEF568C928AB2882001D63B3 /* EpisodeModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */; };
 		CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */; };
 		CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */; };
@@ -58,6 +58,7 @@
 		CE07FF6A28B1334D00A18CC0 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		CE07FFB128B5359700A18CC0 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		CE07FFB328B54FDC00A18CC0 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		CE07FFB728B69E2900A18CC0 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		CECF8134289FC3B300CE5A07 /* BreakingBadFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECF8137289FC3B300CE5A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		CEF568BC28AB21D6001D63B3 /* CharacterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterView.xib; sourceTree = "<group>"; };
 		CEF568BE28AB236D001D63B3 /* CharacterDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailsCell.xib; sourceTree = "<group>"; };
 		CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
-		CEF568C328AB26F1001D63B3 /* EpisodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeView.xib; sourceTree = "<group>"; };
 		CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeModalView.xib; sourceTree = "<group>"; };
 		CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListView.xib; sourceTree = "<group>"; };
@@ -177,6 +177,7 @@
 				CEF568B728AB1F8D001D63B3 /* Quote.swift */,
 				CE07FFB128B5359700A18CC0 /* Episode.swift */,
 				CE07FFB328B54FDC00A18CC0 /* Character.swift */,
+				CE07FFB728B69E2900A18CC0 /* Season.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */,
-				CEF568C328AB26F1001D63B3 /* EpisodeView.xib */,
 				CEF568C828AB2882001D63B3 /* EpisodeModalView.xib */,
 			);
 			path = Details;
@@ -384,7 +384,6 @@
 				CECF8141289FC3B600CE5A07 /* Assets.xcassets in Resources */,
 				CEF568BF28AB236D001D63B3 /* CharacterDetailsCell.xib in Resources */,
 				CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */,
-				CEF568C428AB26F1001D63B3 /* EpisodeView.xib in Resources */,
 				CE07FF6228AEBCC700A18CC0 /* QuatesView.xib in Resources */,
 				CEF568C928AB2882001D63B3 /* EpisodeModalView.xib in Resources */,
 				CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */,
@@ -410,6 +409,7 @@
 				CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */,
 				CEF568E928ADAB7F001D63B3 /* QuatesAPI.swift in Sources */,
 				CEF568B828AB1F8D001D63B3 /* Quote.swift in Sources */,
+				CE07FFB828B69E2900A18CC0 /* Season.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
 				CEF568EF28ADABDD001D63B3 /* EpisodesAPI.swift in Sources */,

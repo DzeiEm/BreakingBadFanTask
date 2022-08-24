@@ -32,8 +32,8 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h05-8r-3W7">
-                        <rect key="frame" x="20" y="255" width="374" height="411"/>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h05-8r-3W7">
+                        <rect key="frame" x="20" y="256.5" width="374" height="409.5"/>
                         <connections>
                             <outlet property="dataSource" destination="tzK-br-NV3" id="xFE-AD-9QH"/>
                             <outlet property="delegate" destination="tzK-br-NV3" id="iG7-Ct-br3"/>
@@ -44,8 +44,8 @@
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="l3f-PY-3uL" firstAttribute="leading" secondItem="9oo-c1-1jb" secondAttribute="leading" constant="40" id="1VJ-Bv-lhR"/>
-                    <constraint firstItem="h05-8r-3W7" firstAttribute="top" secondItem="l3f-PY-3uL" secondAttribute="bottom" constant="99.5" id="5k8-rl-4C3"/>
-                    <constraint firstItem="9oo-c1-1jb" firstAttribute="bottom" secondItem="h05-8r-3W7" secondAttribute="bottom" constant="195" id="748-xQ-He0"/>
+                    <constraint firstItem="9oo-c1-1jb" firstAttribute="bottom" secondItem="h05-8r-3W7" secondAttribute="bottom" constant="196" id="3If-98-Xq1"/>
+                    <constraint firstItem="h05-8r-3W7" firstAttribute="top" secondItem="l3f-PY-3uL" secondAttribute="bottom" constant="100" id="5k8-rl-4C3"/>
                     <constraint firstItem="l3f-PY-3uL" firstAttribute="top" secondItem="9oo-c1-1jb" secondAttribute="top" constant="50" id="9wY-2u-rFi"/>
                     <constraint firstItem="9oo-c1-1jb" firstAttribute="trailing" secondItem="h05-8r-3W7" secondAttribute="trailing" constant="20" id="BkW-Yr-ouj"/>
                     <constraint firstItem="9oo-c1-1jb" firstAttribute="trailing" secondItem="l3f-PY-3uL" secondAttribute="trailing" constant="40" id="Otv-rn-s14"/>

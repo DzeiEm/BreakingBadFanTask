@@ -3,35 +3,73 @@
 import Foundation
 import UIKit
 
-class EpisodeListViewController: UITableViewController {
+class EpisodeListViewController: UIViewController {
+    let apiManager = APIManager()
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell",
-                                                 for: indexPath) // Cell registered in the Main.storyboard
-        cell.textLabel?.text = "Some text at row: \(indexPath.row) of section \(indexPath.section)"
-        
-        
-        return cell
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
-    }
-   
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "titleForHeaderInSection"
-    }
+    var tableView: UITableView!
+    var seasons = [Season]()
     
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected row at: \(indexPath.row)")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        apiManager.getEpisodes(completion: { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+                
+            case .success(let episodes):
+                self?.mapEpisodesToSeasons(episodes: episodes)
+                //TODO
+                self?.tableView.reloadData()
+                print(episodes)
+            }
+        })
+        setupTableView()
     }
     
-//    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-//        let allTitles = sectionsArray.map { $0.title }
-//        let firstLetters = allTitles.map { String($0.prefix(1)) }
-//        
-//        return firstLetters
-//    }
+    func mapEpisodesToSeasons(episodes: [Episode]) {
+        
+       
+        
+    }
+    
+    
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    
 }
+
+
+extension EpisodeListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return seasons[section].episodes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell")! as UITableViewCell
+                cell.textLabel?.text = "Something"
+                return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return seasons.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return seasons[section].title
+    }
+
+}
+extension EpisodeListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print()
+    }
+}
+
+
+
