@@ -30,14 +30,10 @@ class ValidateView {
         return true
     }
     
-    static func passwordSecure(password: String?) throws -> Bool {
+    static func isPasswordSecure(password: String) throws  {
         
-    
-        guard let password = password else {
-            return false
-        }
         guard containsNumbers(password) else {
-            throw AuthenticationError.Secure.containsLowerCases
+            throw AuthenticationError.Secure.containsNumbers
         }
         guard containsLowerCase(password) else {
             throw AuthenticationError.Secure.containsLowerCases
@@ -48,7 +44,6 @@ class ValidateView {
         guard containsRequiredPasswordLength(password) else {
             throw AuthenticationError.Secure.containsRequiredPasswordLength
         }
-        return true
     }
     
     static func isProfileIsTaken(_ username: String) -> Bool {

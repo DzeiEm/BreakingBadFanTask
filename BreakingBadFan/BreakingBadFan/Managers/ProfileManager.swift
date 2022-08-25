@@ -30,9 +30,9 @@ final class ProfileManager {
         }
         
         
-        guard try ValidateView.passwordSecure(password: profile.password) else {
-            throw AuthenticationError.RegistrationError.weakPassword
-        }
+        try ValidateView.isPasswordSecure(password: profile.password)
+        
+        
 
         UserDefaultsHelper.saveProfile(profile)
         ProfileManager.loggedInAccount = profile
@@ -43,9 +43,8 @@ final class ProfileManager {
         
         let profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: nil)
         
-        guard try ValidateView.validateLoginCretentials(profile) else {
-            throw AuthenticationError.LoginError.credentialsDoNotMatch
-        }
+        try ValidateView.validateLoginCretentials(profile)
+        
         
         loggedInAccount = profile
     }

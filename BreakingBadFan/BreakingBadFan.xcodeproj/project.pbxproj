@@ -16,6 +16,7 @@
 		CE07FFB228B5359700A18CC0 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFB128B5359700A18CC0 /* Episode.swift */; };
 		CE07FFB428B54FDC00A18CC0 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFB328B54FDC00A18CC0 /* Character.swift */; };
 		CE07FFB828B69E2900A18CC0 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFB728B69E2900A18CC0 /* Season.swift */; };
+		CE07FFE328B7E95800A18CC0 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFE228B7E95800A18CC0 /* EpisodeCell.xib */; };
 		CEA579DC28A17B81009E5B1D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA579DB28A17B81009E5B1D /* KeychainSwift */; };
 		CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8137289FC3B300CE5A07 /* AppDelegate.swift */; };
 		CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */; };
@@ -45,7 +46,7 @@
 		CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */; };
 		CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E628AD93F2001D63B3 /* AlertView.swift */; };
 		CEF568E928ADAB7F001D63B3 /* QuatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */; };
-		CEF568EF28ADABDD001D63B3 /* EpisodesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568EE28ADABDD001D63B3 /* EpisodesAPI.swift */; };
+		CEF568EF28ADABDD001D63B3 /* EpisodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568EE28ADABDD001D63B3 /* EpisodeAPI.swift */; };
 		CEF568F128ADABEE001D63B3 /* CharactersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		CE07FFB128B5359700A18CC0 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		CE07FFB328B54FDC00A18CC0 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CE07FFB728B69E2900A18CC0 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		CE07FFE228B7E95800A18CC0 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
 		CECF8134289FC3B300CE5A07 /* BreakingBadFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECF8137289FC3B300CE5A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CEF568E628AD93F2001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuatesAPI.swift; sourceTree = "<group>"; };
-		CEF568EE28ADABDD001D63B3 /* EpisodesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesAPI.swift; sourceTree = "<group>"; };
+		CEF568EE28ADABDD001D63B3 /* EpisodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAPI.swift; sourceTree = "<group>"; };
 		CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +120,7 @@
 		CE07FF6528B131A900A18CC0 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568EE28ADABDD001D63B3 /* EpisodesAPI.swift */,
+				CEF568EE28ADABDD001D63B3 /* EpisodeAPI.swift */,
 				CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */,
 				CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */,
 			);
@@ -283,6 +285,7 @@
 			children = (
 				CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */,
 				CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */,
+				CE07FFE228B7E95800A18CC0 /* EpisodeCell.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				CEF568BD28AB21D6001D63B3 /* CharacterView.xib in Resources */,
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
 				CE07FF6428AEBEA600A18CC0 /* QuoteCell.xib in Resources */,
+				CE07FFE328B7E95800A18CC0 /* EpisodeCell.xib in Resources */,
 				CECF8141289FC3B600CE5A07 /* Assets.xcassets in Resources */,
 				CEF568BF28AB236D001D63B3 /* CharacterDetailsCell.xib in Resources */,
 				CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */,
@@ -412,7 +416,7 @@
 				CE07FFB828B69E2900A18CC0 /* Season.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
-				CEF568EF28ADABDD001D63B3 /* EpisodesAPI.swift in Sources */,
+				CEF568EF28ADABDD001D63B3 /* EpisodeAPI.swift in Sources */,
 				CEF568F128ADABEE001D63B3 /* CharactersAPI.swift in Sources */,
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
 				CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */,

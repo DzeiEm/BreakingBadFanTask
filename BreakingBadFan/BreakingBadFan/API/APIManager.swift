@@ -46,7 +46,7 @@ extension APIManager {
                 return
             }
             guard let data = data,
-                  let allEpisodes = try? decoder.decode([EpisodesResponse].self, from: data)
+                  let allEpisodes = try? decoder.decode([EpisodeResponse].self, from: data)
             else {
                 completion(.failure(APIError.parsingError))
                 return

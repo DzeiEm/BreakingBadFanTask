@@ -3,10 +3,10 @@
 import Foundation
 
 
-struct Episode {
+struct Episode: Hashable {
     let id: Int
     let title: String
-    let season: Int
+    let season: String
     let airDate: String
     let characters: [String]
 }

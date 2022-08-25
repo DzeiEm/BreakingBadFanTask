@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct Season {
+struct Season: Hashable {
     let title: String
     let episodes: [Episode]
 }

@@ -40,7 +40,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameLabel.text = "Hi: \(currentUser?.username ?? "DEFAULT value")"
+        
+        if let username = ProfileManager.loggedInAccount?.username {
+            usernameLabel.text = "Hi: \(username)"
+        }
+           
     }
     
     override func viewDidAppear(_ animated: Bool) {

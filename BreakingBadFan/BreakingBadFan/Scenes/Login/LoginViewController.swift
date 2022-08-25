@@ -59,7 +59,6 @@ class LoginViewController: UIViewController {
                 )
                 if let loggedinUser = ProfileManager.loggedInAccount {
 
-                    
                     let homeSceene = HomeViewController()
                    
                     homeSceene.modalPresentationStyle = .fullScreen
@@ -67,10 +66,16 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-            } catch let error as AuthenticationError.RegistrationError {
-                displayAlert(error: error.localizedDescription)
+            } catch let registrationError as AuthenticationError.RegistrationError {
+                displayAlert(error: registrationError.error)
                 
-            } catch {
+            } catch let logiinError as AuthenticationError.LoginError {
+                displayAlert(error: logiinError.error)
+            }
+            catch let secure as AuthenticationError.Secure {
+                displayAlert(error: secure.error)
+            }
+            catch {
                 print(AuthenticationError.General.unexpectedError)
             }
         }
@@ -86,16 +91,21 @@ class LoginViewController: UIViewController {
                 }
                 if loggedinUser.username == ProfileManager.loggedInAccount?.username && loggedinUser.password == ProfileManager.loggedInAccount?.password {
                     
-                    let loginViewController = LoginViewController()
-                    loginViewController.modalPresentationStyle = .fullScreen
-                    navigationController?.pushViewController(loginViewController, animated: true)
+                    let homeSceene = HomeViewController()
+                   
+                    homeSceene.modalPresentationStyle = .fullScreen
+                    present(homeSceene, animated: true, completion: nil)
                 } else {
                     throw AuthenticationError.LoginError.credentialsDoNotMatch
                 }
                 
             } catch let loginError as AuthenticationError.LoginError  {
-                displayAlert(error: loginError.localizedDescription)
+                displayAlert(error: loginError.error)
                 
+            } catch let errorExist as AuthenticationError.General {
+                displayAlert(error: errorExist.error)
+            } catch let error2 as AuthenticationError.Secure {
+                displayAlert(error: error2.error)
             }
             catch {
                 print(AuthenticationError.General.unexpectedError)
