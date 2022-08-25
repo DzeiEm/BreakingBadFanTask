@@ -14,6 +14,7 @@ class EpisodeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCell()
         apiManager.getEpisodes(completion: { [weak self] result in
             switch result {
             case .failure(let error):
@@ -58,25 +59,37 @@ class EpisodeListViewController: UIViewController {
         tableView.delegate = self
     }
     
-    
+    func configureCell () {
+        
+        let cellNib = UINib(nibName: "EpisodeCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
 }
 
-
 extension EpisodeListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seasons[section].episodes.count
-    }
-    
+  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //TODO . 1.view new 2. priregistruoti celle viewdidload. tvarkau miesta app Problems view controller, problem cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell")! as UITableViewCell
-        cell.textLabel?.text = seasons[indexPath.row].title
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell",
+                                                 for: indexPath)
+        guard let episodeCell = cell as? EpisodeCell else {
+            return cell
+        }
+        
+        episodeCell.configureCell(episodeTitle: episodes[indexPath.row].title)
+        return episodeCell
     }
+        
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return seasons.count
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return seasons[section].episodes.count
+    }
+    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return seasons[section].title

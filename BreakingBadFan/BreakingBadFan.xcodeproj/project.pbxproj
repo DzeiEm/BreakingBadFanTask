@@ -17,6 +17,7 @@
 		CE07FFB428B54FDC00A18CC0 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFB328B54FDC00A18CC0 /* Character.swift */; };
 		CE07FFB828B69E2900A18CC0 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFB728B69E2900A18CC0 /* Season.swift */; };
 		CE07FFE328B7E95800A18CC0 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFE228B7E95800A18CC0 /* EpisodeCell.xib */; };
+		CE07FFE528B7EAA700A18CC0 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFE428B7EAA700A18CC0 /* EpisodeCell.swift */; };
 		CEA579DC28A17B81009E5B1D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA579DB28A17B81009E5B1D /* KeychainSwift */; };
 		CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8137289FC3B300CE5A07 /* AppDelegate.swift */; };
 		CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */; };
@@ -61,6 +62,7 @@
 		CE07FFB328B54FDC00A18CC0 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CE07FFB728B69E2900A18CC0 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		CE07FFE228B7E95800A18CC0 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
+		CE07FFE428B7EAA700A18CC0 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		CECF8134289FC3B300CE5A07 /* BreakingBadFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECF8137289FC3B300CE5A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */,
 				CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */,
 				CE07FFE228B7E95800A18CC0 /* EpisodeCell.xib */,
+				CE07FFE428B7EAA700A18CC0 /* EpisodeCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */,
 				CE07FF6B28B1334D00A18CC0 /* APIEndpoint.swift in Sources */,
+				CE07FFE528B7EAA700A18CC0 /* EpisodeCell.swift in Sources */,
 				CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */,
 				CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */,
 				CE07FF6728B1331C00A18CC0 /* APIManager.swift in Sources */,

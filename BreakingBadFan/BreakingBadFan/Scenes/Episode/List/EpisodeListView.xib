@@ -19,18 +19,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vCm-sK-Maw">
-                    <rect key="frame" x="39" y="228" width="290" height="355"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vCm-sK-Maw">
+                    <rect key="frame" x="20" y="194" width="374" height="568"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="o5I-FA-GyE"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="o5I-FA-GyE" firstAttribute="bottom" secondItem="vCm-sK-Maw" secondAttribute="bottom" constant="279" id="Gdx-1E-xE4"/>
-                <constraint firstItem="vCm-sK-Maw" firstAttribute="leading" secondItem="o5I-FA-GyE" secondAttribute="leading" constant="39" id="WYr-V0-ace"/>
-                <constraint firstItem="o5I-FA-GyE" firstAttribute="trailing" secondItem="vCm-sK-Maw" secondAttribute="trailing" constant="85" id="WtA-vY-PVW"/>
-                <constraint firstItem="vCm-sK-Maw" firstAttribute="top" secondItem="o5I-FA-GyE" secondAttribute="top" constant="184" id="sGE-FW-1hy"/>
+                <constraint firstItem="o5I-FA-GyE" firstAttribute="bottom" secondItem="vCm-sK-Maw" secondAttribute="bottom" constant="100" id="Gdx-1E-xE4"/>
+                <constraint firstItem="vCm-sK-Maw" firstAttribute="leading" secondItem="o5I-FA-GyE" secondAttribute="leading" constant="20" id="WYr-V0-ace"/>
+                <constraint firstItem="o5I-FA-GyE" firstAttribute="trailing" secondItem="vCm-sK-Maw" secondAttribute="trailing" constant="20" id="WtA-vY-PVW"/>
+                <constraint firstItem="vCm-sK-Maw" firstAttribute="top" secondItem="o5I-FA-GyE" secondAttribute="top" constant="150" id="sGE-FW-1hy"/>
             </constraints>
             <point key="canvasLocation" x="171.01449275362319" y="-95.089285714285708"/>
         </view>
