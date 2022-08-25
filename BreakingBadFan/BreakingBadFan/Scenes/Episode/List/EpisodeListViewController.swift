@@ -36,19 +36,18 @@ class EpisodeListViewController: UIViewController {
     func mapEpisodesToSeasons(episodes: [Episode]) {
         
         for episode in episodes {
-            let season = Season(title: episode.title,
+            let season = Season(title: episode.season,
                                 episodes: [])
             seasons.append(season)
         }
         seasons = Array(Set(seasons))
-        
+        //TODO: seasons nuo maziausio iki didziausio !!!
+ 
         for episode in episodes {
-            let episode = Episode(id: episode.id,
-                                  title: episode.title,
-                                  season: episode.season,
-                                  airDate: episode.airDate,
-                                  characters: episode.characters)
-            self.episodes.append(episode)
+            
+            if let seasonIndex = seasons.firstIndex(where: { $0.title == episode.season }) {
+                seasons[seasonIndex].episodes.append(episode)
+            }
         }
         
     }
@@ -77,16 +76,18 @@ extension EpisodeListViewController: UITableViewDataSource {
             return cell
         }
         
-        episodeCell.configureCell(episodeTitle: episodes[indexPath.row].title)
+        episodeCell.configureCell(episodeTitle: seasons[indexPath.section].episodes[indexPath.row].title)
         return episodeCell
     }
         
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        print("SEASON COUNT: \(seasons.count)")
         return seasons.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(" : \(seasons[section].episodes.count)")
         return seasons[section].episodes.count
     }
     
@@ -94,6 +95,8 @@ extension EpisodeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return seasons[section].title
     }
+    
+    
     
 }
 extension EpisodeListViewController: UITableViewDelegate {

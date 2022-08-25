@@ -30,7 +30,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="episodeTitle" destination="TjZ-xY-3Ra" id="LB6-1k-DKA"/>
+                <outlet property="episodeTitleLabel" destination="TjZ-xY-3Ra" id="FdB-iH-HFb"/>
             </connections>
             <point key="canvasLocation" x="-77.536231884057983" y="-35.15625"/>
         </tableViewCell>
