@@ -12,7 +12,6 @@ class EpisodeListViewController: UIViewController {
     var seasons = [Season]()
     var episodes = [Episode]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIAppSettings.roundCorners(of: filterButton, by: 10)
@@ -63,7 +62,7 @@ class EpisodeListViewController: UIViewController {
         tableView.delegate = self
     }
     
-    func configureCell () {
+    func configureCell() {
         
         let cellNib = UINib(nibName: "EpisodeCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
@@ -104,8 +103,16 @@ extension EpisodeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("didSelectRowAt")
+        
         let episodeDetailsScene = EpisodeDetailsViewController()
-        present(episodeDetailsScene, animated: true, completion: nil)
+        let selectedRow = tableView.indexPathForSelectedRow?.row
+//        episodeDetailsScene.episodeHeader = episodes[selectedRow ?? "Empty row"].title
+//        episodeDetailsScene.episodeLabel =  episodes[selectedRow ?? "Empty row2"].id
+//        episodeDetailsScene.seasonLabel = episodes[selectedRow].season
+//        episodeDetailsScene.dateLabel =  episodes[selectedRow].airDat
+      
+        navigationController?.pushViewController(episodeDetailsScene, animated: true)
+        
     }
 }
 
