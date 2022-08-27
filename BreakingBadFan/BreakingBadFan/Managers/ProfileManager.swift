@@ -43,7 +43,7 @@ final class ProfileManager {
         
         let profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: nil)
         
-        try ValidateView.validateLoginCretentials(profile)
+        try ValidateView.isLoginCredentialsValid(profile)
         
         
         loggedInAccount = profile

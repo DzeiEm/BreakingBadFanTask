@@ -1,10 +1,10 @@
 
 import Foundation
 
-class ValidateView {
+class RegistrationValidation {
     
     let profileManager = ProfileManager()
-   
+    
     static func checkTextfieldsAreNotEmpty(
         username: String?,
         password: String?,
@@ -22,7 +22,7 @@ class ValidateView {
             return Profile(username: username, password: password, confirmPassword: confirmPassword)
         }
     
-    static func isPasswordMatch(password: String?, confirmPassword: String?) throws -> Bool {
+    static func passwordMatch(password: String?, confirmPassword: String?) throws -> Bool {
         
         if password != confirmPassword {
             throw AuthenticationError.RegistrationError.passwordDoNotMatch
@@ -30,7 +30,7 @@ class ValidateView {
         return true
     }
     
-    static func isPasswordSecure(password: String) throws  {
+    static func ispasswordSecure(password: String) throws  {
         
         guard containsNumbers(password) else {
             throw AuthenticationError.Secure.containsNumbers
@@ -51,18 +51,9 @@ class ValidateView {
             profile.username == username
         }) ?? false
     }
-    
-    static func isLoginCredentialsValid(_ profile: Profile) throws -> Bool {
-        guard let neededAccount = UserDefaultsHelper.profiles?.first(where: { neededAccount in
-            neededAccount.username == profile.username
-        }) else {
-            return false
-        }
-        return KeychainHelper.getPasword(usernameKey: neededAccount.username) == profile.password
-    }
 }
 
-extension ValidateView {
+extension RegistrationValidation {
     private static func containsUpperCase(_ password: String) -> Bool {
         password.contains(where: { letter in
             letter.isUppercase
@@ -84,3 +75,4 @@ extension ValidateView {
         password.count >= 8 ? true : false
     }
 }
+

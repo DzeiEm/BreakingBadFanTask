@@ -4,8 +4,8 @@ struct APIManager {
     
     private enum HTTPMethod {
         static let get = "GET"
-        static let post = "POST"
-        static let delete = "DELETE"
+//        static let post = "POST"
+//        static let delete = "DELETE"
     }
     
     private enum HeaderKey {
@@ -52,7 +52,11 @@ extension APIManager {
                 return
             }
             completion(.success(allEpisodes.compactMap { episode in
-                Episode(id: episode.id, title: episode.title, season: episode.season, airDate: episode.airDate, characters: episode.characters)
+                Episode(id: episode.id,
+                        title: episode.title,
+                        season: episode.season,
+                        airDate: episode.airDate,
+                        characters: episode.characters)
             }))
         }).resume()
     }

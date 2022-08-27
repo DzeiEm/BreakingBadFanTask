@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 
-class EpisodeDetailsViewController: UITableViewController {
+class EpisodeDetailsViewController: UIViewController {
     
     
 }

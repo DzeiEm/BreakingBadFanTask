@@ -53,7 +53,7 @@
                 </constraints>
             </view>
             <connections>
-                <outlet property="tavleView" destination="h05-8r-3W7" id="XFJ-5l-2JI"/>
+                <outlet property="tableView" destination="h05-8r-3W7" id="XFJ-5l-2JI"/>
             </connections>
             <point key="canvasLocation" x="-173.91304347826087" y="-105.13392857142857"/>
         </viewController>

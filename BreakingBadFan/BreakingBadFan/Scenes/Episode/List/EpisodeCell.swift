@@ -4,7 +4,7 @@ import UIKit
 
 class EpisodeCell: UITableViewCell {
     
-    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet private weak var episodeTitleLabel: UILabel!
     
     
     func configureCell(episodeTitle: String) {

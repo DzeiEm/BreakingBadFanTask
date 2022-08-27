@@ -5,7 +5,7 @@ import UIKit
 
 
 enum Header: String {
-    case quate = "Quate"
+    case quote = "Quote"
 }
 
 class QuatesViewController: UITableViewController {
@@ -22,7 +22,7 @@ class QuatesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QuateCell",
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuoteCell",
                                                  for: indexPath)
         cell.textLabel?.text = "Some text at row: \(indexPath.row) of section \(indexPath.section)"
         
@@ -34,7 +34,7 @@ class QuatesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Header.quate.rawValue
+        return Header.quote.rawValue
     }
     
     

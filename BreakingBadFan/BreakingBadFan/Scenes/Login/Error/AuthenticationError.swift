@@ -3,6 +3,7 @@ import Foundation
 
 
 class AuthenticationError {
+    
     enum RegistrationError: Error {
         case weakPassword
         case passwordDoNotMatch
@@ -10,9 +11,9 @@ class AuthenticationError {
         var error: String {
             switch self {
             case .weakPassword:
-                return "Password is too weak"
+                return "Password is too weak 😢"
             case .passwordDoNotMatch:
-                return "Passwords do not match"
+                return "Passwords do not match 💁‍♀️"
             }
         }
     }
@@ -23,7 +24,7 @@ class AuthenticationError {
         var error: String {
             switch self {
             case .credentialsDoNotMatch:
-                return " Username or password do not match"
+                return " Username or password is incorect 😬 "
             }
         }
     }
@@ -36,11 +37,11 @@ class AuthenticationError {
         var error: String {
             switch self {
             case .emptyFields:
-                return "Fields connot be empty"
+                return "Fields connot be empty 🫠"
             case .userAlreadyExist:
-                return "User already exist"
+                return "User already exist 🥵"
             case .unexpectedError:
-                return "Unexpected error appears"
+                return "Unexpected error appears 😱"
             }
         }
     }
@@ -54,13 +55,13 @@ class AuthenticationError {
         var error: String {
             switch self {
             case .containsNumbers:
-                return "Password should contains numbers"
+                return "Password should contains numbers 1️⃣"
             case .containsLowerCases:
-                return "Password should contains lower case letters"
+                return "Password should contains lower case letters 🔤"
             case .containsUpperCases:
-                return "Password should contains upper case letters"
+                return "Password should contains upper case letters 🆙"
             case .containsRequiredPasswordLength:
-                return "Password should contain at lest 8 characters"
+                return "Password should contain at lest 8 characters 8️⃣"
             }
         }
         

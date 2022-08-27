@@ -60,7 +60,6 @@ class LoginViewController: UIViewController {
                 if let loggedinUser = ProfileManager.loggedInAccount {
 
                     let homeSceene = HomeViewController()
-                   
                     homeSceene.modalPresentationStyle = .fullScreen
                     present(homeSceene, animated: true, completion: nil)
                     return
@@ -69,11 +68,13 @@ class LoginViewController: UIViewController {
             } catch let registrationError as AuthenticationError.RegistrationError {
                 displayAlert(error: registrationError.error)
                 
-            } catch let logiinError as AuthenticationError.LoginError {
-                displayAlert(error: logiinError.error)
+            } catch let loginError as AuthenticationError.LoginError {
+                displayAlert(error: loginError.error)
             }
-            catch let secure as AuthenticationError.Secure {
-                displayAlert(error: secure.error)
+            catch let securityError as AuthenticationError.Secure {
+                displayAlert(error: securityError.error)
+            } catch let generalError  as AuthenticationError.General {
+                displayAlert(error: generalError.error)
             }
             catch {
                 print(AuthenticationError.General.unexpectedError)
@@ -92,7 +93,6 @@ class LoginViewController: UIViewController {
                 if loggedinUser.username == ProfileManager.loggedInAccount?.username && loggedinUser.password == ProfileManager.loggedInAccount?.password {
                     
                     let homeSceene = HomeViewController()
-                   
                     homeSceene.modalPresentationStyle = .fullScreen
                     present(homeSceene, animated: true, completion: nil)
                 } else {
@@ -102,12 +102,9 @@ class LoginViewController: UIViewController {
             } catch let loginError as AuthenticationError.LoginError  {
                 displayAlert(error: loginError.error)
                 
-            } catch let errorExist as AuthenticationError.General {
-                displayAlert(error: errorExist.error)
-            } catch let error2 as AuthenticationError.Secure {
-                displayAlert(error: error2.error)
-            }
-            catch {
+            } catch let generalError as AuthenticationError.General {
+                displayAlert(error: generalError.error)
+            } catch {
                 print(AuthenticationError.General.unexpectedError)
             }
         }
@@ -180,6 +177,11 @@ extension LoginViewController {
         customAlert.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         customAlert.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
+    }
+    
+    func displayErrorLabel(message: String) {
+        errorLabel.isHidden = false
+        errorLabel.textColor = .red
     }
     
 }
