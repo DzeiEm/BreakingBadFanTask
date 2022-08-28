@@ -8,7 +8,7 @@ class CharacterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let apiManager = APIManager()
-    var characters = [Character]()
+    var parsedCharacters = [Character]()
     
     override func viewDidLoad() {
         configureCell()
@@ -18,10 +18,9 @@ class CharacterViewController: UIViewController {
                 print(error)
             case .success(let characters):
                 print("CHARACTERS COUNT: \(characters.count)")
-                self?.characters = characters
+                self?.setCharacters(characters)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
-                   
                 }
                 print(characters)
             }
@@ -32,33 +31,42 @@ class CharacterViewController: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 65
     }
     
     func configureCell() {
         let cellNib = UINib(nibName: "CharacterCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "CharacterCell")
-        
+    }
+    
+    func setCharacters(_ characters: [Character]) {
+        parsedCharacters  = characters
     }
 }
 
 
 extension CharacterViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+   
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
+        return parsedCharacters.count
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
-        
+      
         guard let characterCell = cell as? CharacterCell else {
             return cell
         }
         
-        characterCell.configureCell(title: characters[indexPath].name)
+        characterCell.configureCell(title: parsedCharacters[indexPath.row].name)
         return characterCell
     }
-    
 }
 
 extension CharacterViewController: UITableViewDelegate {

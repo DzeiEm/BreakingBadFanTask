@@ -27,6 +27,7 @@ class EpisodeDetailsViewController: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 65
     }
     
     func configureCell() {
