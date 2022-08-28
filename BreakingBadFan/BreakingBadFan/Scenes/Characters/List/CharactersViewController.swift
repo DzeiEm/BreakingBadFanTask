@@ -6,25 +6,63 @@ import UIKit
 
 class CharacterViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    let apiManager = APIManager()
+    var characters = [Character]()
     
+    override func viewDidLoad() {
+        configureCell()
+        apiManager.getCharacters(completion: { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let characters):
+                print("CHARACTERS COUNT: \(characters.count)")
+                self?.characters = characters
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                   
+                }
+                print(characters)
+            }
+        })
+        setupTableView()
+    }
     
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    func configureCell() {
+        let cellNib = UINib(nibName: "CharacterCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "CharacterCell")
+        
+    }
 }
 
 
-
 extension CharacterViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 100
     }
     
+   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
+        
+        guard let characterCell = cell as? CharacterCell else {
+            return cell
+        }
+        
+        characterCell.configureCell(title: characters[indexPath].name)
+        return characterCell
     }
-    
     
 }
 
 extension CharacterViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

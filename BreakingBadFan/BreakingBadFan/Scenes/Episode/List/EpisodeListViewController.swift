@@ -32,6 +32,17 @@ class EpisodeListViewController: UIViewController {
         setupTableView()
     }
     
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    func configureCell() {
+        let cellNib = UINib(nibName: "EpisodeCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
+
+    }
+    
     func mapEpisodesToSeasons(episodes: [Episode]) {
        
         for episode in episodes {
@@ -60,16 +71,7 @@ class EpisodeListViewController: UIViewController {
         }
     }
     
-    func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
-    func configureCell() {
-        let cellNib = UINib(nibName: "EpisodeCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
-
-    }
+   
 }
 
 extension EpisodeListViewController: UITableViewDataSource {

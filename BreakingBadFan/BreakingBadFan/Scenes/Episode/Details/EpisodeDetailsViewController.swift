@@ -55,6 +55,7 @@ class EpisodeDetailsViewController: UIViewController {
 extension EpisodeDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeDetailsCell",
                                                  for: indexPath)
         guard let episodeDetailsCell = cell as? EpisodeDetailsCell else {

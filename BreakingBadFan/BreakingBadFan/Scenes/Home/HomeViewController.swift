@@ -19,8 +19,9 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func charactersButtonTapped(_ sender: Any) {
-//        let charactersViewController = CharacterViewController()
-//        present(charactersViewController, animated: true, completion: nil)
+        let characterViewController = CharacterViewController()
+        characterViewController.modalPresentationStyle = .fullScreen
+        present(characterViewController, animated: true, completion: nil)
     }
     
     

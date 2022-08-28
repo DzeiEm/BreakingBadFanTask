@@ -23,8 +23,8 @@
 		CE07FFEB28BA5ED600A18CC0 /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFEA28BA5ED600A18CC0 /* QuoteCell.swift */; };
 		CE07FFF128BAC1D700A18CC0 /* EpisodeDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFF028BAC1D700A18CC0 /* EpisodeDetailsCell.xib */; };
 		CE07FFF328BAC3AC00A18CC0 /* EpisodeDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF228BAC3AC00A18CC0 /* EpisodeDetailsCell.swift */; };
-		CE07FFF628BB6DEF00A18CC0 /* CharactersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF528BB6DEF00A18CC0 /* CharactersCell.swift */; };
-		CE07FFF828BB6E1000A18CC0 /* CharactersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFF728BB6E1000A18CC0 /* CharactersCell.xib */; };
+		CE07FFF628BB6DEF00A18CC0 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF528BB6DEF00A18CC0 /* CharacterCell.swift */; };
+		CE07FFF828BB6E1000A18CC0 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFF728BB6E1000A18CC0 /* CharacterCell.xib */; };
 		CE07FFFA28BB6E3300A18CC0 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF928BB6E3300A18CC0 /* CharactersViewController.swift */; };
 		CE07FFFC28BB6E7400A18CC0 /* CharacterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFFB28BB6E7400A18CC0 /* CharacterView.xib */; };
 		CEA579DC28A17B81009E5B1D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA579DB28A17B81009E5B1D /* KeychainSwift */; };
@@ -74,8 +74,8 @@
 		CE07FFEA28BA5ED600A18CC0 /* QuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
 		CE07FFF028BAC1D700A18CC0 /* EpisodeDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeDetailsCell.xib; sourceTree = "<group>"; };
 		CE07FFF228BAC3AC00A18CC0 /* EpisodeDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsCell.swift; sourceTree = "<group>"; };
-		CE07FFF528BB6DEF00A18CC0 /* CharactersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCell.swift; sourceTree = "<group>"; };
-		CE07FFF728BB6E1000A18CC0 /* CharactersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCell.xib; sourceTree = "<group>"; };
+		CE07FFF528BB6DEF00A18CC0 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		CE07FFF728BB6E1000A18CC0 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		CE07FFF928BB6E3300A18CC0 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		CE07FFFB28BB6E7400A18CC0 /* CharacterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterView.xib; sourceTree = "<group>"; };
 		CECF8134289FC3B300CE5A07 /* BreakingBadFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,8 +156,8 @@
 			children = (
 				CE07FFFB28BB6E7400A18CC0 /* CharacterView.xib */,
 				CE07FFF928BB6E3300A18CC0 /* CharactersViewController.swift */,
-				CE07FFF528BB6DEF00A18CC0 /* CharactersCell.swift */,
-				CE07FFF728BB6E1000A18CC0 /* CharactersCell.xib */,
+				CE07FFF528BB6DEF00A18CC0 /* CharacterCell.swift */,
+				CE07FFF728BB6E1000A18CC0 /* CharacterCell.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -419,7 +419,7 @@
 				CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */,
 				CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */,
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
-				CE07FFF828BB6E1000A18CC0 /* CharactersCell.xib in Resources */,
+				CE07FFF828BB6E1000A18CC0 /* CharacterCell.xib in Resources */,
 				CE07FF6428AEBEA600A18CC0 /* QuoteCell.xib in Resources */,
 				CE07FFFC28BB6E7400A18CC0 /* CharacterView.xib in Resources */,
 				CE07FFE328B7E95800A18CC0 /* EpisodeCell.xib in Resources */,
@@ -464,7 +464,7 @@
 				CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */,
 				CE07FF6B28B1334D00A18CC0 /* APIEndpoint.swift in Sources */,
 				CE07FFF328BAC3AC00A18CC0 /* EpisodeDetailsCell.swift in Sources */,
-				CE07FFF628BB6DEF00A18CC0 /* CharactersCell.swift in Sources */,
+				CE07FFF628BB6DEF00A18CC0 /* CharacterCell.swift in Sources */,
 				CE07FFEB28BA5ED600A18CC0 /* QuoteCell.swift in Sources */,
 				CE07FFE528B7EAA700A18CC0 /* EpisodeCell.swift in Sources */,
 				CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */,
