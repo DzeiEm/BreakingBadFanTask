@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE07000128BC051000A18CC0 /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07000028BC051000A18CC0 /* CharacterDetailsViewController.swift */; };
+		CE07000328BC055B00A18CC0 /* CharacterDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07000228BC055B00A18CC0 /* CharacterDetailsView.xib */; };
+		CE07000528BC1FDF00A18CC0 /* LoaderActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07000428BC1FDF00A18CC0 /* LoaderActivityIndicator.swift */; };
+		CE07000728BC200600A18CC0 /* LoaderActivityIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07000628BC200600A18CC0 /* LoaderActivityIndicator.xib */; };
 		CE07FF6028AEBC9B00A18CC0 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FF5F28AEBC9B00A18CC0 /* QuotesViewController.swift */; };
 		CE07FF6228AEBCC700A18CC0 /* QuotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FF6128AEBCC700A18CC0 /* QuotesView.xib */; };
 		CE07FF6428AEBEA600A18CC0 /* QuoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FF6328AEBEA600A18CC0 /* QuoteCell.xib */; };
@@ -58,6 +62,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE07000028BC051000A18CC0 /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
+		CE07000228BC055B00A18CC0 /* CharacterDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailsView.xib; sourceTree = "<group>"; };
+		CE07000428BC1FDF00A18CC0 /* LoaderActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderActivityIndicator.swift; sourceTree = "<group>"; };
+		CE07000628BC200600A18CC0 /* LoaderActivityIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderActivityIndicator.xib; sourceTree = "<group>"; };
 		CE07FF5F28AEBC9B00A18CC0 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		CE07FF6128AEBCC700A18CC0 /* QuotesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotesView.xib; sourceTree = "<group>"; };
 		CE07FF6328AEBEA600A18CC0 /* QuoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteCell.xib; sourceTree = "<group>"; };
@@ -165,6 +173,8 @@
 		CE07FFFF28BBB8B300A18CC0 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				CE07000028BC051000A18CC0 /* CharacterDetailsViewController.swift */,
+				CE07000228BC055B00A18CC0 /* CharacterDetailsView.xib */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -262,6 +272,8 @@
 		CECF816428A057C800CE5A07 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CE07000428BC1FDF00A18CC0 /* LoaderActivityIndicator.swift */,
+				CE07000628BC200600A18CC0 /* LoaderActivityIndicator.xib */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -419,6 +431,7 @@
 				CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */,
 				CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */,
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
+				CE07000328BC055B00A18CC0 /* CharacterDetailsView.xib in Resources */,
 				CE07FFF828BB6E1000A18CC0 /* CharacterCell.xib in Resources */,
 				CE07FF6428AEBEA600A18CC0 /* QuoteCell.xib in Resources */,
 				CE07FFFC28BB6E7400A18CC0 /* CharacterView.xib in Resources */,
@@ -429,6 +442,7 @@
 				CE07FF6228AEBCC700A18CC0 /* QuotesView.xib in Resources */,
 				CEF568C928AB2882001D63B3 /* EpisodeDetailsView.xib in Resources */,
 				CECF8158289FCCAB00CE5A07 /* LoginView.xib in Resources */,
+				CE07000728BC200600A18CC0 /* LoaderActivityIndicator.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,11 +460,13 @@
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
 				CE07FFE928BA29F600A18CC0 /* RegistrationValidation.swift in Sources */,
 				CE07FF6928B1332A00A18CC0 /* APIError.swift in Sources */,
+				CE07000128BC051000A18CC0 /* CharacterDetailsViewController.swift in Sources */,
 				CE07FF6028AEBC9B00A18CC0 /* QuotesViewController.swift in Sources */,
 				CE07FFB228B5359700A18CC0 /* Episode.swift in Sources */,
 				CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */,
 				CEF568E928ADAB7F001D63B3 /* QuatesAPI.swift in Sources */,
 				CEF568B828AB1F8D001D63B3 /* Quote.swift in Sources */,
+				CE07000528BC1FDF00A18CC0 /* LoaderActivityIndicator.swift in Sources */,
 				CE07FFB828B69E2900A18CC0 /* Season.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,

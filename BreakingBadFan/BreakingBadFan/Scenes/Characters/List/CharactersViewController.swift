@@ -72,5 +72,24 @@ extension CharacterViewController: UITableViewDataSource {
 extension CharacterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let characterDetailsViewController = CharacterDetailsViewController()
+        
+        let charactersList = parsedCharacters[indexPath.section]
+        
+        characterDetailsViewController.id = String(charactersList.id)
+        characterDetailsViewController.name = charactersList.name
+        characterDetailsViewController.birthday = charactersList.birthday
+        characterDetailsViewController.occupation = charactersList.occupation
+        characterDetailsViewController.status = charactersList.status.description
+        characterDetailsViewController.appearance = charactersList.appearance
+        characterDetailsViewController.nickname = charactersList.nickname
+        characterDetailsViewController.portrayed = charactersList.portrayed
+        
+        
+        characterDetailsViewController.modalPresentationStyle = .fullScreen
+        present(characterDetailsViewController, animated: true, completion: nil)
+        
+        
     }
 }
