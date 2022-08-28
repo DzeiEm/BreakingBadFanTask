@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,19 +15,21 @@
                 <outlet property="episodeHeader" destination="BYM-Pk-5TT" id="zt3-zQ-RlC"/>
                 <outlet property="episodeLabel" destination="uAu-sm-Kh2" id="VUC-J4-vam"/>
                 <outlet property="seasonLabel" destination="c7o-Bt-0hz" id="9Dy-Dz-LqG"/>
-                <outlet property="tableView" destination="6WH-y9-A5q" id="s63-0H-IfJ"/>
+                <outlet property="tableView" destination="6WH-y9-A5q" id="50Q-qR-OmK"/>
+                <outlet property="view" destination="q51-3X-svL" id="Guu-Q9-OEC"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="q51-3X-svL">
+        <view contentMode="scaleToFill" id="q51-3X-svL" userLabel="EpisodeDetailsView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yeo-dc-wA3" userLabel="UpperStack">
                     <rect key="frame" x="20" y="64" width="374" height="92"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEader" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYM-Pk-5TT">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYM-Pk-5TT">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -47,12 +50,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="7kt-nm-tub"/>
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEO-ae-kii">
                             <rect key="frame" x="0.0" y="62" width="374" height="30"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="k2x-iG-efZ"/>
                             </constraints>
@@ -71,7 +76,7 @@
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="TKC-7w-B1K"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="backgroundDarkColor"/>
             <constraints>
                 <constraint firstItem="Yeo-dc-wA3" firstAttribute="leading" secondItem="TKC-7w-B1K" secondAttribute="leading" constant="20" id="3If-OF-lMb"/>
                 <constraint firstItem="TKC-7w-B1K" firstAttribute="trailing" secondItem="6WH-y9-A5q" secondAttribute="trailing" constant="20" id="J35-vi-A80"/>
@@ -85,6 +90,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="backgroundDarkColor">
+            <color red="0.14200000464916229" green="0.14200000464916229" blue="0.14200000464916229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

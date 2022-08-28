@@ -11,7 +11,7 @@ class EpisodeListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var seasons = [Season]()
     var episodes = [Episode]()
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         UIAppSettings.roundCorners(of: filterButton, by: 10)
@@ -41,21 +41,28 @@ class EpisodeListViewController: UIViewController {
             seasons.append(season)
         }
         seasons = Array(Set(seasons))
-        seasons.sort()
- 
+
         for episode in episodes {
-            
+            print("EPISODES: \(episode.title)")
+      
             if let seasonIndex = seasons.firstIndex(where: {
                 $0.title == episode.season}) {
                 seasons[seasonIndex].episodes.append(episode)
             }
-            //TODO: - somehow to sort by  alpha.
-            self.episodes.sort()
         }
+        sortSeasons()
     }
     
+    func sortSeasons() {
+        self.seasons =  seasons.sorted { $0.title < $1.title }
+        //TODO: - thnk better
+        for i in seasons.indices {
+            let filteredSeason =  seasons[i].episodes.sorted { $0.title < $1.title }
+            seasons[i].episodes = filteredSeason
+        }
+       
     
-    
+    }
     
     func setupTableView() {
         tableView.dataSource = self
@@ -63,11 +70,9 @@ class EpisodeListViewController: UIViewController {
     }
     
     func configureCell() {
-        
         let cellNib = UINib(nibName: "EpisodeCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
-        tableView.delegate = self
-        tableView.dataSource = self
+
     }
 }
 
@@ -100,18 +105,22 @@ extension EpisodeListViewController: UITableViewDataSource {
 
 extension EpisodeListViewController: UITableViewDelegate {
     
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("didSelectRowAt")
+        print(" EpisodeListViewController didSelectRowAt")
+        let episode = seasons[indexPath.section].episodes[indexPath.row]
         
-        let episodeDetailsScene = EpisodeDetailsViewController()
-        let selectedRow = tableView.indexPathForSelectedRow?.row
-//        episodeDetailsScene.episodeHeader = episodes[selectedRow ?? "Empty row"].title
-//        episodeDetailsScene.episodeLabel =  episodes[selectedRow ?? "Empty row2"].id
-//        episodeDetailsScene.seasonLabel = episodes[selectedRow].season
-//        episodeDetailsScene.dateLabel =  episodes[selectedRow].airDat
-      
-        navigationController?.pushViewController(episodeDetailsScene, animated: true)
+        let episodeDetails = EpisodeDetailsViewController()
+        episodeDetails.titleText = episode.title
+        episodeDetails.episodeInformationText = "EPISODES: \(episode.season)"
+        episodeDetails.airDatetext = episode.airDate
+        episodeDetails.characters = episode.characters
+        
+        let episodeDetailsViewController = EpisodeDetailsViewController()
+        episodeDetailsViewController.modalPresentationStyle = .fullScreen
+        present(episodeDetails, animated: true, completion: nil)
+        
         
     }
 }

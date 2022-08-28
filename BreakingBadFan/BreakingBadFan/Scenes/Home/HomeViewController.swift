@@ -17,11 +17,11 @@ class HomeViewController: UIViewController {
         episodeListViewController.modalPresentationStyle = .fullScreen
         present(episodeListViewController, animated: true, completion: nil)
     }
-    
-    @IBAction func charactersButtonTapped(_ sender: Any) {
-        let charactersViewController = CharacterViewController()
-        present(charactersViewController, animated: true, completion: nil)
-    }
+//
+//    @IBAction func charactersButtonTapped(_ sender: Any) {
+//        let charactersViewController = CharacterViewController()
+//        present(charactersViewController, animated: true, completion: nil)
+//    }
     
     
     @IBAction func quatesButtonTapped(_ sender: Any) {
@@ -38,11 +38,11 @@ class HomeViewController: UIViewController {
     }
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()  {
         super.viewDidLoad()
         
         if let username = ProfileManager.loggedInAccount?.username {
-            usernameLabel.text = "Hi: \(username)"
+            usernameLabel.text = "HI: \(username)"
         }
            
     }
