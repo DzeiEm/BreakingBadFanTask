@@ -10,16 +10,18 @@ class EpisodeDetailsViewController: UIViewController {
     @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-  
-    var titleText: String?
-    var episodeInformationText: String?
-    var airDatetext: String?
+    
+    var episodeTitle: String?
+    var episodeNo: String?
+    var date: String?
+    var seasonNo: String?
     var characters: [String] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCell()
         setupTableView()
+        setLabelValues()
     }
     
     func setupTableView() {
@@ -31,40 +33,50 @@ class EpisodeDetailsViewController: UIViewController {
         let cellNib = UINib(nibName: "EpisodeDetailsCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "EpisodeDetailsCell")
     }
-//    func setupText() {
-//
-//    })
+    func setLabelValues() {
+        
+        if let episodeNo = episodeNo {
+            episodeLabel.text = "EPISODE: \(episodeNo)"
+        }
+        
+        if let episodeTitle = episodeTitle {
+            episodeHeader.text = episodeTitle
+        }
+        if let seasonNo = seasonNo {
+            seasonLabel.text = "SEASON: \(seasonNo)"
+        }
+        if let date = date {
+            dateLabel.text = "DATE: \(date)"
+        }
+        
+    }
 }
 
 extension EpisodeDetailsViewController: UITableViewDataSource {
-  
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeDetailsCell",
                                                  for: indexPath)
         guard let episodeDetailsCell = cell as? EpisodeDetailsCell else {
             return cell
         }
-        episodeDetailsCell.configureCell(title: "CELL")
+        episodeDetailsCell.configureCell(title: characters[indexPath.row].description)
+        print("EPISODE cell: \(characters[indexPath.row].description)")
         return episodeDetailsCell
     }
-        
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return characters.count
     }
-        
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "SOMTHING"
-    }
-
 }
 
 extension EpisodeDetailsViewController: UITableViewDelegate {
     
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         

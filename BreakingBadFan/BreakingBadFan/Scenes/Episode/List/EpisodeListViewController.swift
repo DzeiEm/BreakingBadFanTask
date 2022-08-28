@@ -20,11 +20,9 @@ class EpisodeListViewController: UIViewController {
         apiManager.getEpisodes(completion: { [weak self] result in
             switch result {
             case .failure(let error):
-                print(error)
-                
+            print("Episode list get episodeList failure")
             case .success(let episodes):
                 self?.mapEpisodesToSeasons(episodes: episodes)
-                //TODO
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
@@ -60,8 +58,6 @@ class EpisodeListViewController: UIViewController {
             let filteredSeason =  seasons[i].episodes.sorted { $0.title < $1.title }
             seasons[i].episodes = filteredSeason
         }
-       
-    
     }
     
     func setupTableView() {
@@ -108,13 +104,13 @@ extension EpisodeListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(" EpisodeListViewController didSelectRowAt")
-        let episode = seasons[indexPath.section].episodes[indexPath.row]
         
+        let episode = seasons[indexPath.section].episodes[indexPath.row]
         let episodeDetails = EpisodeDetailsViewController()
-        episodeDetails.titleText = episode.title
-        episodeDetails.episodeInformationText = "EPISODES: \(episode.season)"
-        episodeDetails.airDatetext = episode.airDate
+        episodeDetails.episodeNo = String(episode.id)
+        episodeDetails.episodeTitle = episode.title
+        episodeDetails.seasonNo = episode.season
+        episodeDetails.date = episode.airDate
         episodeDetails.characters = episode.characters
         
         let episodeDetailsViewController = EpisodeDetailsViewController()

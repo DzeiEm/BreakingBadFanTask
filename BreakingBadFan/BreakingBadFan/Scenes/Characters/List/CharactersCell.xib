@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterCell" customModule="BreakingBadFan" customModuleProvider="target">
+            <connections>
+                <outlet property="characterLabel" destination="HVV-KD-VnU" id="njo-on-FLd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharacterCell" rowHeight="145" id="ZEv-OP-Bcz">
+            <rect key="frame" x="0.0" y="0.0" width="547" height="145"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZEv-OP-Bcz" id="SZ8-Hy-iyr">
+                <rect key="frame" x="0.0" y="0.0" width="547" height="145"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVV-KD-VnU">
+                        <rect key="frame" x="5" y="0.0" width="537" height="145"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HVV-KD-VnU" firstAttribute="top" secondItem="SZ8-Hy-iyr" secondAttribute="top" id="XDZ-8b-5KX"/>
+                    <constraint firstAttribute="trailing" secondItem="HVV-KD-VnU" secondAttribute="trailing" constant="5" id="jCx-L3-hwa"/>
+                    <constraint firstAttribute="bottom" secondItem="HVV-KD-VnU" secondAttribute="bottom" id="lo3-Bf-cwD"/>
+                    <constraint firstItem="HVV-KD-VnU" firstAttribute="leading" secondItem="SZ8-Hy-iyr" secondAttribute="leading" constant="5" id="pdl-8G-65E"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-21.014492753623191" y="136.27232142857142"/>
+        </tableViewCell>
+    </objects>
+</document>

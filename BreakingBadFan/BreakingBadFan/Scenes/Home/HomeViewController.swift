@@ -17,11 +17,11 @@ class HomeViewController: UIViewController {
         episodeListViewController.modalPresentationStyle = .fullScreen
         present(episodeListViewController, animated: true, completion: nil)
     }
-//
-//    @IBAction func charactersButtonTapped(_ sender: Any) {
+
+    @IBAction func charactersButtonTapped(_ sender: Any) {
 //        let charactersViewController = CharacterViewController()
 //        present(charactersViewController, animated: true, completion: nil)
-//    }
+    }
     
     
     @IBAction func quatesButtonTapped(_ sender: Any) {

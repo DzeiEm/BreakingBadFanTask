@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterViewController" customModule="BreakingBadFan" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rtw-Vp-X56">
+                    <rect key="frame" x="20" y="164" width="374" height="658"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXp-u6-Klf">
+                    <rect key="frame" x="40" y="84" width="334" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rtw-Vp-X56" firstAttribute="top" secondItem="ZXp-u6-Klf" secondAttribute="bottom" constant="50" id="11z-Gq-DVg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rtw-Vp-X56" secondAttribute="trailing" constant="20" id="5OV-yw-T7n"/>
+                <constraint firstItem="ZXp-u6-Klf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="R99-lw-DNS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZXp-u6-Klf" secondAttribute="trailing" constant="40" id="S0Q-ro-ClP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rtw-Vp-X56" secondAttribute="bottom" constant="40" id="fh5-8i-eYB"/>
+                <constraint firstItem="ZXp-u6-Klf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="izj-H0-GiC"/>
+                <constraint firstItem="rtw-Vp-X56" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="jXX-Fu-jvE"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="117.85714285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

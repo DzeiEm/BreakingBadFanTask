@@ -23,10 +23,10 @@
 		CE07FFEB28BA5ED600A18CC0 /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFEA28BA5ED600A18CC0 /* QuoteCell.swift */; };
 		CE07FFF128BAC1D700A18CC0 /* EpisodeDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFF028BAC1D700A18CC0 /* EpisodeDetailsCell.xib */; };
 		CE07FFF328BAC3AC00A18CC0 /* EpisodeDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF228BAC3AC00A18CC0 /* EpisodeDetailsCell.swift */; };
-		CE07FFF628BB6DEF00A18CC0 /* EpisodeCharactersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF528BB6DEF00A18CC0 /* EpisodeCharactersCell.swift */; };
-		CE07FFF828BB6E1000A18CC0 /* EpisodeCharactersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFF728BB6E1000A18CC0 /* EpisodeCharactersCell.xib */; };
-		CE07FFFA28BB6E3300A18CC0 /* EpisodeCharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF928BB6E3300A18CC0 /* EpisodeCharactersViewController.swift */; };
-		CE07FFFC28BB6E7400A18CC0 /* EpisodeCharactersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFFB28BB6E7400A18CC0 /* EpisodeCharactersView.xib */; };
+		CE07FFF628BB6DEF00A18CC0 /* CharactersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF528BB6DEF00A18CC0 /* CharactersCell.swift */; };
+		CE07FFF828BB6E1000A18CC0 /* CharactersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFF728BB6E1000A18CC0 /* CharactersCell.xib */; };
+		CE07FFFA28BB6E3300A18CC0 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF928BB6E3300A18CC0 /* CharactersViewController.swift */; };
+		CE07FFFC28BB6E7400A18CC0 /* CharacterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFFB28BB6E7400A18CC0 /* CharacterView.xib */; };
 		CEA579DC28A17B81009E5B1D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA579DB28A17B81009E5B1D /* KeychainSwift */; };
 		CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8137289FC3B300CE5A07 /* AppDelegate.swift */; };
 		CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */; };
@@ -74,10 +74,10 @@
 		CE07FFEA28BA5ED600A18CC0 /* QuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
 		CE07FFF028BAC1D700A18CC0 /* EpisodeDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeDetailsCell.xib; sourceTree = "<group>"; };
 		CE07FFF228BAC3AC00A18CC0 /* EpisodeDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsCell.swift; sourceTree = "<group>"; };
-		CE07FFF528BB6DEF00A18CC0 /* EpisodeCharactersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCharactersCell.swift; sourceTree = "<group>"; };
-		CE07FFF728BB6E1000A18CC0 /* EpisodeCharactersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCharactersCell.xib; sourceTree = "<group>"; };
-		CE07FFF928BB6E3300A18CC0 /* EpisodeCharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCharactersViewController.swift; sourceTree = "<group>"; };
-		CE07FFFB28BB6E7400A18CC0 /* EpisodeCharactersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCharactersView.xib; sourceTree = "<group>"; };
+		CE07FFF528BB6DEF00A18CC0 /* CharactersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCell.swift; sourceTree = "<group>"; };
+		CE07FFF728BB6E1000A18CC0 /* CharactersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCell.xib; sourceTree = "<group>"; };
+		CE07FFF928BB6E3300A18CC0 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		CE07FFFB28BB6E7400A18CC0 /* CharacterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterView.xib; sourceTree = "<group>"; };
 		CECF8134289FC3B300CE5A07 /* BreakingBadFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECF8137289FC3B300CE5A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,12 +145,28 @@
 		CE07FFFD28BB718600A18CC0 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
-				CE07FFFB28BB6E7400A18CC0 /* EpisodeCharactersView.xib */,
-				CE07FFF928BB6E3300A18CC0 /* EpisodeCharactersViewController.swift */,
-				CE07FFF528BB6DEF00A18CC0 /* EpisodeCharactersCell.swift */,
-				CE07FFF728BB6E1000A18CC0 /* EpisodeCharactersCell.xib */,
+				CE07FFFF28BBB8B300A18CC0 /* Details */,
+				CE07FFFE28BBB77B00A18CC0 /* List */,
 			);
 			path = Characters;
+			sourceTree = "<group>";
+		};
+		CE07FFFE28BBB77B00A18CC0 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CE07FFFB28BB6E7400A18CC0 /* CharacterView.xib */,
+				CE07FFF928BB6E3300A18CC0 /* CharactersViewController.swift */,
+				CE07FFF528BB6DEF00A18CC0 /* CharactersCell.swift */,
+				CE07FFF728BB6E1000A18CC0 /* CharactersCell.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		CE07FFFF28BBB8B300A18CC0 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		CECF812B289FC3B300CE5A07 = {
@@ -188,6 +204,7 @@
 		CECF814B289FC5C300CE5A07 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE07FFFD28BB718600A18CC0 /* Characters */,
 				CE07FF5E28AEBC6F00A18CC0 /* Quotes */,
 				CEF568C028AB2677001D63B3 /* Episode */,
 				CEF568B128AA7F56001D63B3 /* Home */,
@@ -309,7 +326,6 @@
 		CEF568CF28AB2DF6001D63B3 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				CE07FFFD28BB718600A18CC0 /* Characters */,
 				CEF568C128AB269F001D63B3 /* EpisodeDetailsViewController.swift */,
 				CEF568C828AB2882001D63B3 /* EpisodeDetailsView.xib */,
 				CE07FFF028BAC1D700A18CC0 /* EpisodeDetailsCell.xib */,
@@ -403,9 +419,9 @@
 				CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */,
 				CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */,
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
-				CE07FFF828BB6E1000A18CC0 /* EpisodeCharactersCell.xib in Resources */,
+				CE07FFF828BB6E1000A18CC0 /* CharactersCell.xib in Resources */,
 				CE07FF6428AEBEA600A18CC0 /* QuoteCell.xib in Resources */,
-				CE07FFFC28BB6E7400A18CC0 /* EpisodeCharactersView.xib in Resources */,
+				CE07FFFC28BB6E7400A18CC0 /* CharacterView.xib in Resources */,
 				CE07FFE328B7E95800A18CC0 /* EpisodeCell.xib in Resources */,
 				CE07FFF128BAC1D700A18CC0 /* EpisodeDetailsCell.xib in Resources */,
 				CECF8141289FC3B600CE5A07 /* Assets.xcassets in Resources */,
@@ -443,12 +459,12 @@
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
 				CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */,
 				CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */,
-				CE07FFFA28BB6E3300A18CC0 /* EpisodeCharactersViewController.swift in Sources */,
+				CE07FFFA28BB6E3300A18CC0 /* CharactersViewController.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
 				CEF568C228AB269F001D63B3 /* EpisodeDetailsViewController.swift in Sources */,
 				CE07FF6B28B1334D00A18CC0 /* APIEndpoint.swift in Sources */,
 				CE07FFF328BAC3AC00A18CC0 /* EpisodeDetailsCell.swift in Sources */,
-				CE07FFF628BB6DEF00A18CC0 /* EpisodeCharactersCell.swift in Sources */,
+				CE07FFF628BB6DEF00A18CC0 /* CharactersCell.swift in Sources */,
 				CE07FFEB28BA5ED600A18CC0 /* QuoteCell.swift in Sources */,
 				CE07FFE528B7EAA700A18CC0 /* EpisodeCell.swift in Sources */,
 				CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */,

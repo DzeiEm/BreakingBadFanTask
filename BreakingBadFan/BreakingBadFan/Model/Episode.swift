@@ -11,13 +11,3 @@ struct Episode: Hashable {
     let characters: [String]
 }
 
-extension Episode: Comparable {
-    
-    static func < (lhs: Episode, rhs: Episode) -> Bool {
-        if lhs.title == rhs.title {
-            return lhs.title > rhs.title
-        }
-        return lhs.title < rhs.title
-    }
-    
-}
