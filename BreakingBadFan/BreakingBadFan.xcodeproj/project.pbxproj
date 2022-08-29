@@ -54,7 +54,6 @@
 		CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DE28AC0658001D63B3 /* ValidateView.swift */; };
 		CEF568E128AC13A2001D63B3 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */; };
 		CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */; };
-		CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */; };
 		CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E628AD93F2001D63B3 /* AlertView.swift */; };
 		CEF568E928ADAB7F001D63B3 /* QuatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */; };
 		CEF568EF28ADABDD001D63B3 /* EpisodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568EE28ADABDD001D63B3 /* EpisodeAPI.swift */; };
@@ -110,7 +109,6 @@
 		CEF568DE28AC0658001D63B3 /* ValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateView.swift; sourceTree = "<group>"; };
 		CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
-		CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CEF568E628AD93F2001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuatesAPI.swift; sourceTree = "<group>"; };
 		CEF568EE28ADABDD001D63B3 /* EpisodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAPI.swift; sourceTree = "<group>"; };
@@ -283,7 +281,6 @@
 			children = (
 				CECF816A28A1605A00CE5A07 /* KeychainHelper.swift */,
 				CEF568A328A4084C001D63B3 /* UserDefaultsHelper.swift */,
-				CEF568E428AC1AE6001D63B3 /* NavigationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -483,7 +480,6 @@
 				CE07FFF628BB6DEF00A18CC0 /* CharacterCell.swift in Sources */,
 				CE07FFEB28BA5ED600A18CC0 /* QuoteCell.swift in Sources */,
 				CE07FFE528B7EAA700A18CC0 /* EpisodeCell.swift in Sources */,
-				CEF568E528AC1AE6001D63B3 /* NavigationHelper.swift in Sources */,
 				CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */,
 				CE07FF6728B1331C00A18CC0 /* APIManager.swift in Sources */,
 				CECF815E289FDC8D00CE5A07 /* UIAppSettings.swift in Sources */,

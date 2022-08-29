@@ -4,6 +4,7 @@ class HomeViewController: UIViewController {
     
     var currentUser: Profile?
     var profileManager: ProfileManager!
+    let indicator = LoaderActivityIndicator()
     
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var episodeButton: UIButton!
@@ -12,7 +13,6 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func episodesButtonTapped(_ sender: Any) {
-        
         let episodeListViewController = EpisodeListViewController()
         episodeListViewController.modalPresentationStyle = .fullScreen
         present(episodeListViewController, animated: true, completion: nil)
@@ -41,17 +41,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad()  {
         super.viewDidLoad()
+        UIAppSettings.setButtonColor(button: episodeButton, color: .purple)
+        UIAppSettings.setButtonColor(button: charactersButton, color: .purple)
+        UIAppSettings.setButtonColor(button: quotesButton, color: .purple)
         
         if let username = ProfileManager.loggedInAccount?.username {
             usernameLabel.text = "HI: \(username)"
         }
            
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        UIAppSettings.setButtonColor(button: episodeButton, color: .purple)
-        UIAppSettings.setButtonColor(button: charactersButton, color: .purple)
-        UIAppSettings.setButtonColor(button: quotesButton, color: .purple)
-    }
-    
 }

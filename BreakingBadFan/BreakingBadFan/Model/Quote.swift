@@ -7,5 +7,4 @@ struct Quote {
     let id: Int
     let header: String
     let author: String
-    
 }

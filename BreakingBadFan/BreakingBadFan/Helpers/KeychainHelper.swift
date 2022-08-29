@@ -13,7 +13,5 @@ class KeychainHelper {
     static func getPasword(usernameKey: String) -> String? {
         keychain.get(usernameKey)
     }
-    
-
 }
 

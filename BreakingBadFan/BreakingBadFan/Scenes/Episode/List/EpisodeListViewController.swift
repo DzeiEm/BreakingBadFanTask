@@ -5,6 +5,7 @@ import UIKit
 
 class EpisodeListViewController: UIViewController {
     let apiManager = APIManager()
+    let indicator = LoaderActivityIndicator()
     
     @IBOutlet weak var filterButton: UIButton!
     
@@ -20,7 +21,7 @@ class EpisodeListViewController: UIViewController {
         apiManager.getEpisodes(completion: { [weak self] result in
             switch result {
             case .failure(let error):
-            print("Episode list get episodeList failure")
+                print(error)
             case .success(let episodes):
                 self?.mapEpisodesToSeasons(episodes: episodes)
                 DispatchQueue.main.async {
@@ -41,7 +42,6 @@ class EpisodeListViewController: UIViewController {
     func configureCell() {
         let cellNib = UINib(nibName: "EpisodeCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
-
     }
     
     func mapEpisodesToSeasons(episodes: [Episode]) {
@@ -53,8 +53,6 @@ class EpisodeListViewController: UIViewController {
         seasons = Array(Set(seasons))
 
         for episode in episodes {
-            print("EPISODES: \(episode.title)")
-      
             if let seasonIndex = seasons.firstIndex(where: {
                 $0.title == episode.season}) {
                 seasons[seasonIndex].episodes.append(episode)
@@ -119,10 +117,10 @@ extension EpisodeListViewController: UITableViewDelegate {
         let episodeDetailsViewController = EpisodeDetailsViewController()
         episodeDetailsViewController.modalPresentationStyle = .fullScreen
         present(episodeDetails, animated: true, completion: nil)
-        
-        
+    
     }
 }
+
 
 
 

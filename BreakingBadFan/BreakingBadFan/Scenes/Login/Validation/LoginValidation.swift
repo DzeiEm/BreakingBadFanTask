@@ -21,11 +21,12 @@ class LoginValidation {
 
     }
     
-    static func validateLoginCretentials(_ profile: Profile) throws -> Bool {
+    static func isLoginCredentialsValid(_ profile: Profile) throws -> Bool {
+       
         guard let neededAccount = UserDefaultsHelper.profiles?.first(where: { neededAccount in
             neededAccount.username == profile.username
         }) else {
-            return false
+           return false
         }
         return KeychainHelper.getPasword(usernameKey: neededAccount.username) == profile.password
     }

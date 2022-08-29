@@ -9,7 +9,7 @@ enum SegmentTitle: String {
 
 class LoginViewController: UIViewController {
     
-    //OUTLETS
+    //MARK: - OUTLETS
     @IBOutlet weak var registrationTypeSegmentController: UISegmentedControl!
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
@@ -28,23 +28,22 @@ class LoginViewController: UIViewController {
         Bundle.main.loadNibNamed("CustomAlertView", owner: self, options: nil)?.first as? CustomAlertView
     }()
     
-    //ACTIONS
+    //MARK: - ACTIONS
     @IBAction func onSegmentControllerTypeChanged(_ sender: UISegmentedControl) {
         
         if registrationTypeSegmentController.selectedSegmentIndex == 0 {
             errorLabel.isHidden = true
+            buttonLabel.titleLabel?.text = SegmentTitle.Register.rawValue
             hideTextfield(textfield: usernameTextfield, hide: false)
             hideTextfield(textfield: passwordTextfield, hide: false)
             hideTextfield(textfield: confirmPasswordTextfield, hide: false)
-            buttonLabel.titleLabel?.text = SegmentTitle.Register.rawValue
-            buttonLabel.isEnabled =  false
+            
         } else {
             errorLabel.isHidden = true
+            buttonLabel.titleLabel?.text = SegmentTitle.Login.rawValue
             hideTextfield(textfield: usernameTextfield, hide: false)
             hideTextfield(textfield: passwordTextfield, hide: false)
             hideTextfield(textfield: confirmPasswordTextfield, hide: true)
-            buttonLabel.titleLabel?.text = SegmentTitle.Login.rawValue
-            buttonLabel.isEnabled =  false
         }
     }
     
@@ -58,7 +57,6 @@ class LoginViewController: UIViewController {
                     confirmPassword: confirmPasswordTextfield.text
                 )
                 if let loggedinUser = ProfileManager.loggedInAccount {
-
                     let homeSceene = HomeViewController()
                     homeSceene.modalPresentationStyle = .fullScreen
                     present(homeSceene, animated: true, completion: nil)
@@ -70,9 +68,11 @@ class LoginViewController: UIViewController {
                 
             } catch let loginError as AuthenticationError.LoginError {
                 displayAlert(error: loginError.error)
+                
             }
             catch let securityError as AuthenticationError.Secure {
-                displayAlert(error: securityError.error)
+                displayErrorLabel(message: securityError.error)
+                
             } catch let generalError  as AuthenticationError.General {
                 displayAlert(error: generalError.error)
             }
@@ -85,27 +85,27 @@ class LoginViewController: UIViewController {
             do {
                 try ProfileManager.login(
                     username: usernameTextfield.text,
-                    password: passwordTextfield.text)
-                
+                    password: passwordTextfield.text
+                )
                 guard let loggedinUser = ProfileManager.loggedInAccount else {
                     return
                 }
-                if loggedinUser.username == ProfileManager.loggedInAccount?.username && loggedinUser.password == ProfileManager.loggedInAccount?.password {
+                if loggedinUser.username == ProfileManager.loggedInAccount?.username &&
+                    loggedinUser.password  == ProfileManager.loggedInAccount?.password {
                     
                     let homeSceene = HomeViewController()
                     homeSceene.modalPresentationStyle = .fullScreen
                     present(homeSceene, animated: true, completion: nil)
-                } else {
-                    throw AuthenticationError.LoginError.credentialsDoNotMatch
+            
                 }
-                
             } catch let loginError as AuthenticationError.LoginError  {
                 displayAlert(error: loginError.error)
                 
             } catch let generalError as AuthenticationError.General {
                 displayAlert(error: generalError.error)
+                
             } catch {
-                print(AuthenticationError.General.unexpectedError)
+                displayAlert(error:AuthenticationError.General.unexpectedError.error)
             }
         }
     }
@@ -129,29 +129,18 @@ class LoginViewController: UIViewController {
 }
 
 
-
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("Textfield should begin editing")
         buttonLabel.isEnabled = true
         return true
-    }
-    
-    private func textFieldDidBeginEditing(_ textField: UITextField) throws {
-        print("textFieldDidBeginEditing")
-    }
-    
-    private func highlightTextfield(textfield: UITextField, by: Int, _ boarderColor: UIColor) {
-        textfield.layer.borderWidth = CGFloat(by)
-        textfield.layer.borderColor = UIColor.red.cgColor
     }
     
     private func hideTextfield( textfield: UITextField?, hide: Bool) {
         textfield?.isHidden = hide
     }
     
-    static func clearTextfield(_ textfield: UITextField ) {
+    private func clearTextfield(_ textfield: UITextField ) {
         textfield.text = ""
     }
 }
@@ -182,6 +171,7 @@ extension LoginViewController {
     func displayErrorLabel(message: String) {
         errorLabel.isHidden = false
         errorLabel.textColor = .red
+        errorLabel.text = message
     }
     
 }

@@ -29,6 +29,7 @@
                     <constraint firstItem="RK6-59-Kbt" firstAttribute="leading" secondItem="mF7-p1-LIT" secondAttribute="leading" constant="5" id="hlr-wc-lqQ"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="charactersLabel" destination="RK6-59-Kbt" id="kDV-aS-p5J"/>
             </connections>

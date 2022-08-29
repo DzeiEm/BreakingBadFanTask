@@ -37,9 +37,11 @@ class CharacterDetailsViewController : UIViewController {
         if let name = name {
             characterNameLabel.text = "Name: \(name)"
         }
+        
         if let nickname = nickname {
             characterNicknameLabel.text = "Nickname: \(nickname)"
         }
+        
         if let birthday = birthday {
             characterBirthdayLabel.text = "Birthday: \(birthday)"
         }
@@ -54,6 +56,5 @@ class CharacterDetailsViewController : UIViewController {
         
         characterOccupationLabel.text = "Occupation: \(occupation.description)"
         characterAppearanceLabel.text = "Appearance: \(appearance.description)"
-
     }
 }

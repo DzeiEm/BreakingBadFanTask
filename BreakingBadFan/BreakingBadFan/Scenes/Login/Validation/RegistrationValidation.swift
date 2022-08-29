@@ -22,7 +22,7 @@ class RegistrationValidation {
             return Profile(username: username, password: password, confirmPassword: confirmPassword)
         }
     
-    static func passwordMatch(password: String?, confirmPassword: String?) throws -> Bool {
+    static func isPasswordMatch(password: String?, confirmPassword: String?) throws -> Bool {
         
         if password != confirmPassword {
             throw AuthenticationError.RegistrationError.passwordDoNotMatch
@@ -30,7 +30,7 @@ class RegistrationValidation {
         return true
     }
     
-    static func ispasswordSecure(password: String) throws  {
+    static func isPasswordSecure(password: String) throws  {
         
         guard containsNumbers(password) else {
             throw AuthenticationError.Secure.containsNumbers

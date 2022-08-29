@@ -10,6 +10,7 @@ class EpisodeDetailsViewController: UIViewController {
     @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    let indicator = LoaderActivityIndicator()
     
     var episodeTitle: String?
     var episodeNo: String?
@@ -78,10 +79,8 @@ extension EpisodeDetailsViewController: UITableViewDataSource {
 
 extension EpisodeDetailsViewController: UITableViewDelegate {
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
 }
 

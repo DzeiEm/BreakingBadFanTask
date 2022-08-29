@@ -3,6 +3,7 @@ import Foundation
 
 
 class Profile: Codable {
+    
     var username: String
     var password: String
     var confirmPassword: String?
@@ -11,6 +12,5 @@ class Profile: Codable {
         self.username = username
         self.password = password
         self.confirmPassword = confirmPassword
-        
     }
 }

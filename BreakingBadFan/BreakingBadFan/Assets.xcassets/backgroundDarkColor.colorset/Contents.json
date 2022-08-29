@@ -2,13 +2,8 @@
   "colors" : [
     {
       "color" : {
-        "color-space" : "srgb",
-        "components" : {
-          "alpha" : "1.000",
-          "blue" : "0.142",
-          "green" : "0.142",
-          "red" : "0.142"
-        }
+        "platform" : "osx",
+        "reference" : "windowFrameTextColor"
       },
       "idiom" : "universal"
     },

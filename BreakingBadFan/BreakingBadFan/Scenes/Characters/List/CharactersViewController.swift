@@ -17,7 +17,6 @@ class CharacterViewController: UIViewController {
             case .failure(let error):
                 print(error)
             case .success(let characters):
-                print("CHARACTERS COUNT: \(characters.count)")
                 self?.setCharacters(characters)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()

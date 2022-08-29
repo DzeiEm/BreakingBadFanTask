@@ -7,9 +7,6 @@ final class ProfileManager {
     
     static var profiles = [Profile]()
     
-    
-    
-    //MARK: -Variables
     static var loggedInAccount: Profile? {
         willSet(newProfile) {
             print("About to set username", newProfile?.username ?? "nil" )
@@ -19,21 +16,18 @@ final class ProfileManager {
         }
     }
     
-    //MARK:- Public functions
     static func register(username: String?, password: String?, confirmPassword: String?) throws {
     
         
-        let profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: confirmPassword)
+        let profile = try RegistrationValidation.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: confirmPassword)
 
-        if ValidateView.isProfileIsTaken(profile.username) {
+        if RegistrationValidation.isProfileIsTaken(profile.username) {
             throw AuthenticationError.General.userAlreadyExist
         }
         
+        try RegistrationValidation.isPasswordSecure(password: profile.password)
+        try RegistrationValidation.isPasswordMatch(password: profile.password, confirmPassword: profile.confirmPassword)
         
-        try ValidateView.isPasswordSecure(password: profile.password)
-        
-        
-
         UserDefaultsHelper.saveProfile(profile)
         ProfileManager.loggedInAccount = profile
         profiles.append(profile)
@@ -41,10 +35,9 @@ final class ProfileManager {
     
     static func login(username: String?,password: String?) throws {
         
-        let profile = try ValidateView.checkTextfieldsAreNotEmpty(username: username, password: password, confirmPassword: nil)
+        let profile = try LoginValidation.checkIsTextfieldIsEmpty(username: username, password: password)
         
-        try ValidateView.isLoginCredentialsValid(profile)
-        
+        try LoginValidation.isLoginCredentialsValid(profile)
         
         loggedInAccount = profile
     }
