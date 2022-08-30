@@ -33,7 +33,6 @@ class CharacterDetailsViewController : UIViewController {
         if let id = id {
             characterIDLabel.text = "ID: \(id)"
         }
-        
         if let name = name {
             characterNameLabel.text = "Name: \(name)"
         }
@@ -53,7 +52,6 @@ class CharacterDetailsViewController : UIViewController {
         if let status = status {
             characterStatusLabel.text = "Status: \(status.description)"
         }
-        
         characterOccupationLabel.text = "Occupation: \(occupation.description)"
         characterAppearanceLabel.text = "Appearance: \(appearance.description)"
     }

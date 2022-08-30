@@ -5,11 +5,11 @@ import UIKit
 
 class EpisodeDetailsViewController: UIViewController {
     
-    @IBOutlet weak var episodeHeader: UILabel!
-    @IBOutlet weak var seasonLabel: UILabel!
-    @IBOutlet weak var episodeLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var episodeHeader: UILabel!
+    @IBOutlet private weak var seasonLabel: UILabel!
+    @IBOutlet private weak var episodeLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     let indicator = LoaderActivityIndicator()
     
     var episodeTitle: String?

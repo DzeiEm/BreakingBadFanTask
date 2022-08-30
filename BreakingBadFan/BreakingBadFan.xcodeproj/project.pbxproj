@@ -31,6 +31,10 @@
 		CE07FFF828BB6E1000A18CC0 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFF728BB6E1000A18CC0 /* CharacterCell.xib */; };
 		CE07FFFA28BB6E3300A18CC0 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07FFF928BB6E3300A18CC0 /* CharactersViewController.swift */; };
 		CE07FFFC28BB6E7400A18CC0 /* CharacterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE07FFFB28BB6E7400A18CC0 /* CharacterView.xib */; };
+		CE16A77B28BD25AC00F944D6 /* EpisodeFilterPopoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE16A77A28BD25AC00F944D6 /* EpisodeFilterPopoverView.xib */; };
+		CE16A77D28BD34B400F944D6 /* EpisodeFilterPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A77C28BD34B400F944D6 /* EpisodeFilterPopoverViewController.swift */; };
+		CE16A77F28BD390300F944D6 /* EpisodeFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE16A77E28BD390300F944D6 /* EpisodeFilterCell.xib */; };
+		CE16A78128BD391600F944D6 /* EpisodeFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A78028BD391600F944D6 /* EpisodeFilterCell.swift */; };
 		CEA579DC28A17B81009E5B1D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA579DB28A17B81009E5B1D /* KeychainSwift */; };
 		CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8137289FC3B300CE5A07 /* AppDelegate.swift */; };
 		CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */; };
@@ -85,6 +89,10 @@
 		CE07FFF728BB6E1000A18CC0 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		CE07FFF928BB6E3300A18CC0 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		CE07FFFB28BB6E7400A18CC0 /* CharacterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterView.xib; sourceTree = "<group>"; };
+		CE16A77A28BD25AC00F944D6 /* EpisodeFilterPopoverView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeFilterPopoverView.xib; sourceTree = "<group>"; };
+		CE16A77C28BD34B400F944D6 /* EpisodeFilterPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeFilterPopoverViewController.swift; sourceTree = "<group>"; };
+		CE16A77E28BD390300F944D6 /* EpisodeFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeFilterCell.xib; sourceTree = "<group>"; };
+		CE16A78028BD391600F944D6 /* EpisodeFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeFilterCell.swift; sourceTree = "<group>"; };
 		CECF8134289FC3B300CE5A07 /* BreakingBadFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECF8137289FC3B300CE5A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +183,17 @@
 				CE07000228BC055B00A18CC0 /* CharacterDetailsView.xib */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		CE16A77928BD258B00F944D6 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				CE16A77A28BD25AC00F944D6 /* EpisodeFilterPopoverView.xib */,
+				CE16A77C28BD34B400F944D6 /* EpisodeFilterPopoverViewController.swift */,
+				CE16A77E28BD390300F944D6 /* EpisodeFilterCell.xib */,
+				CE16A78028BD391600F944D6 /* EpisodeFilterCell.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		CECF812B289FC3B300CE5A07 = {
@@ -315,6 +334,7 @@
 		CEF568C028AB2677001D63B3 /* Episode */ = {
 			isa = PBXGroup;
 			children = (
+				CE16A77928BD258B00F944D6 /* Filter */,
 				CEF568CF28AB2DF6001D63B3 /* Details */,
 				CEF568CE28AB2DE0001D63B3 /* List */,
 			);
@@ -427,6 +447,8 @@
 			files = (
 				CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */,
 				CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */,
+				CE16A77F28BD390300F944D6 /* EpisodeFilterCell.xib in Resources */,
+				CE16A77B28BD25AC00F944D6 /* EpisodeFilterPopoverView.xib in Resources */,
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
 				CE07000328BC055B00A18CC0 /* CharacterDetailsView.xib in Resources */,
 				CE07FFF828BB6E1000A18CC0 /* CharacterCell.xib in Resources */,
@@ -457,6 +479,7 @@
 				CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */,
 				CE07FFE928BA29F600A18CC0 /* RegistrationValidation.swift in Sources */,
 				CE07FF6928B1332A00A18CC0 /* APIError.swift in Sources */,
+				CE16A78128BD391600F944D6 /* EpisodeFilterCell.swift in Sources */,
 				CE07000128BC051000A18CC0 /* CharacterDetailsViewController.swift in Sources */,
 				CE07FF6028AEBC9B00A18CC0 /* QuotesViewController.swift in Sources */,
 				CE07FFB228B5359700A18CC0 /* Episode.swift in Sources */,
@@ -466,6 +489,7 @@
 				CE07000528BC1FDF00A18CC0 /* LoaderActivityIndicator.swift in Sources */,
 				CE07FFB828B69E2900A18CC0 /* Season.swift in Sources */,
 				CECF816B28A1605A00CE5A07 /* KeychainHelper.swift in Sources */,
+				CE16A77D28BD34B400F944D6 /* EpisodeFilterPopoverViewController.swift in Sources */,
 				CECF817428A1718F00CE5A07 /* ProfileManager.swift in Sources */,
 				CEF568EF28ADABDD001D63B3 /* EpisodeAPI.swift in Sources */,
 				CEF568F128ADABEE001D63B3 /* CharactersAPI.swift in Sources */,

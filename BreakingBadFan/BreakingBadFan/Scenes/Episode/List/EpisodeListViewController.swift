@@ -5,13 +5,13 @@ import UIKit
 
 class EpisodeListViewController: UIViewController {
     let apiManager = APIManager()
-    let indicator = LoaderActivityIndicator()
-    
-    @IBOutlet weak var filterButton: UIButton!
-    
-    @IBOutlet weak var tableView: UITableView!
     var seasons = [Season]()
     var episodes = [Episode]()
+    let indicator = LoaderActivityIndicator()
+    
+    @IBOutlet private weak var filterButton: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
+    
  
     override func viewDidLoad() {
         super.viewDidLoad()
