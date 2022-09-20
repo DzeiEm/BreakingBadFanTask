@@ -18,16 +18,16 @@ class RegistrationValidation {
                   !confirmPassword.isEmpty
             else {
                 throw AuthenticationError.General.emptyFields
-                }
+            }
             return Profile(username: username, password: password, confirmPassword: confirmPassword)
         }
     
-    static func isPasswordMatch(password: String?, confirmPassword: String?) throws -> Bool {
+    static func isPasswordMatch(password: String?, confirmPassword: String?) throws {
         
         if password != confirmPassword {
             throw AuthenticationError.RegistrationError.passwordDoNotMatch
         }
-        return true
+        return
     }
     
     static func isPasswordSecure(password: String) throws  {
@@ -71,6 +71,7 @@ extension RegistrationValidation {
             letter.isNumber
         })
     }
+    
     private static func containsRequiredPasswordLength(_ password: String) -> Bool {
         password.count >= 8 ? true : false
     }

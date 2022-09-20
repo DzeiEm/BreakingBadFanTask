@@ -4,7 +4,6 @@ class HomeViewController: UIViewController {
     
     var currentUser: Profile?
     var profileManager: ProfileManager!
-    let indicator = LoaderActivityIndicator()
     
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var episodeButton: UIButton!
@@ -17,27 +16,25 @@ class HomeViewController: UIViewController {
         episodeListViewController.modalPresentationStyle = .fullScreen
         present(episodeListViewController, animated: true, completion: nil)
     }
-
+    
     @IBAction func charactersButtonTapped(_ sender: Any) {
         let characterViewController = CharacterViewController()
         characterViewController.modalPresentationStyle = .fullScreen
         present(characterViewController, animated: true, completion: nil)
+        
     }
     
-    
     @IBAction func quatesButtonTapped(_ sender: Any) {
-        let quotesViewController = QuatesViewController()
+        let quotesViewController = QuotesViewController()
         quotesViewController.modalPresentationStyle = .fullScreen
         present(quotesViewController, animated: true, completion: nil)
     }
-    
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         let loginScreen = LoginViewController()
         loginScreen.modalPresentationStyle = .fullScreen
         present(loginScreen, animated: true, completion: nil)
     }
-    
     
     override func viewDidLoad()  {
         super.viewDidLoad()
@@ -48,6 +45,7 @@ class HomeViewController: UIViewController {
         if let username = ProfileManager.loggedInAccount?.username {
             usernameLabel.text = "HI: \(username)"
         }
-           
+        
     }
 }
+

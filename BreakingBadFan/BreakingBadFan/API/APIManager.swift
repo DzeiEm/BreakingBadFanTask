@@ -79,7 +79,9 @@ extension APIManager {
                 return
             }
             completion(.success(allQuotes.compactMap({ quote in
-                Quote(id: quote.id, header: quote.quoteTitle, author: quote.author)
+                Quote(id: quote.id,
+                      header: quote.quoteTitle,
+                      author: quote.author)
             })))
         }).resume()
     }

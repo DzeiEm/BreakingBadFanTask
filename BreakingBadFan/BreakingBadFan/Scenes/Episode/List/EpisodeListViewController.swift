@@ -3,16 +3,21 @@
 import Foundation
 import UIKit
 
-class EpisodeListViewController: UIViewController {
+class EpisodeListViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     let apiManager = APIManager()
     var seasons = [Season]()
     var episodes = [Episode]()
-    let indicator = LoaderActivityIndicator()
+    let filterController = EpisodeFilterPopoverViewController()
+    
     
     @IBOutlet private weak var filterButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     
- 
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        navigate(to: filterController)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIAppSettings.roundCorners(of: filterButton, by: 10)
@@ -36,7 +41,7 @@ class EpisodeListViewController: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 65
+        tableView.rowHeight = 55
     }
     
     func configureCell() {
@@ -44,14 +49,15 @@ class EpisodeListViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
     }
     
+    
     func mapEpisodesToSeasons(episodes: [Episode]) {
-       
+        
         for episode in episodes {
             let season = Season(title: episode.season, episodes: [])
             seasons.append(season)
         }
         seasons = Array(Set(seasons))
-
+        
         for episode in episodes {
             if let seasonIndex = seasons.firstIndex(where: {
                 $0.title == episode.season}) {
@@ -69,12 +75,11 @@ class EpisodeListViewController: UIViewController {
             seasons[i].episodes = filteredSeason
         }
     }
-    
-   
 }
 
+
 extension EpisodeListViewController: UITableViewDataSource {
-  
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell",
                                                  for: indexPath)
@@ -85,7 +90,7 @@ extension EpisodeListViewController: UITableViewDataSource {
         episodeCell.configureCell(episodeTitle: seasons[indexPath.section].episodes[indexPath.row].title)
         return episodeCell
     }
-        
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return seasons.count
     }
@@ -93,16 +98,15 @@ extension EpisodeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return seasons[section].episodes.count
     }
-        
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "SEASON: \(seasons[section].title)"
     }
-
+    
 }
 
 extension EpisodeListViewController: UITableViewDelegate {
     
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -117,7 +121,30 @@ extension EpisodeListViewController: UITableViewDelegate {
         let episodeDetailsViewController = EpisodeDetailsViewController()
         episodeDetailsViewController.modalPresentationStyle = .fullScreen
         present(episodeDetails, animated: true, completion: nil)
+    }
+}
+
+extension EpisodeListViewController {
     
+    func displayPopover() {
+//        let controller = UIAlertController(title: "Controller", message: "Message for controlleer", preferredStyle: .alert)
+        let filterController = EpisodeFilterPopoverViewController()
+        let pop = filterController.popoverPresentationController
+//        let popover = controller.popoverPresentationController
+        pop?.sourceView = view
+        pop?.sourceRect = CGRect(x: 32, y: 32, width: 64, height: 64)
+        present(filterController, animated: true, completion: nil)
+    }
+    
+    
+//    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+//        return .none
+//    }
+    
+    func navigate(to controller: UIViewController) {
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
+        
     }
 }
 

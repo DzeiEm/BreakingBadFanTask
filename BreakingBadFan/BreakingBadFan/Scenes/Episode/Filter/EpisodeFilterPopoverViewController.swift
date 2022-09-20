@@ -5,7 +5,7 @@ import UIKit
 import XCTest
 
 
-class EpisodeFilterViewController: UIViewController {
+class EpisodeFilterPopoverViewController: UIViewController {
     let apiManager = APIManager()
     var quotes: [Quote] = []
     
@@ -14,7 +14,7 @@ class EpisodeFilterViewController: UIViewController {
     @IBOutlet weak var toDateLabel: UILabel!
     @IBOutlet weak var datePicker: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    
+
     
     @IBAction func ApplyButtonTapped(_ sender: Any) {
         print("APPLY Button tapped")
@@ -32,10 +32,7 @@ class EpisodeFilterViewController: UIViewController {
     }
 }
 
-
-
-
-extension EpisodeFilterViewController: UITableViewDataSource {
+extension EpisodeFilterPopoverViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quotes.count
     }
@@ -44,13 +41,14 @@ extension EpisodeFilterViewController: UITableViewDataSource {
         let quotCell = tableView.dequeueReusableCell(withIdentifier: "CELLNAME", for: indexPath)
        return quotCell
     }
-    
    
 }
 
-extension EpisodeFilterViewController: UITableViewDelegate {
+extension EpisodeFilterPopoverViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected row tapped")
     }
 }
+
+

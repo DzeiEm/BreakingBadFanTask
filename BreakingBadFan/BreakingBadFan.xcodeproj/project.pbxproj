@@ -35,6 +35,7 @@
 		CE16A77D28BD34B400F944D6 /* EpisodeFilterPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A77C28BD34B400F944D6 /* EpisodeFilterPopoverViewController.swift */; };
 		CE16A77F28BD390300F944D6 /* EpisodeFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE16A77E28BD390300F944D6 /* EpisodeFilterCell.xib */; };
 		CE16A78128BD391600F944D6 /* EpisodeFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A78028BD391600F944D6 /* EpisodeFilterCell.swift */; };
+		CE9D963D28C7B1A200A333A8 /* EmptyQuoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D963C28C7B1A200A333A8 /* EmptyQuoteCell.xib */; };
 		CEA579DC28A17B81009E5B1D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA579DB28A17B81009E5B1D /* KeychainSwift */; };
 		CECF8138289FC3B300CE5A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8137289FC3B300CE5A07 /* AppDelegate.swift */; };
 		CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */; };
@@ -59,7 +60,7 @@
 		CEF568E128AC13A2001D63B3 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */; };
 		CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */; };
 		CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E628AD93F2001D63B3 /* AlertView.swift */; };
-		CEF568E928ADAB7F001D63B3 /* QuatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */; };
+		CEF568E928ADAB7F001D63B3 /* QuotesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E828ADAB7F001D63B3 /* QuotesAPI.swift */; };
 		CEF568EF28ADABDD001D63B3 /* EpisodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568EE28ADABDD001D63B3 /* EpisodeAPI.swift */; };
 		CEF568F128ADABEE001D63B3 /* CharactersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,8 @@
 		CE16A77C28BD34B400F944D6 /* EpisodeFilterPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeFilterPopoverViewController.swift; sourceTree = "<group>"; };
 		CE16A77E28BD390300F944D6 /* EpisodeFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeFilterCell.xib; sourceTree = "<group>"; };
 		CE16A78028BD391600F944D6 /* EpisodeFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeFilterCell.swift; sourceTree = "<group>"; };
+		CE16A78328BE420F00F944D6 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
+		CE9D963C28C7B1A200A333A8 /* EmptyQuoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyQuoteCell.xib; sourceTree = "<group>"; };
 		CECF8134289FC3B300CE5A07 /* BreakingBadFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECF8137289FC3B300CE5A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECF8139289FC3B300CE5A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +121,7 @@
 		CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
 		CEF568E628AD93F2001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuatesAPI.swift; sourceTree = "<group>"; };
+		CEF568E828ADAB7F001D63B3 /* QuotesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesAPI.swift; sourceTree = "<group>"; };
 		CEF568EE28ADABDD001D63B3 /* EpisodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAPI.swift; sourceTree = "<group>"; };
 		CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +141,8 @@
 		CE07FF5E28AEBC6F00A18CC0 /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				CEE9CB0928BFCC9B006009DA /* List */,
+				CEE9CB0828BFCC82006009DA /* Details */,
 				CE07FF5F28AEBC9B00A18CC0 /* QuotesViewController.swift */,
 				CE07FF6128AEBCC700A18CC0 /* QuotesView.xib */,
 				CE07FF6328AEBEA600A18CC0 /* QuoteCell.xib */,
@@ -150,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF568EE28ADABDD001D63B3 /* EpisodeAPI.swift */,
-				CEF568E828ADAB7F001D63B3 /* QuatesAPI.swift */,
+				CEF568E828ADAB7F001D63B3 /* QuotesAPI.swift */,
 				CEF568F028ADABEE001D63B3 /* CharactersAPI.swift */,
 			);
 			path = Response;
@@ -196,11 +201,20 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
+		CE16A78228BE420F00F944D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE16A78328BE420F00F944D6 /* libswiftWebKit.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CECF812B289FC3B300CE5A07 = {
 			isa = PBXGroup;
 			children = (
 				CECF8136289FC3B300CE5A07 /* BreakingBadFan */,
 				CECF8135289FC3B300CE5A07 /* Products */,
+				CE16A78228BE420F00F944D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -310,6 +324,21 @@
 				CECF817328A1718F00CE5A07 /* ProfileManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		CEE9CB0828BFCC82006009DA /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CE9D963C28C7B1A200A333A8 /* EmptyQuoteCell.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		CEE9CB0928BFCC9B006009DA /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		CEF568A228A2B226001D63B3 /* Alert */ = {
@@ -447,6 +476,7 @@
 			files = (
 				CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */,
 				CECF815C289FD30D00CE5A07 /* LaunchScreen.xib in Resources */,
+				CE9D963D28C7B1A200A333A8 /* EmptyQuoteCell.xib in Resources */,
 				CE16A77F28BD390300F944D6 /* EpisodeFilterCell.xib in Resources */,
 				CE16A77B28BD25AC00F944D6 /* EpisodeFilterPopoverView.xib in Resources */,
 				CEF568B528AA7FDA001D63B3 /* HomeView.xib in Resources */,
@@ -484,7 +514,7 @@
 				CE07FF6028AEBC9B00A18CC0 /* QuotesViewController.swift in Sources */,
 				CE07FFB228B5359700A18CC0 /* Episode.swift in Sources */,
 				CEF568B328AA7FAA001D63B3 /* HomeViewController.swift in Sources */,
-				CEF568E928ADAB7F001D63B3 /* QuatesAPI.swift in Sources */,
+				CEF568E928ADAB7F001D63B3 /* QuotesAPI.swift in Sources */,
 				CEF568B828AB1F8D001D63B3 /* Quote.swift in Sources */,
 				CE07000528BC1FDF00A18CC0 /* LoaderActivityIndicator.swift in Sources */,
 				CE07FFB828B69E2900A18CC0 /* Season.swift in Sources */,
@@ -637,6 +667,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4543GKL842;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BreakingBadFan/Info.plist;
 				INFOPLIST_KEY_NSMainNibFile = LoginView;
@@ -647,6 +678,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jme.BreakingBadFan;
@@ -665,6 +700,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4543GKL842;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BreakingBadFan/Info.plist;
 				INFOPLIST_KEY_NSMainNibFile = LoginView;
@@ -675,6 +711,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jme.BreakingBadFan;
