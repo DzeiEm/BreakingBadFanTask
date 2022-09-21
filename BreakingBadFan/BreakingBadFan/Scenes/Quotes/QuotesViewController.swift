@@ -6,9 +6,9 @@ class QuotesViewController: UIViewController {
     enum Header: String {
         case quote = "Quote"
     }
-    @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var headerLabel: UILabel!
+    @IBOutlet private weak var authorLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     let apiManager = APIManager()
     var parsedQuotes = [Quote]()
     var header: String?

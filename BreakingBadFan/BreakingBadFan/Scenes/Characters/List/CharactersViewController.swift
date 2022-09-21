@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 class CharacterViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     let apiManager = APIManager()
     var parsedCharacters = [Character]()
     
@@ -67,12 +67,9 @@ extension CharacterViewController: UITableViewDataSource {
 extension CharacterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        forwardData()
-    }
-    
-    func forwardData() {
+        
         let characterDetailsViewController = CharacterDetailsViewController()
-        let charactersList = parsedCharacters[IndexPath.section]
+        let charactersList = parsedCharacters[indexPath.section]
         characterDetailsViewController.id = String(charactersList.id)
         characterDetailsViewController.name = charactersList.name
         characterDetailsViewController.birthday = charactersList.birthday

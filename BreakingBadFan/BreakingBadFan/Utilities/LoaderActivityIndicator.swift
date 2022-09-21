@@ -27,8 +27,5 @@ class LoaderActivityIndicator: UIViewController {
         if let indicatorViewController = viewController.presentedViewController as?  LoaderActivityIndicator {
             indicatorViewController.dismiss(animated: false)
         }
-        
     }
-  
-    
 }

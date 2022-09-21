@@ -9,12 +9,12 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - OUTLETS
-    @IBOutlet weak var registrationTypeSegmentController: UISegmentedControl!
-    @IBOutlet weak var usernameTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
-    @IBOutlet weak var confirmPasswordTextfield: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var buttonLabel: UIButton!
+    @IBOutlet private weak var registrationTypeSegmentController: UISegmentedControl!
+    @IBOutlet private weak var usernameTextfield: UITextField!
+    @IBOutlet private weak var passwordTextfield: UITextField!
+    @IBOutlet private weak var confirmPasswordTextfield: UITextField!
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var buttonLabel: UIButton!
     var username: String = ""
     var password: String = ""
     var confirmPassword: String = ""

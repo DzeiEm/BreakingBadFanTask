@@ -1,3 +1,4 @@
+
 import UIKit
 
 typealias AlertCompletion = (UIButton) -> Void
@@ -11,6 +12,7 @@ enum AlertButton: String {
     case ok = "OK"
     case cancel = "Cancel"
 }
+
 enum AlertTitle: String {
     case error =  "ERROR 😬"
     case success = "SUCCESS 🤟🏻"
@@ -22,12 +24,23 @@ final class CustomAlertView: UIView {
     @IBOutlet private weak var alertMessage: UILabel!
     @IBOutlet private weak var agreeButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
-   
-    
     var completion: AlertCompletion?
     weak var delegate: CustomAlertViewDelegate?
     var profileManager = ProfileManager()
-   
+    
+    @IBAction func agreeButtonTapped() {
+        completion?(agreeButton)
+        removeFromSuperview()
+        delegate?.didTapAgreeButton()
+        
+    }
+    
+    @IBAction func cancelButtonTapped() {
+        completion?(cancelButton)
+        removeFromSuperview()
+        delegate?.didTapCancelButton()
+    }
+    
     func setupView(success: Bool,
                    title: String,
                    message: String,
@@ -42,19 +55,4 @@ final class CustomAlertView: UIView {
         
         self.completion = completion
     }
-    
-    
-    @IBAction func agreeButtonTapped() {
-        completion?(agreeButton)
-        removeFromSuperview()
-        delegate?.didTapAgreeButton()
-      
-    }
-    
-    @IBAction func cancelButtonTapped() {
-        completion?(cancelButton)
-        removeFromSuperview()
-        delegate?.didTapCancelButton()
-    }
-    
 }

@@ -3,11 +3,11 @@ import Foundation
 import UIKit
 
 class EpisodeFilterPopoverViewController: UIViewController {
-    @IBOutlet weak var seasonTextfield: UITextField!
-    @IBOutlet weak var fromDateLabel: UILabel!
-    @IBOutlet weak var toDateLabel: UILabel!
-    @IBOutlet weak var datePicker: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var seasonTextfield: UITextField!
+    @IBOutlet private weak var fromDateLabel: UILabel!
+    @IBOutlet private weak var toDateLabel: UILabel!
+    @IBOutlet private weak var datePicker: UIImageView!
+    @IBOutlet private weak var tableView: UITableView!
     let apiManager = APIManager()
     var quotes: [Quote] = []
     
