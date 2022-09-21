@@ -1,15 +1,8 @@
-//
-//  AppDelegate.swift
-//  BreakingBadFan
-//
-//  Created by Julija M. on 2022-08-07.
-//
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
     
     func application(
@@ -35,7 +28,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 

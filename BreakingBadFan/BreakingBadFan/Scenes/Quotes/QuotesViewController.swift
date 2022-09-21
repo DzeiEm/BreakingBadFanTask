@@ -1,43 +1,24 @@
 
-
 import Foundation
 import UIKit
 
-
-enum Header: String {
-    case quote = "Quote"
-}
-
 class QuotesViewController: UIViewController {
-    
+    enum Header: String {
+        case quote = "Quote"
+    }
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    
+    @IBOutlet weak var tableView: UITableView!
     let apiManager = APIManager()
     var parsedQuotes = [Quote]()
     var header: String?
     var author: String?
     var birthdayDate: String?
     
-    
-    @IBOutlet weak var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCell()
-        apiManager.getQuotes(completion: { [weak self] result in
-            switch result {
-            case.failure(let error):
-                print("ERROR fetching quates: \(error)")
-            case .success(var quotes):
-                print("QUOTES: \(quotes)")
-                self?.setQuotes(quotes)
-                DispatchQueue.main.async {
-                    self?.setLabels()
-                    self?.tableView.reloadData()
-                }
-            }
-        })
+        fetchQuotes()
         setupTableView()
     }
     
@@ -57,21 +38,35 @@ class QuotesViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: "QuoteCell")
     }
     
+    func fetchQuotes() {
+        apiManager.getQuotes(completion: { [weak self] result in
+            switch result {
+            case.failure(let error):
+                print("ERROR fetching quates: \(error)")
+            case .success(var quotes):
+                print("QUOTES: \(quotes)")
+                self?.setQuotes(quotes)
+                DispatchQueue.main.async {
+                    self?.setLabels()
+                    self?.tableView.reloadData()
+                }
+            }
+        })
+    }
+    
     func setLabels() {
-   // TODO: - does not working
+        // TODO: - does not working
     }
 }
 
 extension QuotesViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return parsedQuotes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuoteCell", for: indexPath)
-        
+
         guard let quotesCell = cell as? QuoteCell else {
             return cell
         }
@@ -80,8 +75,7 @@ extension QuotesViewController: UITableViewDataSource {
     }
 }
 
-extension QuotesViewController: UITableViewDelegate {
-    
+extension QuotesViewController: UITableViewDelegate {    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Tapped")
     }

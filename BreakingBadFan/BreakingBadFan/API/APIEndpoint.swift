@@ -1,12 +1,7 @@
 
-
-import Foundation
-
-
 import Foundation
 
 enum APIEndpoint {
-
     case getEpisodes
     case getQuotes
     case getCharacters
@@ -21,11 +16,9 @@ enum APIEndpoint {
             return makeURL(endpoint: "characters")
         }
     }
-
 }
 
 extension APIEndpoint {
-
     private var BaseUrlString: String {
         "https://www.breakingbadapi.com/api/"
     }
@@ -35,7 +28,6 @@ extension APIEndpoint {
 
         var urlComponents = URLComponents(string: urlString)
         urlComponents?.queryItems = queryItems
-
         return urlComponents?.url
     }
 }

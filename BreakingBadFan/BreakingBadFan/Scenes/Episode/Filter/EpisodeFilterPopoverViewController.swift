@@ -1,26 +1,25 @@
 
-
 import Foundation
 import UIKit
-import XCTest
-
 
 class EpisodeFilterPopoverViewController: UIViewController {
-    let apiManager = APIManager()
-    var quotes: [Quote] = []
-    
     @IBOutlet weak var seasonTextfield: UITextField!
     @IBOutlet weak var fromDateLabel: UILabel!
     @IBOutlet weak var toDateLabel: UILabel!
     @IBOutlet weak var datePicker: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-
+    let apiManager = APIManager()
+    var quotes: [Quote] = []
     
     @IBAction func ApplyButtonTapped(_ sender: Any) {
         print("APPLY Button tapped")
     }
     
     override func viewDidLoad() {
+        fetchQuotes()
+    }
+    
+    func fetchQuotes() {
         apiManager.getQuotes(completion: { result in
             switch result {
             case .failure(let error):
@@ -41,11 +40,9 @@ extension EpisodeFilterPopoverViewController: UITableViewDataSource {
         let quotCell = tableView.dequeueReusableCell(withIdentifier: "CELLNAME", for: indexPath)
        return quotCell
     }
-   
 }
 
 extension EpisodeFilterPopoverViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected row tapped")
     }

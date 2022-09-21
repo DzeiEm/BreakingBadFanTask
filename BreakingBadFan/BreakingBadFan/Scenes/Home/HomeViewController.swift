@@ -1,16 +1,15 @@
+
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    var currentUser: Profile?
-    var profileManager: ProfileManager!
-    
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var episodeButton: UIButton!
     @IBOutlet private weak var charactersButton: UIButton!
     @IBOutlet private weak var quotesButton: UIButton!
+    var currentUser: Profile?
+    var profileManager: ProfileManager!
     
-    
+    //MARK: - ACTIONS
     @IBAction func episodesButtonTapped(_ sender: Any) {
         let episodeListViewController = EpisodeListViewController()
         episodeListViewController.modalPresentationStyle = .fullScreen
@@ -21,7 +20,6 @@ class HomeViewController: UIViewController {
         let characterViewController = CharacterViewController()
         characterViewController.modalPresentationStyle = .fullScreen
         present(characterViewController, animated: true, completion: nil)
-        
     }
     
     @IBAction func quatesButtonTapped(_ sender: Any) {
@@ -45,7 +43,6 @@ class HomeViewController: UIViewController {
         if let username = ProfileManager.loggedInAccount?.username {
             usernameLabel.text = "HI: \(username)"
         }
-        
     }
 }
 

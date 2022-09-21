@@ -1,11 +1,9 @@
+
 import Foundation
 
 struct APIManager {
-    
     private enum HTTPMethod {
         static let get = "GET"
-//        static let post = "POST"
-//        static let delete = "DELETE"
     }
     
     private enum HeaderKey {
@@ -27,15 +25,13 @@ struct APIManager {
         ]
         return URLSession(configuration: sessionConfiguration)
     }
-    
 }
 
-// MARK: - API calls
+// MARK: - API CALLS
 
 extension APIManager {
     
     func getEpisodes(completion: @escaping (Result<[Episode], APIError>) -> Void) {
-        
         guard let url = APIEndpoint.getEpisodes.url else {
             completion(.failure(APIError.invalidURL))
             return
@@ -60,7 +56,6 @@ extension APIManager {
             }))
         }).resume()
     }
-    
     
     func getQuotes(completion: @escaping (Result<[Quote], APIError>) -> Void) {
         guard let url = APIEndpoint.getQuotes.url else {

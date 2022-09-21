@@ -2,7 +2,6 @@
 import UIKit
 
 struct EpisodeResponse: Decodable {
-    
     let id: Int
     let title: String
     let season: String
@@ -17,7 +16,6 @@ struct EpisodeResponse: Decodable {
         case episode
         case airDate = "air_date"
         case characters
-       
     }
 }
 

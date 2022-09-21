@@ -1,9 +1,7 @@
 
-
 import Foundation
 
 struct CharactersResponse: Decodable {
-   
     let id: Int
     let name: String
     let birthday: String
@@ -22,6 +20,5 @@ struct CharactersResponse: Decodable {
         case appearance
         case nickname
         case portrayed
-        
     }
 }

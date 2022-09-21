@@ -2,7 +2,6 @@
 import Foundation
 
 class RegistrationValidation {
-    
     let profileManager = ProfileManager()
     
     static func checkTextfieldsAreNotEmpty(
@@ -23,7 +22,6 @@ class RegistrationValidation {
         }
     
     static func isPasswordMatch(password: String?, confirmPassword: String?) throws {
-        
         if password != confirmPassword {
             throw AuthenticationError.RegistrationError.passwordDoNotMatch
         }
@@ -31,7 +29,6 @@ class RegistrationValidation {
     }
     
     static func isPasswordSecure(password: String) throws  {
-        
         guard containsNumbers(password) else {
             throw AuthenticationError.Secure.containsNumbers
         }

@@ -1,28 +1,45 @@
 
-
 import Foundation
 import UIKit
 
 class EpisodeListViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+    @IBOutlet private weak var filterButton: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
     let apiManager = APIManager()
     var seasons = [Season]()
     var episodes = [Episode]()
     let filterController = EpisodeFilterPopoverViewController()
     
-    
-    @IBOutlet private weak var filterButton: UIButton!
-    @IBOutlet private weak var tableView: UITableView!
-    
+    //MARK: - ACTIONS
     @IBAction func filterButtonTapped(_ sender: Any) {
         navigate(to: filterController)
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setButtonView()
+        configureCell()
+        fetchEpisodes()
+        setupTableView()
+    }
+    
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 55
+    }
+    
+    func setButtonView() {
         UIAppSettings.roundCorners(of: filterButton, by: 10)
         UIAppSettings.setButtonColor(button: filterButton, color: .purple)
-        configureCell()
+    }
+    
+    func configureCell() {
+        let cellNib = UINib(nibName: "EpisodeCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
+    }
+    
+    func fetchEpisodes() {
         apiManager.getEpisodes(completion: { [weak self] result in
             switch result {
             case .failure(let error):
@@ -35,23 +52,9 @@ class EpisodeListViewController: UIViewController, UIPopoverPresentationControll
                 print(episodes)
             }
         })
-        setupTableView()
     }
-    
-    func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = 55
-    }
-    
-    func configureCell() {
-        let cellNib = UINib(nibName: "EpisodeCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "EpisodeCell")
-    }
-    
     
     func mapEpisodesToSeasons(episodes: [Episode]) {
-        
         for episode in episodes {
             let season = Season(title: episode.season, episodes: [])
             seasons.append(season)
@@ -69,7 +72,6 @@ class EpisodeListViewController: UIViewController, UIPopoverPresentationControll
     
     func sortSeasons() {
         self.seasons =  seasons.sorted { $0.title < $1.title }
-        //TODO: - thnk better
         for i in seasons.indices {
             let filteredSeason =  seasons[i].episodes.sorted { $0.title < $1.title }
             seasons[i].episodes = filteredSeason
@@ -77,9 +79,7 @@ class EpisodeListViewController: UIViewController, UIPopoverPresentationControll
     }
 }
 
-
 extension EpisodeListViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell",
                                                  for: indexPath)
@@ -92,24 +92,22 @@ extension EpisodeListViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return seasons.count
+        seasons.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seasons[section].episodes.count
+        seasons[section].episodes.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "SEASON: \(seasons[section].title)"
+        "SEASON: \(seasons[section].title)"
     }
-    
 }
 
 extension EpisodeListViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         let episode = seasons[indexPath.section].episodes[indexPath.row]
         let episodeDetails = EpisodeDetailsViewController()
         episodeDetails.episodeNo = String(episode.id)
@@ -124,27 +122,24 @@ extension EpisodeListViewController: UITableViewDelegate {
     }
 }
 
+//TODO: POPOVER ??????
 extension EpisodeListViewController {
-    
     func displayPopover() {
-//        let controller = UIAlertController(title: "Controller", message: "Message for controlleer", preferredStyle: .alert)
+        //        let controller = UIAlertController(title: "Controller", message: "Message for controlleer", preferredStyle: .alert)
         let filterController = EpisodeFilterPopoverViewController()
         let pop = filterController.popoverPresentationController
-//        let popover = controller.popoverPresentationController
+        //        let popover = controller.popoverPresentationController
         pop?.sourceView = view
         pop?.sourceRect = CGRect(x: 32, y: 32, width: 64, height: 64)
         present(filterController, animated: true, completion: nil)
     }
-    
-    
-//    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
-//        return .none
-//    }
+    //    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+    //        return .none
+    //    }
     
     func navigate(to controller: UIViewController) {
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
-        
     }
 }
 

@@ -1,10 +1,8 @@
 
 import Foundation
 
-
 class AuthenticationError {
-    
-    enum RegistrationError: Error {
+        enum RegistrationError: Error {
         case weakPassword
         case passwordDoNotMatch
         
@@ -28,7 +26,7 @@ class AuthenticationError {
             }
         }
     }
-    
+
     enum General: Error {
         case emptyFields
         case userAlreadyExist

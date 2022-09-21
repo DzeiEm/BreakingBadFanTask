@@ -1,11 +1,8 @@
 
-
 import Foundation
 import UIKit
 
-
 class CharacterViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
     let apiManager = APIManager()
     var parsedCharacters = [Character]()
@@ -75,7 +72,7 @@ extension CharacterViewController: UITableViewDelegate {
     
     func forwardData() {
         let characterDetailsViewController = CharacterDetailsViewController()
-        let charactersList = parsedCharacters[indexPath.section]
+        let charactersList = parsedCharacters[IndexPath.section]
         characterDetailsViewController.id = String(charactersList.id)
         characterDetailsViewController.name = charactersList.name
         characterDetailsViewController.birthday = charactersList.birthday

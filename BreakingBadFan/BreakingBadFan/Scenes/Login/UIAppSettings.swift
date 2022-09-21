@@ -3,7 +3,6 @@ import Foundation
 import UIKit
 
 class UIAppSettings {
-    
     static func roundCorners(of button: UIButton, by: Int) {
         button.layer.cornerRadius = CGFloat(by)
     }
@@ -15,5 +14,4 @@ class UIAppSettings {
     static func hightlight(textfield: UITextField, by color: UIColor) {
         
     }
-    
 }

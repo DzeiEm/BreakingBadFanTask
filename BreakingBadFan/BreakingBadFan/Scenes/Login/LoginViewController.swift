@@ -2,12 +2,11 @@
 import Foundation
 import UIKit
 
-enum SegmentTitle: String {
-    case Register = "Register"
-    case Login = "Login"
-}
-
 class LoginViewController: UIViewController {
+    enum SegmentTitle: String {
+        case Register = "Register"
+        case Login = "Login"
+    }
     
     //MARK: - OUTLETS
     @IBOutlet weak var registrationTypeSegmentController: UISegmentedControl!
@@ -19,7 +18,6 @@ class LoginViewController: UIViewController {
     var username: String = ""
     var password: String = ""
     var confirmPassword: String = ""
-    
     let ui = UIAppSettings()
     var profileManager = ProfileManager()
     var loggedinUser = ProfileManager.loggedInAccount
@@ -30,14 +28,12 @@ class LoginViewController: UIViewController {
     
     //MARK: - ACTIONS
     @IBAction func onSegmentControllerTypeChanged(_ sender: UISegmentedControl) {
-        
         if registrationTypeSegmentController.selectedSegmentIndex == 0 {
             errorLabel.isHidden = true
             buttonLabel.titleLabel?.text = SegmentTitle.Register.rawValue
             hideTextfield(textfield: usernameTextfield, hide: false)
             hideTextfield(textfield: passwordTextfield, hide: false)
             hideTextfield(textfield: confirmPasswordTextfield, hide: false)
-            
         } else {
             errorLabel.isHidden = true
             buttonLabel.titleLabel?.text = SegmentTitle.Login.rawValue
@@ -120,18 +116,16 @@ class LoginViewController: UIViewController {
         passwordTextfield.delegate = self
         confirmPasswordTextfield.delegate = self
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         usernameTextfield.delegate =  self
         passwordTextfield.delegate = self
         confirmPasswordTextfield.delegate = self
     }
-    
 }
 
-
 extension LoginViewController: UITextFieldDelegate {
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         buttonLabel.isEnabled = true
         return true
     }
@@ -152,6 +146,7 @@ extension LoginViewController {
             present(AlertView.build(message: error), animated: true)
             return
         }
+        
         customAlert.setupView(
             success: false,
             title: AlertTitle.error.rawValue,
@@ -159,13 +154,11 @@ extension LoginViewController {
             agreeButtonTitle: AlertButton.ok.rawValue,
             cancelButtonTitle: AlertButton.cancel.rawValue)
         view.addSubview(customAlert)
-        
         customAlert.translatesAutoresizingMaskIntoConstraints = false
         customAlert.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         customAlert.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         customAlert.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         customAlert.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
     }
     
     func displayErrorLabel(message: String) {
@@ -173,7 +166,6 @@ extension LoginViewController {
         errorLabel.textColor = .red
         errorLabel.text = message
     }
-    
 }
 
 

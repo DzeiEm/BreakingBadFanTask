@@ -1,12 +1,8 @@
 
 import Foundation
 
-
-
 class LoginValidation {
-    
     let profileManager = ProfileManager()
-    
     
     static func checkIsTextfieldIsEmpty(username: String?, password: String?) throws -> Profile {
         
@@ -18,11 +14,9 @@ class LoginValidation {
             throw AuthenticationError.General.emptyFields
         }
         return Profile(username: username, password: password, confirmPassword: nil)
-
     }
     
     static func isLoginCredentialsValid(_ profile: Profile) throws -> Bool {
-       
         guard let neededAccount = UserDefaultsHelper.profiles?.first(where: { neededAccount in
             neededAccount.username == profile.username
         }) else {
@@ -30,5 +24,4 @@ class LoginValidation {
         }
         return KeychainHelper.getPasword(usernameKey: neededAccount.username) == profile.password
     }
-    
 }
