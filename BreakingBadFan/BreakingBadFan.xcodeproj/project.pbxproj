@@ -56,7 +56,6 @@
 		CEF568CB28AB2D75001D63B3 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */; };
 		CEF568CD28AB2DA4001D63B3 /* EpisodeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */; };
 		CEF568DC28ABFDE0001D63B3 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */; };
-		CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568DE28AC0658001D63B3 /* ValidateView.swift */; };
 		CEF568E128AC13A2001D63B3 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */; };
 		CEF568E328AC13E2001D63B3 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */; };
 		CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF568E628AD93F2001D63B3 /* AlertView.swift */; };
@@ -117,7 +116,6 @@
 		CEF568CA28AB2D75001D63B3 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		CEF568CC28AB2DA4001D63B3 /* EpisodeListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListView.xib; sourceTree = "<group>"; };
 		CEF568DB28ABFDE0001D63B3 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
-		CEF568DE28AC0658001D63B3 /* ValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateView.swift; sourceTree = "<group>"; };
 		CEF568E028AC13A2001D63B3 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		CEF568E228AC13E2001D63B3 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
 		CEF568E628AD93F2001D63B3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 		CEF568DD28AC05FE001D63B3 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				CEF568DE28AC0658001D63B3 /* ValidateView.swift */,
 				CE07FFE628BA29DF00A18CC0 /* LoginValidation.swift */,
 				CE07FFE828BA29F600A18CC0 /* RegistrationValidation.swift */,
 			);
@@ -524,7 +521,6 @@
 				CEF568EF28ADABDD001D63B3 /* EpisodeAPI.swift in Sources */,
 				CEF568F128ADABEE001D63B3 /* CharactersAPI.swift in Sources */,
 				CECF817128A1645000CE5A07 /* Profile.swift in Sources */,
-				CEF568DF28AC0658001D63B3 /* ValidateView.swift in Sources */,
 				CEF568E728AD93F2001D63B3 /* AlertView.swift in Sources */,
 				CE07FFFA28BB6E3300A18CC0 /* CharactersViewController.swift in Sources */,
 				CECF813A289FC3B300CE5A07 /* SceneDelegate.swift in Sources */,
